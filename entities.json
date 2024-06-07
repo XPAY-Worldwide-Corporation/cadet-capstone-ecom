@@ -1,11 +1,12 @@
+
 {
     "user":{
         "id":"",
         "username":"",
         "password":"",
-        "email":"",
+        "email":""
     },
     "admin":{
-        "id":
+        "id":""
     }
 }
