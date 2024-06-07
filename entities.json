@@ -1,0 +1,460 @@
+Entities JSON and user stories with test cases
+USERS - To Get all users : GET /users - provisioned_url.co/users/
+{
+  "requests": {
+    "getAllUsers": {
+      "method": "GET",
+      "url": "/users",
+      "headers": {
+        "Host": "provisioned_url.co",
+        "User-Agent": "Mozilla/5.0",
+        "Accept": "application/json"
+      }
+    }
+  },
+  "responses": {
+    "getAllUsers": {
+      "status": "200 OK",
+      "headers": {
+        "Date": "Mon, 15 Aug 2023 12:30:00 GMT",
+        "Server": "Apache/2.4.1 (Unix)",
+        "Content-Type": "application/json",
+        "Content-Length": "num"
+      },
+      "body": [
+        {
+          "id": 1,
+          "username": "john_doe",
+          "email": "john.doe@example.com"
+        },
+        {
+          "id": 2,
+          "username": "jane_smith",
+          "email": "jane.smith@example.com"
+        }
+      ]
+    }
+  }
+}
+
+
+Create a new User: POST /users  - provisioned_url.co/users/ 
+{
+  "requests": {
+    "createUser": {
+      "method": "POST",
+      "url": "/users",
+      "headers": {
+        "Host": "provisioned_url.co",
+        "User-Agent": "Mozilla/5.0",
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Content-Length": "num"
+      },
+      "body": {
+        "username": "john_doe",
+        "password": "securePassword123",
+        "email": "john.doe@example.com"
+      }
+    }
+  },
+  "responses": {
+    "createUser": {
+      "status": "201 Created",
+      "headers": {
+        "Date": "Mon, 15 Aug 2023 12:32:00 GMT",
+        "Server": "Apache/2.4.1 (Unix)",
+        "Content-Type": "application/json",
+        "Content-Length": "num"
+      },
+      "body": {
+        "id": 1,
+        "username": "john_doe",
+        "email": "john.doe@example.com",
+        "message": "User successfully created!"
+      }
+    }
+  }
+}
+
+
+Get a specific user by ID: GET /users/{userId}  - provisioned_url.co/users/{userId}
+{
+  "requests": {
+    "getById": {
+      "method": "GET",
+      "url": "/users/1",
+      "headers": {
+        "Host": "provisioned_url.co",
+        "User-Agent": "Mozilla/5.0",
+        "Accept": "application/json"
+      }
+    }
+  },
+  "responses": {
+    "getById": {
+      "status": "200 OK",
+      "headers": {
+        "Date": "Mon, 15 Aug 2023 12:33:00 GMT",
+        "Server": "Apache/2.4.1 (Unix)",
+        "Content-Type": "application/json",
+        "Content-Length": "num"
+      },
+      "body": {
+        "id": 1,
+        "username": "john_doe",
+        "email": "john.doe@example.com"
+      }
+    }
+  }
+}
+
+
+Update a specific user by ID: PUT /users/{userId} - provisioned_url.co/users/{userId} 
+{
+  "users": [
+    {
+      "request": {
+        "method": "PUT",
+        "url": "/users/1",
+        "headers": {
+          "Host": "provisioned_url.co",
+          "User-Agent": "Mozilla/5.0",
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "username": "john_doe_updated",
+          "password": "newSecurePassword123",
+          "email": "john.doe.updated@example.com"
+        }
+      },
+      "response": {
+        "status": "200 OK",
+        "headers": {
+          "Date": "Mon, 15 Aug 2023 12:35:00 GMT",
+          "Server": "Apache/2.4.1 (Unix)",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "id": 1,
+          "username": "john_doe_updated",
+          "email": "john.doe.updated@example.com",
+          "message": "User successfully updated!"
+        }
+      }
+    }
+  ]
+}
+
+
+Delete a specific user by ID: DELETE /users/{userId} -provisioned_url.co/users/{userId}
+{
+  "users": [
+    {
+      "request": {
+        "method": "DELETE",
+        "url": "/users/1",
+        "headers": {
+          "Host": "provisioned_url.co",
+          "User-Agent": "Mozilla/5.0",
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": "204 No Content",
+        "headers": {
+          "Date": "Thu, 6 June 2024 12:36:00 GMT",
+          "Server": "Apache/2.4.1 (Unix)"
+        }
+      }
+    }
+  ]
+}
+
+
+User Stories and Test Cases
+
+User Story 1
+**Title:** User Registration
+
+**As a** new user, **I want** to register for an account, **so that** I can access the system.
+
+Test Cases
+1. **Test Case:** Successful Registration
+   - **Given:** A new user
+   - **When:** The user provides valid registration details
+   - **Then:** The system should create a new user account
+
+2. **Test Case:** Registration with Existing Email
+   - **Given:** A new user
+   - **When:** The user provides an email that is already registered
+   - **Then:** The system should show an error message
+
+User Story 2
+**Title:** User Login
+
+**As a** registered user, **I want** to log in to my account, **so that** I can access my personal dashboard.
+
+Test Cases
+1. **Test Case:** Successful Login
+   - **Given:** A registered user
+   - **When:** The user provides correct login details
+   - **Then:** The system should log the user in and redirect to the dashboard
+
+2. **Test Case:** Login with Incorrect Password
+   - **Given:** A registered user
+   - **When:** The user provides an incorrect password
+   - **Then:** The system should show an error message
+
+User Story 3
+**Title:** View User Profile
+
+**As a** registered user, **I want** to view my user profile, **so that** I can see my account details.
+
+Test Cases
+1. **Test Case:** Successful Profile View
+   - **Given:** A registered user
+   - **When:** The user requests their profile
+   - **Then:** The system should return the user's profile details
+
+2. **Test Case:** Profile View of Non-existent User
+   - **Given:** A user ID that does not exist
+   - **When:** The user requests the profile for that ID
+   - **Then:** The system should return an error message indicating the user does not exist
+
+User Story 4
+**Title:** Update User Profile
+
+**As a** registered user, **I want** to update my user profile, **so that** I can keep my account information up to date.
+
+Test Cases
+1. **Test Case:** Successful Profile Update
+   - **Given:** A registered user
+   - **When:** The user provides valid updated details
+   - **Then:** The system should update the user's profile and return a success message
+
+2. **Test Case:** Profile Update with Invalid Data
+   - **Given:** A registered user
+   - **When:** The user provides invalid updated details
+   - **Then:** The system should return an error message indicating the validation failure
+
+User Story 5
+**Title:** Get All Users
+
+**As an** admin, **I want** to get a list of all users, **so that** I can manage the user base.
+
+Test Cases
+1. **Test Case:** Successful Retrieval of All Users
+   - **Given:** An admin
+   - **When:** The admin requests the list of all users
+   - **Then:** The system should return a list of all users
+
+User Story 6
+**Title:** Delete User
+
+**As an** admin, **I want** to delete a user, **so that** I can remove inactive or problematic users from the system.
+
+Test Cases
+1. **Test Case:** Successful User Deletion
+   - **Given:** An admin
+   - **When:** The admin deletes a user by ID
+   - **Then:** The system should remove the user and return a success message
+
+2. **Test Case:** Deletion of Non-existent User
+   - **Given:** An admin
+   - **When:** The admin attempts to delete a user that does not exist
+   - **Then:** The system should return an error message indicating the user does not exist
+
+
+ADMINS
+Get all admins: GET /admins - provisioned_url.co/admins/
+{
+  "admins": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "/admins",
+        "headers": {
+          "Host": "provisioned_url.co",
+          "User-Agent": "Mozilla/5.0",
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": "200 OK",
+        "headers": {
+          "Date": "Mon, 15 Aug 2023 12:30:00 GMT",
+          "Server": "Apache/2.4.1 (Unix)",
+          "Content-Type": "application/json",
+          "Content-Length": "num"
+        },
+        "body": [
+          {
+            "id": "admin1",
+            "firstName": "John",
+            "lastName": "Doe"
+          },
+          {
+            "id": "admin2",
+            "firstName": "Jane",
+            "lastName": "Smith"
+          }
+        ]
+      }
+    }
+  ]
+}
+
+
+Create a new admin: POST /admins - provisioned_url.co/admins/
+{
+  "admins": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "/admins",
+        "headers": {
+          "Host": "provisioned_url.co",
+          "User-Agent": "Mozilla/5.0",
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "Content-Length": "num"
+        },
+        "body": {
+          "firstName": "John",
+          "lastName": "Doe",
+          "username": "john_admin",
+          "password": "securePassword123",
+          "email": "john.doe@example.com"
+        }
+      },
+      "response": {
+        "status": "201 Created",
+        "headers": {
+          "Date": "Mon, 15 Aug 2023 12:32:00 GMT",
+          "Server": "Apache/2.4.1 (Unix)",
+          "Content-Type": "application/json",
+          "Content-Length": "num"
+        },
+        "body": {
+          "id": "admin1",
+          "firstName": "John",
+          "lastName": "Doe",
+          "username": "john_admin",
+          "email": "john.doe@example.com",
+          "message": "Admin successfully created!"
+        }
+      }
+    }
+  ]
+}
+
+
+Get a specific admin by ID: GET /admins/{adminId} - provisioned_url.co/admins/{adminId} 
+{
+  "admins": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "/admins/admin1",
+        "headers": {
+          "Host": "provisioned_url.co",
+          "User-Agent": "Mozilla/5.0",
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": "200 OK",
+        "headers": {
+          "Date": "Mon, 15 Aug 2023 12:33:00 GMT",
+          "Server": "Apache/2.4.1 (Unix)",
+          "Content-Type": "application/json",
+          "Content-Length": "num"
+        },
+        "body": {
+          "id": "admin1",
+          "firstName": "John",
+          "lastName": "Doe",
+          "username": "john_admin",
+          "email": "john.doe@example.com"
+        }
+      }
+    }
+  ]
+}
+
+
+Update a specific admin by ID: PUT /admins/{adminId} - provisioned_url.co/admins/{adminId} 
+{
+  "admins": [
+    {
+      "request": {
+        "method": "PUT",
+        "url": "/admins/admin1",
+        "headers": {
+          "Host": "provisioned_url.co",
+          "User-Agent": "Mozilla/5.0",
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "Content-Length": "num"
+        },
+        "body": {
+          "firstName": "Johnathan",
+          "lastName": "Doe",
+          "username": "john_admin_updated",
+          "password": "newSecurePassword123",
+          "email": "john.doe.updated@example.com"
+        }
+      },
+      "response": {
+        "status": "200 OK",
+        "headers": {
+          "Date": "Mon, 15 Aug 2023 12:35:00 GMT",
+          "Server": "Apache/2.4.1 (Unix)",
+          "Content-Type": "application/json",
+          "Content-Length": "num"
+        },
+        "body": {
+          "id": "admin1",
+          "firstName": "Johnathan",
+          "lastName": "Doe",
+          "username": "john_admin_updated",
+          "email": "john.doe.updated@example.com",
+          "message": "Admin successfully updated!"
+        }
+      }
+    }
+  ]
+}
+
+
+Delete a specific admin by ID: DELETE /admins/{adminId} -  provisioned_url.co/admins/{adminId}
+{
+  "admins": [
+    {
+      "request": {
+        "method": "DELETE",
+        "url": "/admins/admin1",
+        "headers": {
+          "Host": "provisioned_url.co",
+          "User-Agent": "Mozilla/5.0",
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": "204 No Content",
+        "headers": {
+          "Date": "Thu, 6 June 2024 12:36:00 GMT",
+          "Server": "Apache/2.4.1 (Unix)"
+        }
+      }
+    }
+  ]
+}
+
+
+
+
+
+
