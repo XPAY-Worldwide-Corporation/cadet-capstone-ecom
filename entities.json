@@ -7,6 +7,53 @@
         "email":""
     },
     "admin":{
-        "id":""
+        "id":"",
+        "firstname":"",
+        "lastname":""
+    },
+    "product":{
+        "id":"",
+        "name":"",
+        "description":"",
+        "price":"",
+        "Instock":""
+    },
+    "cartitem":{
+        "id":"",
+        "cartid":"",
+        "productid":"",
+        "quantity":""
+    },
+    "orderitem":{
+        "id":"",
+        "orderid":"",
+        "productid":"",
+        "quantity":""
+    },
+    "order":{
+        "id":"",
+        "userid":"",
+        "orderdate":"",
+        "status":""
+    },
+    "salesreport":{
+        "id":"",
+        "reportdate":"",
+        "reporttype":"",
+        "totalsales":""
+    },
+    "customer":{
+        "id":"",
+        "firstname":"",
+        "lastname":"",
+        "address":"",
+        "paymentmethod":""
+    },
+    "cart":{
+        "id":"",
+        "userid":"",
+        "createdat":""
     }
+    
+
 }
