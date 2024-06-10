@@ -1,0 +1,538 @@
+Test Cases
+
+
+
+User Login
+
+As a Customer, I need to login, so that I can get all the Item that I checked out to be saved in my own account and buy them later on If I want to
+Acceptance:
+Given: The user has a registered account and is on the login page.
+When: The user enters valid login credentials and clicks the login button.
+Then: The user is successfully logged in, and all previously checked-out items are saved in their account for future purchase.
+
+Test Case:
+TC ID : TC001
+Summary: Verify that a customer can log in successfully with valid credentials and see previously checked-out items saved in their account.
+
+Pre-requisites:
+1.	The user must have a registered account.
+2.	The user must have previously checked out items without completing the purchase.
+3.	The application must be up and running.
+
+Test Procedure:
+1.	Open the application and navigate to the login page.
+2.	Enter the registered email address in the email field.
+3.	Enter the correct password in the password field.
+4.	Click the "Login" button.
+5.	Verify that the user is redirected to the dashboard or home page.
+6.	Check the user account for previously checked-out items.
+
+Expected and Actual Results:
+1.	The login page is displayed.
+2.	Email is entered without errors.
+3.	Password is entered without errors.
+4.	The login button is clickable.
+5.	User is redirected to the dashboard or home page.
+6.	Previously checked-out items are displayed in the user account.
+
+
+
+Register/Sign up
+
+As a Customer, I need to sign up, so that I can get logged in and check the products available on the page and buy it if I want.
+Acceptance Criteria/Test:
+•	Given: The user is on the sign-up page and does not have an existing account.
+•	When: The user enters valid sign-up details and submits the form.
+•	Then: The user account is created successfully, and the user can log in to view and buy available products.
+
+Test Case:
+TC ID: TC002
+Summary: Verify that a customer can sign up successfully with valid details and then log in to view and purchase available products.
+
+Pre-requisites:
+1.	The user does not already have an account.
+2.	The application must be up and running.
+
+Test Procedure:
+1.	Open the application and navigate to the sign-up page.
+2.	Enter a valid email address in the email field.
+3.	Enter a valid password in the password field.
+4.	Enter the required personal details (e.g., name, address) in the respective fields.
+5.	Click the "Sign Up" button.
+6.	Verify that the user receives a confirmation message and/or email.
+7.	Navigate to the login page.
+8.	Enter the registered email address in the email field.
+9.	Enter the password in the password field.
+10.	Click the "Login" button.
+11.	Verify that the user is redirected to the dashboard or home page.
+12.	Browse the available products on the page.
+13.	Verify that the user can add products to the cart and proceed to purchase.
+
+Expected and Actual Results:
+14.	The sign-up page is displayed.
+15.	Email is entered without errors.
+16.	Password is entered without errors.
+17.	Personal details are entered without errors.
+18.	The "Sign Up" button is clickable.
+19.	User receives a confirmation message/email.
+20.	The login page is displayed.
+21.	Email is entered without errors.
+22.	Password is entered without errors.
+23.	The "Login" button is clickable.
+24.	User is redirected to the dashboard or home page.
+25.	Available products are displayed.
+26.	User can add products to the cart and proceed to purchase.
+
+
+
+
+Search Product
+
+As a Customer, I need to search product, so that I can look for the item that I am looking for.
+Acceptance Criteria/Test:
+•	Given: The user is logged in and on the home page or product search page.
+•	When: The user enters a search query in the search bar and clicks the search button.
+•	Then: The user is presented with search results that match the query.
+
+Test Case:
+TC ID: TC003
+Summary : Verify that a customer can search for products using the search bar and see relevant search results.
+
+Pre-requisites:
+1.	The user must be logged in.
+2.	The application must be up and running.
+3.	There must be products available in the database that match the search query.
+
+Test Procedure:
+1.	Open the application and log in with valid credentials.
+2.	Navigate to the home page or product search page.
+3.	Locate the search bar on the page.
+4.	Enter a valid search query (e.g., "laptop") into the search bar.
+5.	Click the "Search" button.
+6.	Verify that the search results page is displayed.
+7.	Verify that the products displayed in the search results match the search query.
+
+Expected and Actual Results:
+1.	User is logged in and on the home page or product search page.
+2.	Search bar is visible on the page.
+3.	Search bar is clickable and allows text input.	
+4.	Search query is entered without errors.
+5.	"Search" button is clickable.
+6.	Search results page is displayed.
+7.	Products matching the search query are displayed.
+
+
+
+View Product
+
+As a Customer, I want to view product, so that I can check if it is available or not.
+Acceptance Criteria/Test:
+Given: The user is logged in and has navigated to the product listing or search results page.
+When: The user clicks on a product to view its details.
+Then: The user is presented with the product details page, including information on availability.
+
+Test Case:
+TC ID: TC004
+Summary: Verify that a customer can view product details and check its availability.
+
+Pre-requisites
+1.	The user must be logged in.
+2.	The application must be up and running.
+3.	There must be products available in the database with detailed information including availability.
+
+Test Procedure
+1.	Open the application and log in with valid credentials.
+2.	Navigate to the home page, product listing page, or search results page.
+3.	Locate and click on a product to view its details.
+4.	Verify that the product details page is displayed.
+5.	Check the product details for information on availability (e.g., "In Stock", "Out of Stock").
+
+Expected and Actual Results
+1.	User is logged in and on the home page, product listing page, or search results page.	
+2.	List of products or search results is displayed.
+3.	Product details page is displayed after clicking on a product.
+4.	Product details page is displayed with complete product information.
+5.	Availability status of the product is visible.
+
+
+
+Add to cart
+
+As a Customer, I want to add something in my cart, so that I can check them out later on If I want to buy them
+Acceptance Criteria/Test:
+•	Given: The user is logged in and on the product details page.
+•	When: The user clicks the "Add to Cart" button.
+•	Then: The item is added to the user's cart, and the user can view the item in their cart for potential checkout later.
+
+Test Case:
+TC ID: TC005
+Summary
+Verify that a customer can add an item to their cart and see it listed in their cart for future checkout.
+
+Pre-requisites:
+1.	The user must be logged in.
+2.	The application must be up and running.
+3.	There must be products available in the database.
+
+Test Procedure:
+1.	Open the application and log in with valid credentials.
+2.	Navigate to the home page or use the search bar to find a product.
+3.	Click on a product to view its details.
+4.	Verify that the product details page is displayed.
+5.	Click the "Add to Cart" button.
+6.	Verify that a confirmation message is displayed indicating the product has been added to the cart.
+7.	Navigate to the cart page.
+8.	Verify that the product is listed in the cart with correct details (name, price, quantity).
+
+Expected and Actual Results
+1.	User is logged in and on the home page or product search page.
+2.	Search bar and product listings are visible.	
+3.	Product details page is displayed after clicking on a product.
+4.	Product details are displayed accurately.
+5.	"Add to Cart" button is clickable and functions properly.
+6.	Confirmation message is displayed indicating the product is added to the cart.
+7.	Cart page is accessible.
+8.	Product is listed in the cart with correct details.
+
+
+
+Payment
+
+As a Customer, I want to have a payment options, so that it will be more efficient for me to choose a payment.
+Acceptance Criteria/Test:
+•	Given: The user has items in their cart and is on the checkout page.
+•	When: The user selects a payment option and proceeds to make a payment.
+•	Then: The user is able to choose from various payment options and successfully complete the purchase using the selected option.
+
+Test Case:
+TC ID: TC006
+Summary: Verify that a customer can choose from multiple payment options and complete the purchase efficiently.
+
+Pre-requisites:
+1.	The user must be logged in.
+2.	The user must have items in their cart.
+3.	The application must be up and running.
+4.	Various payment options (e.g., credit card, PayPal, etc.) must be available and configured in the system.
+
+Test Procedure:
+1.	Open the application and log in with valid credentials.
+2.	Navigate to the cart and ensure there are items present.
+3.	Click on the "Checkout" button.
+4.	Verify that the checkout page is displayed with multiple payment options.
+5.	Select a payment option (e.g., credit card, PayPal).
+6.	Enter valid payment details for the selected payment option.
+7.	Click on the "Place Order" or "Pay Now" button.
+8.	Verify that the payment is processed successfully and a confirmation message is displayed.
+9.	Verify that the order details are updated and visible in the user's order history.
+
+Expected and Actual Results:
+1.	User is logged in.
+2.	Items are present in the cart.
+3.	Checkout page is displayed.
+4.	Multiple payment options are visible.
+5.	Selected payment option is highlighted.
+6.	Payment details are entered without errors.
+7.	Payment is processed, and confirmation message is displayed.
+8.	Order details are updated in the user's order history.
+
+
+
+
+View Cart
+
+As a Customer, I want to view my cart, so that I can buy all the Item that I added to my cart or wish to remove it If I have to.
+Acceptance Criteria/Test:
+•	Given: The user is logged in and has added items to their cart.
+•	When: The user navigates to the cart page.
+•	Then: The user can view all items in the cart, proceed to checkout, or remove items from the cart.
+
+Test Case:
+TC ID: TC007
+Summary: Verify that a customer can view their cart, buy all the items, or remove items if needed.
+
+Pre-requisites:
+1.	The user must be logged in.
+2.	The user must have items added to their cart.
+3.	The application must be up and running.
+
+Test Procedure:
+1.	Open the application and log in with valid credentials.
+2.	Add a few items to the cart if not already added.
+3.	Navigate to the cart page by clicking on the cart icon or link.
+4.	Verify that the cart page is displayed with all the items listed.
+5.	Check that each item displays the correct name, quantity, price, and total cost.
+6.	Verify the presence of a "Remove" button next to each item.
+7.	Click the "Remove" button next to an item and verify that it is removed from the cart.
+8.	Check the updated total cost after item removal.
+9.	Click on the "Proceed to Checkout" button.
+10.	Verify that the user is redirected to the checkout page with the remaining items.
+
+Expected and Actual Results:
+1.	User is logged in.
+2.	Items are added to the cart.
+3.	Cart page is displayed.
+4.	All items are listed with correct details.
+5.	Each item displays correct name, quantity, price, and total cost.
+6.	"Remove" button is present next to each item.
+7.	Item is removed from the cart upon clicking "Remove".
+8.	Total cost is updated correctly.
+9.	"Proceed to Checkout" button is clickable.
+10.	User is redirected to the checkout page.
+
+
+
+
+
+Admin Login
+
+As an Admin, I want to login, so that I can Manage all the products on the page or check the sales report.
+Acceptance Criteria/Test:
+•	Given: The admin is on the login page.
+•	When: The admin enters valid login credentials and clicks the login button.
+•	Then: The admin is successfully logged in and can access the admin dashboard to manage products and view sales reports.
+
+Test Case:
+TC ID: TC008
+Summary: Verify that an admin can log in successfully and access the admin dashboard to manage products and view sales reports.
+
+Pre-requisites:
+1.	The admin credentials must be valid.
+2.	The application must be up and running.
+
+Test Procedure:
+1.	Open the application and navigate to the admin login page.
+2.	Enter the valid admin email address in the email field.
+3.	Enter the correct admin password in the password field.
+4.	Click the "Login" button.
+5.	Verify that the admin is redirected to the admin dashboard.
+6.	Check for the presence of options to manage products (e.g., add, edit, delete) and view sales reports.
+7.	Click on the option to manage products and verify that the admin can perform actions such as adding, editing, and deleting products.
+8.	Click on the option to view sales reports and verify that the admin can access sales data.
+
+Expected and Actual Results:
+1.	Admin login page is displayed.
+2.	Admin email is entered without errors.
+3.	Admin password is entered without errors.	
+4.	"Login" button is clickable.
+5.	Admin is redirected to the admin dashboard.
+6.	Options to manage products and view sales reports are visible.
+7.	Admin can perform actions like add, edit, and delete products.
+8.	Admin can access and view sales reports.
+
+
+
+
+Manage Product
+
+As an Admin, I want to manage all my products, so that I can check the products on what to remove, add or update.
+Acceptance Criteria/Test:
+•	Given: The admin is logged in and on the admin dashboard.
+•	When: The admin navigates to the product management section.
+•	Then: The admin can view a list of all products, add new products, remove existing products, and update product details.
+
+Test Case:
+TC ID: TC009
+Summary: Verify that an admin can manage products by adding, removing, or updating them from the admin dashboard.
+
+Pre-requisites:
+1.	The admin must be logged in.
+2.	The application must be up and running.
+3.	There must be existing products in the system.
+
+Test Procedure:
+1.	Log in to the admin account using valid credentials.
+2.	Navigate to the admin dashboard.
+3.	Locate and click on the "Manage Products" or "Products" section.
+4.	Verify that a list of existing products is displayed.
+5.	Check for options to add a new product.
+6.	Click on the option to add a new product and fill in the required details.
+7.	Verify that the new product is added successfully.
+8.	Check for options to update existing products.
+9.	Click on the option to update a product and modify its details.
+10.	Verify that the product details are updated successfully.
+11.	Check for options to remove existing products.
+12.	Click on the option to remove a product and confirm the action.
+13.	Verify that the product is removed from the system.
+14.	Ensure that the product list reflects all changes made (addition, update, removal).
+
+Expected and Actual Results:
+1.	Admin dashboard is displayed after login.
+2.	"Manage Products" section is visible on the dashboard.
+3.	List of existing products is displayed.
+4.	Option to add a new product is available.
+5.	Admin can successfully add a new product.
+6.	Option to update existing products is available.
+7.	Admin can successfully update product details.
+8.	Option to remove existing products is available.
+9.	Admin can successfully remove a product.
+10.	Product list reflects all changes made.
+
+
+
+
+Add Product
+
+As an Admin, I want to add products on the product list, so that users will be more interested on our new products to sell.
+Acceptance Criteria/Test:
+•	Given: The admin is logged in and on the admin dashboard.
+•	When: The admin navigates to the product management section and chooses to add a new product.
+•	Then: The admin can successfully add a new product with all relevant details.
+
+Test Case:
+TC ID: TC010
+Summary: Verify that an admin can add a new product to the product list from the admin dashboard.
+
+Pre-requisites:
+1.	The admin must be logged in.
+2.	The application must be up and running.
+
+Test Procedure:
+1.	Log in to the admin account using valid credentials.
+2.	Navigate to the admin dashboard.
+3.	Locate and click on the "Manage Products" or "Products" section.
+4.	Find and click the option to add a new product.
+5.	Fill in all the required details for the new product, such as name, description, price, category, etc.
+6.	Upload an image for the new product if required.
+7.	Verify that all mandatory fields are filled correctly.
+8.	Click the "Add Product" or "Save" button.
+9.	Verify that a success message is displayed confirming the addition of the new product.
+10.	Check the product list to ensure that the new product is added correctly and appears with all the provided details.
+
+Expected and Actual Results:
+1.	Admin dashboard is displayed after login.
+2.	“Manage Products" section is visible on the dashboard.
+3.	Option to add a new product is available.
+4.	Admin can successfully navigate to the new product form.
+5.	All required details for the new product are filled correctly.
+6.	Image for the new product is uploaded (if required).
+7.	All mandatory fields are filled correctly.
+8.	Admin clicks the "Add Product" or "Save" button.
+9.	Success message is displayed confirming the addition of the new product.
+10.	New product is successfully added to the product list.
+
+
+
+
+Remove Product
+
+As an Admin, I want to remove products on the product list, so that there will be no, excess list that are out of stock or not available anymore from the list.
+Acceptance Criteria/Test:
+•	Given: The admin is logged in and on the admin dashboard.
+•	When: The admin navigates to the product management section and chooses to remove a product.
+•	Then: The admin can successfully remove the selected product from the product list.
+
+Test Case:
+TC ID: TC011
+Summary: Verify that an admin can remove a product from the product list from the admin dashboard.
+
+Pre-requisites:
+1.	The admin must be logged in.
+2.	The application must be up and running.
+3.	There must be existing products in the system.
+
+Test Procedure:
+1.	Log in to the admin account using valid credentials.
+2.	Navigate to the admin dashboard.
+3.	Locate and click on the "Manage Products" or "Products" section.
+4.	Find the product to be removed from the product list.
+5.	Click on the option to remove or delete the product.
+6.	Confirm the action if prompted.
+7.	Verify that a success message is displayed confirming the removal of the product.
+8.	Check the product list to ensure that the removed product is no longer present.
+
+Expected and Actual Results:
+1.	Admin dashboard is displayed after login.
+2.	"Manage Products" section is visible on the dashboard.
+3.	Option to remove a product is available.
+4.	Admin can successfully locate the product to be removed.
+5.	Admin clicks on the option to remove or delete the product.
+6.	Admin confirms the action if prompted.
+7.	Success message is displayed confirming the removal of the product.
+8.	Removed product is no longer present in the product list.
+
+
+
+
+Update Product
+
+As an Admin, I want to update the products on the product list, so that I can let the users know that the product has been updated.
+Acceptance Criteria/Test:
+•	Given: The admin is logged in and on the admin dashboard.
+•	When: The admin navigates to the product management section and chooses to update a product.
+•	Then: The admin can successfully update the selected product with new information.
+
+Test Case:
+TC ID: TC012
+Summary: Verify that an admin can update a product on the product list from the admin dashboard.
+
+Pre-requisites:
+1.	The admin must be logged in.
+2.	The application must be up and running.
+3.	There must be existing products in the system.
+
+Test Procedure:
+1.	Log in to the admin account using valid credentials.
+2.	Navigate to the admin dashboard.
+3.	Locate and click on the "Manage Products" or "Products" section.
+4.	Find the product to be updated from the product list.
+5.	Click on the option to edit or update the product details.
+6.	Modify the necessary information for the product (e.g., name, description, price, category).
+7.	Upload a new image for the product if required.
+8.	Verify that all changes are made correctly and accurately.
+9.	Click the "Update" or "Save" button to save the changes.
+10.	Verify that a success message is displayed confirming the update of the product.
+11.	Check the product list to ensure that the updated product reflects the changes made.
+
+Expected and Actual Results:
+1.	Admin dashboard is displayed after login.
+2.	"Manage Products" section is visible on the dashboard.
+3.	Option to update a product is available.
+4.	Admin can successfully locate the product to be updated.
+5.	Admin clicks on the option to edit or update the product details.
+6.	Admin modifies the necessary information for the product.	
+7.	New image for the product is uploaded (if required).
+8.	All changes are made correctly and accurately.
+9.	Admin clicks the "Update" or "Save" button.
+10.	Success message is displayed confirming the update of the product.
+11.	Updated product reflects the changes made in the product list.
+
+
+
+
+
+Sales Report
+
+As an Admin, I want to check the sales report, so that I can manage and maintain my business through looking day, weekly, monthly or yearly sales report.
+Acceptance Criteria/Test:
+•	Given: The admin is logged in and on the admin dashboard.
+•	When: The admin navigates to the sales report section.
+•	Then: The admin can successfully view sales reports for different time periods (daily, weekly, monthly, yearly).
+
+Test Case:
+TC ID: TC013
+Summary: Verify that an admin can check the sales report for different time periods from the admin dashboard.
+
+Pre-requisites:
+1.	The admin must be logged in.
+2.	The application must be up and running.
+3.	There must be sales data available in the system.
+
+Test Procedure:
+1.	Log in to the admin account using valid credentials.
+2.	Navigate to the admin dashboard.
+3.	Locate and click on the "Sales Report" or "Reports" section.
+4.	Select the time period for which the admin wants to view the sales report (e.g., daily, weekly, monthly, yearly).
+5.	Click on the option to generate the sales report for the selected time period.
+6.	Verify that the sales report is displayed with relevant information such as total sales, top-selling products, revenue generated, etc.
+7.	Check that the sales report is presented in a clear and understandable format.
+8.	Analyze the sales report to identify trends, patterns, and areas for improvement in the business.
+
+Expected and Actual Results:
+1.	Admin dashboard is displayed after login.
+2.	"Sales Report" or "Reports" section is visible on the dashboard.
+3.	Admin can navigate to the sales report section.
+4.	Admin selects the desired time period for the sales report (daily, weekly, monthly, yearly).
+5.	Sales report for the selected time period is generated.
+6.	Sales report is displayed with relevant information.
+7.	Sales report is presented in a clear and understandable format.
+8.	Admin can analyze the sales report to identify trends and patterns.
