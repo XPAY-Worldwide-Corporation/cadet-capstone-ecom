@@ -11,7 +11,8 @@
         "store_id":"",
         "user_id":"",
         "name":"",
-        "description":""
+        "description":"",
+        "image":""
     },
     "product":{
         "product_id":"",
@@ -24,7 +25,10 @@
         "store_id":"",
         "product_id":"",
         "price":0.0,
-        "rating":0.0,
+        "rating":{
+            "rate":0,
+            "by":0
+        },
         "stock":0
     },
     "cart":{
