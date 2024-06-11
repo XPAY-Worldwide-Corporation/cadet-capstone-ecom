@@ -10,7 +10,8 @@
     "store":{
         "store_id":"",
         "user_id":"",
-        "name":""
+        "name":"",
+        "description":""
     },
     "product":{
         "product_id":"",
