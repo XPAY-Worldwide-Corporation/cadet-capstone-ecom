@@ -47,6 +47,8 @@
         "cart_id":"",
         "total":0.0,
         "destination":"",
-        "status":""
+        "status":"",
+        "message":"",
+        "mop":""
     }
 }
