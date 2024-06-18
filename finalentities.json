@@ -1,58 +1,60 @@
-
-{
-    "user":{
-        "id":"",
-        "username":"",
-        "password":"",
-        "email":""
+{  
+    "user": {
+        "userid": "",
+        "username": "",
+        "password": "",
+        "email": ""
     },
-    "admin":{
-        "id":"",
-        "firstname":"",
-        "lastname":""
+    "category": {
+        "userid": "",
+        "categoryid": "",
+        "productname": ""
     },
-    "product":{
-        "id":"",
-        "name":"",
-        "description":"",
-        "price":"",
-        "Instock":""
+    "products": {
+        "userid": "",
+        "productid": "",
+        "categoryid": "",
+        "productname": "",
+        "itemname": "",
+        "price": "",
+        "image": ""
     },
-    "cartitem":{
-        "id":"",
-        "cartid":"",
-        "productid":"",
-        "quantity":""
+    "addtocart": {
+        "userid": "",
+        "addtocartid": "",
+        "itemname": "",
+        "price": "",
+        "size": "",
+        "color": "",
+        "quantity": ""
     },
-    "orderitem":{
-        "id":"",
-        "orderid":"",
-        "productid":"",
-        "quantity":""
+    "checkout": {
+        "userid": "",
+        "checkoutid": "",
+        "shipping_address": "",
+        "payment_method": "",
+        "shipping_cost": ""
     },
-    "order":{
-        "id":"",
-        "userid":"",
-        "orderdate":"",
-        "status":""
+    "payment": {
+        "userid": "",
+        "paymentid": "",
+        "checkoutid": ""
     },
-    "salesreport":{
-        "id":"",
-        "reportdate":"",
-        "reporttype":"",
-        "totalsales":""
+    "admin": {
+        "adminid": "",
+        "username": "",
+        "password": ""
     },
-    "customer":{
-        "id":"",
-        "firstname":"",
-        "lastname":"",
-        "address":"",
-        "paymentmethod":""
+    "manageproduct": {
+        "manageproductid": "",
+        "adminid": "",
+        "categoryid": ""
     },
-    "cart":{
-        "id":"",
-        "userid":"",
-        "createdat":""
+    "productlist": {
+        "productlistid": "",
+        "adminid": "",
+        "categoryid": "",
+        "productid": ""
     }
 
 
