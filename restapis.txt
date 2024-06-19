@@ -1,28 +1,29 @@
-STORE PRODUCT
+PRODUCT
 
-POST /products     body:{product,stock}
-{store_product}
+POST /products     body:{product}
+{product}
 
 GET /products
-{products:[store_product]}
+{products:[product]}
 
 GET /products/{id}
-{store_product}
+{product}
 
 GET /products?limit=:limit&offset=:offset
-{products:[store_product]}
+{products:[product]}
 
 GET /products?category=:category
-{products:[store_product]}
+{products:[product]}
 
 GET /products?search=:query
-{products:[store_product]}
+{products:[product]}
 
-PUT /products/{id}   body:{store_product}
-{store_product}
+PUT /products/{id}   body:{product}
+{product}
 
 DELETE /products/{id}
-{store_product}
+{product}
+
 
 CART
 
@@ -42,25 +43,22 @@ PATCH /carts/{id}     body:{cart}
 {cart}
 
 
-
-
 CART PRODUCT
 
-POST /cart_products    body:{store_product}
-{cart_product}
-
-GET /cart_products    body:{cart_id}
+GET /cart_product
 {cart_products:[cart_product]}
 
-GET /cart_products/{id}    body:{cart_id}
+GET /cart_product/id
 {cart_product}
 
-PATCH /cart_products/{id}    body:{cart_product}
+POST /cart_product   body:{quantity,cart_id,product_id}
 {cart_product}
 
-DELETE /cart_products/{id}    body:{cart_id}
+DELETE /cart_product/id
 {cart_product}
 
+PATCH /cart_product/id    body:{quantity}
+{cart_product}
 
 
 
@@ -80,6 +78,12 @@ PATCH /stores/{id}   body:{store}
 
 DELETE /stores/{id}
 {store}
+
+
+
+
+
+
 
 
 USER
@@ -116,5 +120,15 @@ POST /orders   body:{order}
 PATCH /orders   body:{order}
 {order}
 
+REVIEW
+
+GET /reviews    body:{product_id}
+{reviews:[review]}
+
+GET /reviews/id
+{review}
+
+POST /reviews  body:{review}
+{review}
 
 
