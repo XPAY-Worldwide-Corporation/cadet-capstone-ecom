@@ -16,20 +16,20 @@
     },
     "product":{
         "product_id":"",
+        "store_id":"",
         "name":"",
         "description":"",
-        "image":""
-    },
-    "store_product":{
-        "store_product_id":"",
-        "store_id":"",
-        "product_id":"",
+        "image":"",
+        "category":"",
         "price":0.0,
-        "rating":{
-            "rate":0,
-            "by":0
-        },
         "stock":0
+    },
+    "review":{
+        "review_id":"",
+        "product_id":"",
+        "user_id":"",
+        "rate":0,
+        "comment":""
     },
     "cart":{
         "cart_id":"",
