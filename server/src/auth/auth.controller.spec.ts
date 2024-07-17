@@ -49,7 +49,7 @@ describe('AuthController', () => {
     }
     jest.spyOn(controller, 'signup').mockResolvedValue({id:1,...inputs})
     const res = await controller.signup(inputs)
-    expect(res).toEqual({...inputs,id:'user_id'})
+    expect(res).toEqual({...inputs,id:1})
   })
 
   it('should be able to receive a bad request error for creating a user with an existing username', async () => {
