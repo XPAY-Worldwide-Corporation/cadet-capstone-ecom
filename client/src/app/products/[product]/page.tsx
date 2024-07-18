@@ -12,13 +12,14 @@ import { useDispatch } from "react-redux";
 
 export default function ViewSingleProduct() {
   const pathname = usePathname();
-  const product_id = pathname.split("/")[2];
+  const product_id = parseInt(pathname.split("/")[2]);
   const dispatch = useDispatch<AppDispatch>();
   const [product, setProduct] = useState<Product | null>(null);
   const [store, setStore] = useState<Store | null>(null);
   const [showAddToCartModal, setShowAddToCartModal] = useState(false);
   const isLoading = !product || !store;
   const router = useRouter();
+
   useEffect(() => {
     const fetchDatas = () => {
       dispatch(fetch_product(product_id)).then((res: any) => {
@@ -98,12 +99,14 @@ export default function ViewSingleProduct() {
               ADD TO CART
             </button>
           </div>
-          <div className="w-full h-[40px]">
+          <div className="w-full">
             <h1 className="text-2xl uppercase font-bold">{product?.name}</h1>
           </div>
-          <h1>{product?.description}</h1>
-          <div className="w-full h-[40px]">{`${product?.stocks} stock(s) left`}</div>
-          <div className="w-full h-[40px]">{`$${product?.price}`}</div>
+          <h1 className="border-b border-black">{product?.description}</h1>
+          <div className="w-full">{`${product?.category}`}</div>
+          <div className="w-full">{`${product?.stocks} stock(s) left`}</div>
+          <div className="w-full">{`$${product?.price}`}</div>
+
           <StoreCard store={store} />
         </div>
       </div>

@@ -14,7 +14,7 @@ import { useDispatch } from "react-redux";
 
 export default function ViewSingleCart() {
   const pathname = usePathname();
-  const cart_id = pathname.split("/")[2];
+  const cart_id = parseInt(pathname.split("/")[2]);
   const dispatch = useDispatch<AppDispatch>();
   const [cart, setCart] = useState<Cart | null>(null);
   const [products, setProducts] = useState<CartProduct[] | []>([]);

@@ -46,9 +46,9 @@ export class ProductsService {
         }
     }
 
-    async fetch_product(query:Object): Promise<Product>{
+    async fetch_product(id: number): Promise<Product>{
         try {
-            return await this.prisma.prismaClient.product.findFirst({where:query})
+            return await this.prisma.prismaClient.product.findFirst({where:{id}})
         } catch (error) {
             throw new BadRequestException('An ERROR occured fetching the product')
         }

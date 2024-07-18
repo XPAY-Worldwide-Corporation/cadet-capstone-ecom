@@ -29,18 +29,28 @@ export default function OrderCard({ order }: OrderCardProps) {
   const ShowData = () => {
     return (
       <div
-        className="h-[200px] w-full border p-2 hover:border-black cursor-pointer"
-        onClick={() => router.push(`/orders/${order?.id}`)}
+        className={`h-[200px] w-full border p-2 ${
+          order?.status !== "CANCELLED"
+            ? "cursor-pointer hover:border-black"
+            : "cursor-not-allowed bg-gray-400"
+        }`}
+        onClick={() => {
+          if (order?.status != "CANCELLED") {
+            router.push(`/orders/${order?.id}`);
+          }
+        }}
       >
-        <div className="h-[50px] py-2 border-b border-black">
+        <div className="h-1/4 py-2 border-b border-black flex justify-between">
           <div className="w-full h-full">{order?.status}</div>
+          <h1 className="w-full h-full">{order?.mode_of_payment}</h1>
         </div>
-        <div className="h-[150px] py-2 space-y-2">
+        <div className="h-3/4 py-2 space-y-2 overflow-hidden">
           <h1>{order?.destination}</h1>
-          <h1>{order?.mode_of_payment}</h1>
           <h1>{`$${order?.total}`}</h1>
-
-          <h1>{order?.message}</h1>
+          <div>
+            <h1 className="border-t border-black">MESSAGE</h1>
+            <h1>{order?.message}</h1>
+          </div>
         </div>
       </div>
     );

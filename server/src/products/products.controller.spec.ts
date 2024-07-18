@@ -98,7 +98,7 @@ describe('ProductsController', () => {
         image:'imageurl'
       }
     ]);
-    const stores = await controller.fetch_store_products(1);
+    const stores = await controller.fetch_store_products('1');
     expect(stores).toEqual(expect.any(Array))
   });
 
@@ -116,7 +116,7 @@ describe('ProductsController', () => {
         image:'imageurl'
       }
     );
-    const res = await controller.fetch_product(1);
+    const res = await controller.fetch_product('1');
     expect(res).toEqual(expect.any(Object))
   });
 
@@ -150,7 +150,7 @@ describe('ProductsController', () => {
         category:'category',
         image:'imageurl'
     });
-    const stores = await controller.update_product(1,{
+    const stores = await controller.update_product('1',{
       id:1,
       name:'name',
       description:'description',
@@ -175,7 +175,7 @@ describe('ProductsController', () => {
       category:'category',
       image:'imageurl'
     });
-    const stores = await controller.delete_product(1);
+    const stores = await controller.delete_product('1');
     expect(stores).toEqual(expect.any(Object))
   })
 });

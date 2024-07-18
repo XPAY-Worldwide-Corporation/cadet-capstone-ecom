@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 
 export default function ViewSingleMyStore() {
   const pathname = usePathname();
-  const store_id = pathname.split("/")[2];
+  const store_id = parseInt(pathname.split("/")[2]);
   const dispatch = useDispatch<AppDispatch>();
   const [store, setStore] = useState<Store | null>(null);
   const [products, setProducts] = useState<Product[] | []>([]);

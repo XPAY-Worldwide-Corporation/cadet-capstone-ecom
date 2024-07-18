@@ -80,7 +80,7 @@ describe('CartproductsController', () => {
         quantity:99
       }
     ])
-    const res = await controller.fetch_cartproducts(1)
+    const res = await controller.fetch_cartproducts('1')
     expect(res).toEqual(expect.any(Array))
   })
 
@@ -93,7 +93,7 @@ describe('CartproductsController', () => {
         quantity:99
       }
     )
-    const res = await controller.fetch_cartproduct(1)
+    const res = await controller.fetch_cartproduct('1')
     expect(res).toEqual(expect.any(Object))
   })
 
@@ -109,7 +109,7 @@ describe('CartproductsController', () => {
         ...inputs
       }
     )
-    const res = await controller.update_cartproduct(1, inputs)
+    const res = await controller.update_cartproduct('1', inputs)
     expect(res).toEqual(expect.any(Object))
   })
 
@@ -122,7 +122,7 @@ describe('CartproductsController', () => {
         quantity:99
       }
     )
-    const res = await controller.delete_cartproduct(1)
+    const res = await controller.delete_cartproduct('1')
     expect(res).toEqual(expect.any(Object))
   })
 });

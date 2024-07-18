@@ -2,9 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import AxiosInstance from "../api/myapi";
 
 export type Store = {
-    id: string,
+    id: number,
     name: string,
-    user_id: string,
+    user_id: number,
     description: string,
     image: string
 }
@@ -63,7 +63,7 @@ export const fetch_stores = createAsyncThunk('/fetch_stores', async () => {
     }
 })
 
-export const fetch_store = createAsyncThunk('/fetch_store', async (id: string) => {
+export const fetch_store = createAsyncThunk('/fetch_store', async (id: number) => {
     try {
         return (await AxiosInstance.get(`/stores/mystores/${id}`)).data
     } catch (error:any) {
@@ -79,7 +79,7 @@ export const update_store = createAsyncThunk('/update_store', async (inputs: any
     }
 })
 
-export const delete_store = createAsyncThunk('/delete_store', async (id: string) => {
+export const delete_store = createAsyncThunk('/delete_store', async (id: number) => {
     try {
         return (await AxiosInstance.delete(`/stores/mystores/${id}`)).data
     } catch (error: any) {

@@ -1,6 +1,5 @@
 "use client";
 import StoreCard from "@/components/cards/StoreCard";
-import AddToCartModal from "@/components/modals/AddToCartModal";
 import UpdateProductModal from "@/components/modals/UpdateProductModal";
 import { error, success } from "@/redux/reducers/notification_slice";
 import {
@@ -8,7 +7,6 @@ import {
   fetch_product,
   Product,
 } from "@/redux/reducers/products_slice";
-import { fetch_store, Store } from "@/redux/reducers/store_slice";
 import { AppDispatch } from "@/redux/store";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
@@ -17,7 +15,7 @@ import { useDispatch } from "react-redux";
 
 export default function ViewSingleMyProduct() {
   const pathname = usePathname();
-  const product_id = pathname.split("/")[3];
+  const product_id = parseInt(pathname.split("/")[3]);
   const dispatch = useDispatch<AppDispatch>();
   const [product, setProduct] = useState<Product | null>(null);
   const [showUpdateModal, setShowUpdateModal] = useState(false);

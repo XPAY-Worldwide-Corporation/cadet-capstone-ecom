@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import AxiosInstance from "../api/myapi";
 
 export type User = {
-    id: string,
+    id: number,
     fname: string,
     lname: string,
     username: string,

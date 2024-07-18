@@ -100,7 +100,7 @@ describe('ReviewsController', () => {
         rate:5
       }
     ])
-    const res = await controller.fetch_reviews(1)
+    const res = await controller.fetch_reviews('1')
     expect(res).toEqual(expect.any(Array))
   })
 
@@ -115,7 +115,7 @@ describe('ReviewsController', () => {
         rate:5
       }
     )
-    const res = await controller.fetch_review(1)
+    const res = await controller.fetch_review('1')
     expect(res).toEqual(expect.any(Object))
   })
 
@@ -135,7 +135,7 @@ describe('ReviewsController', () => {
         id:1
       }
     }
-    const res = await controller.update_review(1, {
+    const res = await controller.update_review('1', {
       title:'updated review title',
       message:'updated review message',
       rate:5
@@ -152,7 +152,7 @@ describe('ReviewsController', () => {
       message:'updated review message',
       rate:5
     })
-    const res = await controller.delete_review(1)
+    const res = await controller.delete_review('1')
     expect(res).toEqual(expect.any(Object))
   })
 });

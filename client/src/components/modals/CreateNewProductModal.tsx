@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 interface CreateNewProductModalProps {
-  store_id: string;
+  store_id: number;
   setShowCreateModal: React.Dispatch<React.SetStateAction<boolean>>;
   products: Product[] | [];
   setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
@@ -77,14 +77,21 @@ export default function CreateNewProductModal({
             setStocks(parseInt(e.target.value));
           }}
         />
-        <input
-          type="text"
+        <select
+          name="category"
           className="border-b border-black w-full p-1 focus:outline-none"
-          placeholder="category"
+          id=""
           onChange={(e: any) => {
             setCategory(e.target.value);
           }}
-        />
+        >
+          <option value="mens products">MENS PRODUCTS</option>
+          <option value="womens products">WOMENS PRODUCTS</option>
+          <option value="jewelry">JEWELRY</option>
+          <option value="electronics">ELECTRONICS</option>
+          <option value="kitchen utensils">KITCHEN UTENSILS</option>
+          <option value="books">BOOKS</option>
+        </select>
         <div className="overflow-hidden">
           {uploadingFile ? (
             <div className="flex justify-center items-center h-[75px]">

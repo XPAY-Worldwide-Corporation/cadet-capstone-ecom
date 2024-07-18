@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 
 interface CheckOutCartModalProps {
   setCheckOut: React.Dispatch<React.SetStateAction<boolean>>;
-  cart_id: string;
+  cart_id: number;
 }
 
 export default function CheckOutCartModal({

@@ -38,21 +38,21 @@ export class StoresController {
 
     @Get('/mystores/:id')
     //@UseGuards(AuthenticationGuard)
-    async fetch_mystore(@Param('id') id: number){
-        return await this.storesService.fetch_store({id})
+    async fetch_mystore(@Param('id') id: string){
+        return await this.storesService.fetch_store(parseInt(id))
     }
 
     @Patch('/mystores/:id')
     @UseGuards(AuthenticationGuard)
-    async update_mystore(@Param('id') id: number, @Body() data:UpdateStoreDto){
+    async update_mystore(@Param('id') id: string, @Body() data:UpdateStoreDto){
         delete data.id
-        return await this.storesService.update_store(id, data)
+        return await this.storesService.update_store(parseInt(id), data)
     }
 
     @Delete('/mystores/:id')
     @UseGuards(AuthenticationGuard)
-    async delete_mystore(@Param('id') id: number){
-        return await this.storesService.delete_store(id)
+    async delete_mystore(@Param('id') id: string){
+        return await this.storesService.delete_store(parseInt(id))
     }
 
     @Get()
@@ -61,7 +61,7 @@ export class StoresController {
     }
 
     @Get(':id')
-    async fetch_store(@Param() id :number){
-        return await this.storesService.fetch_store({id})
+    async fetch_store(@Param('id') id :string){
+        return await this.storesService.fetch_store(parseInt(id))
     }
 }

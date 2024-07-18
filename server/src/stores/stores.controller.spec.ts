@@ -126,7 +126,7 @@ describe('StoresController', () => {
         id: 1,
       },
     };
-    const stores = await controller.fetch_mystore(1);
+    const stores = await controller.fetch_mystore('1');
     expect(stores).toEqual(expect.any(Object))
   });
 
@@ -152,7 +152,7 @@ describe('StoresController', () => {
       description:'description',
       image:'imageurl'
     });
-    const stores = await controller.fetch_store(1);
+    const stores = await controller.fetch_store('1');
     expect(stores).toEqual(expect.any(Object))
   });
 
@@ -165,7 +165,7 @@ describe('StoresController', () => {
       description:'updated description',
       image:'imageurl'
     });
-    const stores = await controller.update_mystore(1,{
+    const stores = await controller.update_mystore('1',{
       id:1,
       user_id:1,
       name:'updated name',
@@ -184,7 +184,7 @@ describe('StoresController', () => {
       description:'delete store description',
       image:'imageurl'
     });
-    const stores = await controller.delete_mystore(1);
+    const stores = await controller.delete_mystore('1');
     expect(stores).toEqual(expect.any(Object))
   })
 });

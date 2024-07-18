@@ -1,9 +1,9 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import AxiosInstance from "../api/myapi";
 
 export type Product = {
-    id:string,
-    store_id: string,
+    id:number,
+    store_id: number,
     name:string,
     description:string,
     price:number,
@@ -15,13 +15,17 @@ export type Product = {
 interface ProductState {
     products: Product[] | []
     loading_products: boolean
-    loading_create: boolean
+    loading_create: boolean,
+    search_query: string,
+    category: string
 }
 
 const initialState = {
     products:[],
     loading_products: false,
-    loading_create: false
+    loading_create: false,
+    search_query: '',
+    category: ''
 }satisfies ProductState as ProductState
 
 export const upload_product_image = createAsyncThunk('/upload_product_image', async (file:File) => {
@@ -50,7 +54,7 @@ export const fetch_products = createAsyncThunk('/fetch_products', async () => {
     }
 })
 
-export const fetch_product = createAsyncThunk('/fetch_product', async (id: string) => {
+export const fetch_product = createAsyncThunk('/fetch_product', async (id: number) => {
     try {
         return (await AxiosInstance.get(`/products/${id}`)).data 
     } catch (error:any) {
@@ -58,7 +62,7 @@ export const fetch_product = createAsyncThunk('/fetch_product', async (id: strin
     }
 })
 
-export const fetch_myproducts = createAsyncThunk('/fetch_myproducts/:id', async (id: string) => {
+export const fetch_myproducts = createAsyncThunk('/fetch_myproducts/:id', async (id: number) => {
     try {
         return (await AxiosInstance.get(`/products/store-products/${id}`)).data 
     } catch (error:any) {
@@ -74,7 +78,7 @@ export const search_product = createAsyncThunk('/search_product', async (name: s
     }
 })
 
-export const delete_product = createAsyncThunk('/delete_product', async (id: string) => {
+export const delete_product = createAsyncThunk('/delete_product', async (id: number) => {
     try {
         return (await AxiosInstance.delete(`/products/${id}`)).data
     } catch (error: any) {
@@ -85,7 +89,14 @@ export const delete_product = createAsyncThunk('/delete_product', async (id: str
 const productSlice = createSlice({
     name:'product',
     initialState,
-    reducers:{},
+    reducers:{
+        set_search: (state, action: PayloadAction<string>) => {
+            state.search_query = action.payload
+        },
+        set_category: (state, action: PayloadAction<string>) => {
+            state.category = action.payload
+        }
+    },
     extraReducers: builder => {
         builder.addCase(create_product.pending, (state) => {
             state.loading_create = true
@@ -122,4 +133,5 @@ const productSlice = createSlice({
     }
 })
 
+export const {set_search, set_category} = productSlice.actions
 export default productSlice.reducer

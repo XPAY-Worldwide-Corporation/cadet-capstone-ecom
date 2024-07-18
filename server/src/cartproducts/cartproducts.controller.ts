@@ -17,25 +17,25 @@ export class CartproductsController {
 
     @Get('/cart/:id')
     @UseGuards(AuthenticationGuard)
-    async fetch_cartproducts(@Param('id') id: number){
-        return await this.cartproductsService.fetch_cartproducts({cart_id: id})
+    async fetch_cartproducts(@Param('id') id: string){
+        return await this.cartproductsService.fetch_cartproducts({cart_id: parseInt(id)})
     }
 
     @Get(':id')
     @UseGuards(AuthenticationGuard)
-    async fetch_cartproduct(@Param('id') id :number){
-        return await this.cartproductsService.fetch_cartproduct({id})
+    async fetch_cartproduct(@Param('id') id :string){
+        return await this.cartproductsService.fetch_cartproduct({id:parseInt(id)})
     }
 
     @Patch(':id')
     @UseGuards(AuthenticationGuard)
-    async update_cartproduct(@Param('id') id: number, @Body() data:UpdateCartProductDto){
-        return await this.cartproductsService.update_cartproduct(id, data)
+    async update_cartproduct(@Param('id') id: string, @Body() data:UpdateCartProductDto){
+        return await this.cartproductsService.update_cartproduct(parseInt(id), data)
     }
 
     @Delete(':id')
     @UseGuards(AuthenticationGuard)
-    async delete_cartproduct(@Param('id') id: number){
-        return await this.cartproductsService.delete_cartproduct(id)
+    async delete_cartproduct(@Param('id') id: string){
+        return await this.cartproductsService.delete_cartproduct(parseInt(id))
     }
 }

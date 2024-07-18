@@ -1,29 +1,27 @@
 "use client";
-import CartProductCard from "@/components/cards/CartProductCard";
-import OrderCard from "@/components/cards/OrderCard";
 import OrderProductCard from "@/components/cards/OrderProductCard";
-import CheckOutCartModal from "@/components/modals/CheckOutCartModal";
-import { calculate_total, Cart, fetch_cart } from "@/redux/reducers/cart_slice";
+import { calculate_total } from "@/redux/reducers/cart_slice";
 import {
   CartProduct,
   fetch_cartproducts,
 } from "@/redux/reducers/cartproduct_slice";
-import { error } from "@/redux/reducers/notification_slice";
-import { fetch_order, Order } from "@/redux/reducers/order_slice";
-import { AppDispatch } from "@/redux/store";
+import { error, success } from "@/redux/reducers/notification_slice";
+import { cancel_order, fetch_order, Order } from "@/redux/reducers/order_slice";
+import { AppDispatch, RootState } from "@/redux/store";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function ViewSingleOrder() {
   const pathname = usePathname();
-  const order_id = pathname.split("/")[2];
+  const order_id = parseInt(pathname.split("/")[2]);
   const dispatch = useDispatch<AppDispatch>();
   const [order, setOrder] = useState<Order | null>(null);
   const [products, setProducts] = useState<CartProduct[] | []>([]);
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [total, setTotal] = useState(0);
+  const { loading_cancel } = useSelector((state: RootState) => state.order);
 
   useEffect(() => {
     const fetchData = () => {
@@ -121,8 +119,21 @@ export default function ViewSingleOrder() {
       {isLoading ? <Skeleton /> : <ShowData />}
       <div className="w-full md:w-1/2 lg:w-1/4 space-y-2 sticky bottom-[1rem] md:bottom-[2rem]">
         <h1 className="text-white bg-gray-600 p-[2rem]">{`$${total}`}</h1>
-        <button className="text-xl px-2 py-1 bg-black text-white">
-          CANCEL
+        <button
+          disabled={loading_cancel}
+          className="text-xl px-2 py-1 bg-black text-white"
+          onClick={() => {
+            dispatch(cancel_order(order_id)).then((res: any) => {
+              if (res.error) {
+                dispatch(error(res.error.message));
+              } else {
+                dispatch(success("Order has been cancelled"));
+                router.back();
+              }
+            });
+          }}
+        >
+          {loading_cancel ? "CANCELLING..." : "CANCEL ORDER"}
         </button>
       </div>
     </div>

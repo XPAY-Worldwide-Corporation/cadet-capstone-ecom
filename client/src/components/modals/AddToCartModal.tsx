@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 interface AddToCartModalProps {
-  product_id: string;
+  product_id: number;
   setShowAddToCartModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -19,7 +19,7 @@ export default function AddToCartModal({
   const { loading_create } = useSelector(
     (state: RootState) => state.cartproduct
   );
-  const [selectedcart, setSelectedCart] = useState("");
+  const [selectedcart, setSelectedCart] = useState<number>();
   const { carts, loading_carts } = useSelector(
     (state: RootState) => state.cart
   );

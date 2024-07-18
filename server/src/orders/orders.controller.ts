@@ -9,8 +9,8 @@ export class OrdersController {
     constructor(private readonly ordersService:OrdersService){}
 
     @Get('/calculate_total/:id')
-    async calculate_total(@Param('id') id: number){
-        return await this.ordersService.fetch_total(id)
+    async calculate_total(@Param('id') id: string){
+        return await this.ordersService.fetch_total(parseInt(id))
     }
 
     @Post()
@@ -31,19 +31,19 @@ export class OrdersController {
 
     @Get(':id')
     @UseGuards(AuthenticationGuard)
-    async fetch_order(@Param('id') id: number){
-        return await this.ordersService.fetch_order({id})
+    async fetch_order(@Param('id') id: string){
+        return await this.ordersService.fetch_order({id:parseInt(id)})
     }
 
     @Patch(':id')
     @UseGuards(AuthenticationGuard)
-    async update_order(@Param('id') id: number, @Body() data: UpdateOrderDto){
-        return await this.ordersService.update_order(id, data)
+    async update_order(@Param('id') id: string, @Body() data: UpdateOrderDto){
+        return await this.ordersService.update_order(parseInt(id), data)
     }
 
     @Delete(':id')
     @UseGuards(AuthenticationGuard)
-    async delete_order(@Param('id') id: number){
-        return await this.ordersService.delete_order(id)
+    async delete_order(@Param('id') id: string){
+        return await this.ordersService.delete_order(parseInt(id))
     }
 }

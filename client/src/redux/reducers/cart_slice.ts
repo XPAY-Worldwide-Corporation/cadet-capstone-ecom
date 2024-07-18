@@ -2,9 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import AxiosInstance from "../api/myapi";
 
 export type Cart = {
-    id: string,
+    id: number,
     name: string,
-    user_id: string
+    user_id: number
 }
 
 interface CartState {
@@ -19,7 +19,7 @@ const initialState = {
     loading_create: false
 } satisfies CartState as CartState
 
-export const calculate_total = createAsyncThunk('/calculate_total', async (id: string) => {
+export const calculate_total = createAsyncThunk('/calculate_total', async (id: number) => {
     try {
         return (await AxiosInstance.get(`/orders/calculate_total/${id}`)).data
     } catch (error: any) {
@@ -35,7 +35,7 @@ export const fetch_carts = createAsyncThunk('/fetch_carts', async () => {
     }
 })
 
-export const fetch_cart = createAsyncThunk('/fetch_cart', async (id: string) => {
+export const fetch_cart = createAsyncThunk('/fetch_cart', async (id: number) => {
     try {
         return (await AxiosInstance.get(`/carts/${id}`)).data
     } catch (error:any) {
@@ -51,7 +51,7 @@ export const create_cart = createAsyncThunk('/create_cart', async (inputs: Objec
     }
 })
 
-export const delete_cart = createAsyncThunk('/delete_cart', async (id: string) => {
+export const delete_cart = createAsyncThunk('/delete_cart', async (id: number) => {
     try {   
         return (await AxiosInstance.delete(`/carts/${id}`)).data
     } catch (error: any) {

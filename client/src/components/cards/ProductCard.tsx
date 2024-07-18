@@ -41,6 +41,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               alt=""
               fill
               sizes="(max-width: 600px) 100vw, 50vw"
+              priority
             />
           )}
         </div>

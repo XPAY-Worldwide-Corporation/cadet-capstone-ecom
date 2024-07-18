@@ -23,20 +23,20 @@ export class CartsController {
 
     @Get(':id')
     @UseGuards(AuthenticationGuard)
-    async fetch_cart(@Param('id') id: number){
-        return await this.cartsService.fetch_cart(id)
+    async fetch_cart(@Param('id') id: string){
+        return await this.cartsService.fetch_cart(parseInt(id))
     }
 
     @Patch(':id')
     @UseGuards(AuthenticationGuard)
-    async update_cart(@Param('id') id: number, @Body() data:UpdateCartDto){
+    async update_cart(@Param('id') id: string, @Body() data:UpdateCartDto){
         delete data.id
-        return await this.cartsService.update_cart(id, data)
+        return await this.cartsService.update_cart(parseInt(id), data)
     }
 
     @Delete(':id')
     @UseGuards(AuthenticationGuard)
-    async delete_cart(@Param('id') id: number){
-        return await this.cartsService.delete_cart(id)
+    async delete_cart(@Param('id') id: string){
+        return await this.cartsService.delete_cart(parseInt(id))
     }
 }

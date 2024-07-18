@@ -16,24 +16,24 @@ export class ReviewsController {
     }
 
     @Get('/product/:id')
-    async fetch_reviews(@Param('id') id: number){
-        return await this.reviewsService.fetch_reviews({product_id:id})
+    async fetch_reviews(@Param('id') id: string){
+        return await this.reviewsService.fetch_reviews({product_id:parseInt(id)})
     }
 
     @Get(':id')
-    async fetch_review(@Param('id') id: number){
-        return await this.reviewsService.fetch_review({id})
+    async fetch_review(@Param('id') id: string){
+        return await this.reviewsService.fetch_review({id:parseInt(id)})
     } 
 
     @Patch(':id')
     @UseGuards(AuthenticationGuard)
-    async update_review(@Param('id') id: number, @Body() data: UpdateReviewDto){
-        return await this.reviewsService.update_review(id, data)
+    async update_review(@Param('id') id: string, @Body() data: UpdateReviewDto){
+        return await this.reviewsService.update_review(parseInt(id), data)
     }
 
     @Delete(':id')
     @UseGuards(AuthenticationGuard)
-    async delete_review(@Param('id') id: number){
-        return await this.reviewsService.delete_review(id)
+    async delete_review(@Param('id') id: string){
+        return await this.reviewsService.delete_review(parseInt(id))
     }
 }

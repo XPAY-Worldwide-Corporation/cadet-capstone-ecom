@@ -129,7 +129,7 @@ describe('OrdersController', () => {
         message:''
       }
     )
-    const res = await controller.fetch_order(1)
+    const res = await controller.fetch_order('1')
     expect(res).toEqual(expect.any(Object))
   })
 
@@ -156,7 +156,7 @@ describe('OrdersController', () => {
       user_id:1,
       message:''
     }
-    const res = await controller.update_order(1,inputs)
+    const res = await controller.update_order('1',inputs)
     expect(res).toEqual(expect.any(Object))
   })
 });

@@ -7,9 +7,9 @@ interface CartProductState {
 }
 
 export type CartProduct = {
-    id: string,
-    cart_id: string,
-    product_id: string,
+    id: number,
+    cart_id: number,
+    product_id: number,
     quantity: number
 }
 
@@ -18,7 +18,7 @@ const initialState = {
     loading_delete: false
 } satisfies CartProductState as CartProductState
 
-export const fetch_cartproducts = createAsyncThunk('/fetch_cartproducts', async (id: string) => {
+export const fetch_cartproducts = createAsyncThunk('/fetch_cartproducts', async (id: number) => {
     try {
         return (await AxiosInstance.get(`/cartproducts/cart/${id}`)).data
     } catch (error:any) {
@@ -44,7 +44,7 @@ export const update_cartproduct = createAsyncThunk('/update_cartproduct', async 
     }
 })
 
-export const delete_cartproduct = createAsyncThunk('/delete_cartproduct', async (id: string) => {
+export const delete_cartproduct = createAsyncThunk('/delete_cartproduct', async (id: number) => {
     try {  
         return (await AxiosInstance.delete(`/cartproducts/${id}`)).data
     } catch (error: any) {

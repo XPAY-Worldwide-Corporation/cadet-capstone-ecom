@@ -26,8 +26,8 @@ export class StoresService {
         return res
     }
 
-    async fetch_store(query:Object): Promise<Store>{
-        const res = await this.prisma.prismaClient.store.findFirst({where:query})
+    async fetch_store(id: number): Promise<Store>{
+        const res = await this.prisma.prismaClient.store.findFirst({where:{id}})
         if(!res) throw new NotFoundException('An ERROR fetching the store information')
         return res
     }

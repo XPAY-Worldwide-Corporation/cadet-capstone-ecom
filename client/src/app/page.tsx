@@ -1,12 +1,11 @@
 "use client";
 import ProductCard from "@/components/cards/ProductCard";
 import StoreCard from "@/components/cards/StoreCard";
-import CategoryBar from "@/components/CategoryBar";
 import { fetch_products } from "@/redux/reducers/products_slice";
 import { fetch_stores } from "@/redux/reducers/store_slice";
 import { AppDispatch, RootState } from "@/redux/store";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Home() {
@@ -93,9 +92,6 @@ export default function Home() {
     <section className="w-full">
       <div className="w-full h-[250px] md:h-[500px] relative">
         <Image src={"/images/home.jpg"} alt="" fill />
-      </div>
-      <div className="w-full overflow-hidden py-[2rem]">
-        <CategoryBar />
       </div>
       <div className="w-full py-[1rem]">
         <h1>Products</h1>

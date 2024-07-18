@@ -104,7 +104,7 @@ describe('CartsController', () => {
     jest.spyOn(controller, 'fetch_cart').mockResolvedValue(
       {id:1,user_id:1, name:'cart_name'}
     )
-    const res = await controller.fetch_cart(1)
+    const res = await controller.fetch_cart('1')
     expect(res).toEqual(expect.any(Object))
   })
 
@@ -121,7 +121,7 @@ describe('CartsController', () => {
         id:1
       }
     }
-    const res = await controller.update_cart(1, {
+    const res = await controller.update_cart('1', {
       id: 1,
       user_id:1,
       name:'cart_name'
@@ -136,7 +136,7 @@ describe('CartsController', () => {
       user_id:1,
       name:'cart_name'
     })
-    const res = await controller.delete_cart(1)
+    const res = await controller.delete_cart('1')
     expect(res).toEqual(expect.any(Object))
   })
 });
