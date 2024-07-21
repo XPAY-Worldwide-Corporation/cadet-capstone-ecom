@@ -4,7 +4,7 @@ import { error, success } from "@/redux/reducers/notification_slice";
 import {
   cancel_orderproduct,
   OrderProduct,
-  receive_orderproduct,
+  ship_orderproduct,
 } from "@/redux/reducers/orderproduct_slice";
 import { fetch_product, Product } from "@/redux/reducers/products_slice";
 import { AppDispatch } from "@/redux/store";
@@ -16,17 +16,20 @@ interface OrderProductCardProps {
   orderProduct: OrderProduct | null;
 }
 
-export default function OrderProductCard({
+export default function StoreOrderCard({
   orderProduct,
 }: OrderProductCardProps) {
   const [product, setProduct] = useState<Product | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [cancelling, setCancelling] = useState<boolean>(false);
   const [order, setOrder] = useState<OrderProduct | null>(orderProduct);
   const dispatch = useDispatch<AppDispatch>();
 
-  const disableButton = ["CANCELLED", "RECEIVED", undefined].includes(
-    order?.status
-  );
+  const disableButton = [
+    "RECEIVED",
+    "SHIPPED",
+    "CANCELLED",
+    undefined,
+  ].includes(order?.status);
 
   useEffect(() => {
     const fetchDatas = () => {
@@ -71,11 +74,9 @@ export default function OrderProductCard({
 
   const ShowData = () => {
     return (
-      <div
-        className={`w-full md:h-[150px] flex flex-col md:flex-row gap-2 relative`}
-      >
-        {loading && <Loading />}
-        <div className="w-full md:w-[30%] h-[250px] md:h-full">
+      <div className={`w-full h-[150px] flex gap-2 relative`}>
+        {cancelling && <Loading />}
+        <div className="relative w-[30%] h-full">
           {product && (
             <img
               src={product?.image}
@@ -88,14 +89,14 @@ export default function OrderProductCard({
             />
           )}
         </div>
-        <div className="overflow-hidden w-full md:w-[70%] h-full">
+        <div className="overflow-hidden w-[70%] h-full relative">
           <div className="flex gap-2 border-b border-black justify-between">
             <h1 className="text-xl font-bold uppercase truncate">
               {product?.name}
             </h1>
             <h1 className="text-xl font-bold uppercase">{`$${product?.price}`}</h1>
           </div>
-          <div className="flex flex-col justify-center py-5">
+          <div className="flex flex-col justify-center py-6">
             <div className="flex gap-2">
               <h1>STATUS:</h1>
               <h1
@@ -118,41 +119,25 @@ export default function OrderProductCard({
           </div>
           <button
             disabled={disableButton}
-            className={`bg-black text-white p-1 w-full ${
+            className={`absolute bottom-0 bg-black text-white p-1 w-full ${
               disableButton ? "hover:cursor-not-allowed bg-opacity-50" : ""
             }`}
             onClick={() => {
               if (order) {
-                setLoading(true);
-                if (order.status === "SHIPPED") {
-                  dispatch(receive_orderproduct(order?.id)).then((res: any) => {
-                    if (res.error) {
-                      dispatch(error(res.error.message));
-                    } else {
-                      dispatch(success("RECEIVED!"));
-                      setOrder(res.payload);
-                    }
-                    setLoading(false);
-                  });
-                } else {
-                  dispatch(cancel_orderproduct(order?.id)).then((res: any) => {
-                    if (res.error) {
-                      dispatch(error(res.error.message));
-                    } else {
-                      dispatch(success("CANCELLED!"));
-                      setOrder(res.payload);
-                    }
-                    setLoading(false);
-                  });
-                }
+                setCancelling(true);
+                dispatch(ship_orderproduct(order?.id)).then((res: any) => {
+                  if (res.error) {
+                    dispatch(error(res.error.message));
+                  } else {
+                    dispatch(success("SHIPPED!"));
+                    setOrder(res.payload);
+                  }
+                  setCancelling(false);
+                });
               }
             }}
           >
-            {disableButton
-              ? "..."
-              : order?.status === "SHIPPED"
-              ? "RECEIVE ORDER"
-              : "CANCEL ORDER"}
+            {disableButton ? "..." : "SHIP ORDER"}
           </button>
         </div>
       </div>

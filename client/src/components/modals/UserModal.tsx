@@ -56,12 +56,15 @@ export default function UserModal({ setShowUSerModal }: UserModalProps) {
       <div className="space-y-2 w-full flex flex-col justify-center items-center">
         <div className="w-[150px] h-[150px] relative flex justify-center items-center">
           {user?.image && (
-            <Image
+            <img
               className="rounded-full"
-              src={user.image}
+              src={user?.image}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
               alt=""
-              fill
-              sizes="(max-width: 600px) 100vw, 50vw"
             />
           )}
         </div>

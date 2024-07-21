@@ -9,19 +9,16 @@ export type Order = {
     mode_of_payment: string,
     destination: string,
     total: number,
-    status: string
 }
 
 interface OrderState {
     orders:Order[] | []
     loading_orders: boolean
-    loading_cancel: boolean
 }
 
 const initialState = {
     orders:[],
     loading_orders:false,
-    loading_cancel: false
 } satisfies OrderState as OrderState
 
 export const create_order = createAsyncThunk('/create_order', async (inputs: Object) => {
@@ -43,14 +40,6 @@ export const fetch_orders = createAsyncThunk('/fetch_orders', async () => {
 export const fetch_order = createAsyncThunk('/fetch_order', async (id: number) => {
     try {
         return (await AxiosInstance.get(`/orders/${id}`)).data
-    } catch (error: any) {
-        throw new Error(error.response.data.message)
-    }
-})
-
-export const cancel_order = createAsyncThunk('/cancel_order', async (id: number) => {
-    try {
-        return (await AxiosInstance.patch(`/orders/${id}`, {status:'CANCELLED'})).data
     } catch (error: any) {
         throw new Error(error.response.data.message)
     }
@@ -78,16 +67,6 @@ const orderSlice = createSlice({
         builder.addCase(fetch_orders.fulfilled, (state, action) => {
             state.loading_orders = false
             state.orders = action.payload
-        })
-
-        builder.addCase(cancel_order.pending, (state) => {
-            state.loading_cancel = true
-        })
-        builder.addCase(cancel_order.rejected, (state) => {
-            state.loading_cancel = false
-        })
-        builder.addCase(cancel_order.fulfilled, (state) => {
-            state.loading_cancel = false
         })
     }
 })

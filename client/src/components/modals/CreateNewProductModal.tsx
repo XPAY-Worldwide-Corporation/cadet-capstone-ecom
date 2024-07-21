@@ -30,7 +30,7 @@ export default function CreateNewProductModal({
   const [price, setPrice] = useState<number>();
   const [stocks, setStocks] = useState<number>();
   const [image, setImage] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("mens products");
 
   const Loader = () => {
     return (

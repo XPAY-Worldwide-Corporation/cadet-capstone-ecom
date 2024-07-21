@@ -7,26 +7,24 @@ import { useDispatch, useSelector } from "react-redux";
 export default function CategoryBar() {
   const { category } = useSelector((state: RootState) => state.product);
   const classCatBtn =
-    "bg-black text-white px-[2rem] py-2 truncate min-w-[200px] hover:bg-opacity-100 flex flex-col justify-center items-center";
+    "bg-black text-white px-[2rem] py-2 truncate min-w-[200px] hover:bg-opacity-100 flex flex-col justify-center items-center uppercase cursor-pointer";
   const dispatch = useDispatch<AppDispatch>();
   const categories = [
     "mens products",
     "womens products",
     "jewelry",
     "electronics",
-    "kitchen untensils",
+    "kitchen utensils",
     "books",
   ];
 
   return (
     <ul className="flex gap-[1rem] overflow-auto">
-      <li className={`${classCatBtn} ${category && "bg-opacity-50"}`}>
-        <button
-          className="uppercase"
-          onClick={() => dispatch(set_category(""))}
-        >
-          ALL
-        </button>
+      <li
+        className={`${classCatBtn} ${category && "bg-opacity-50"}`}
+        onClick={() => dispatch(set_category(""))}
+      >
+        ALL
       </li>
       {categories.map((val) => {
         return (
@@ -39,13 +37,9 @@ export default function CategoryBar() {
                 ? "bg-opacity-100"
                 : "bg-opacity-50"
             }`}
+            onClick={() => dispatch(set_category(val))}
           >
-            <button
-              className="uppercase"
-              onClick={() => dispatch(set_category(val))}
-            >
-              {val}
-            </button>
+            {val}
           </li>
         );
       })}

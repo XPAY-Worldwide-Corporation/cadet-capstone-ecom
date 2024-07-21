@@ -1,8 +1,7 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Request, UseGuards } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Delete, Get, Param, Post, Request, UseGuards } from '@nestjs/common';
 import { OrdersService } from './orders.service';
 import { CreateOrderDto } from './dto/createorder-dto';
 import { AuthenticationGuard } from '../auth/guard/authentication-guard'
-import { UpdateOrderDto } from './dto/updateorder-dto';
 
 @Controller('orders')
 export class OrdersController {
@@ -17,9 +16,10 @@ export class OrdersController {
     @UseGuards(AuthenticationGuard)
     async create_order(@Body() data:CreateOrderDto, @Request() req){
         data.user_id = req.user.id
-        data.status = 'PENDING'
         data.message = data.message || ''
-        data.total = await this.ordersService.fetch_total(data.cart_id)
+        const total = await this.ordersService.fetch_total(data.cart_id)
+        data.total = total
+        if(total === 0) throw new BadRequestException('Nothing to checkout!')
         return await this.ordersService.create_order(data)
     }
 
@@ -33,12 +33,6 @@ export class OrdersController {
     @UseGuards(AuthenticationGuard)
     async fetch_order(@Param('id') id: string){
         return await this.ordersService.fetch_order({id:parseInt(id)})
-    }
-
-    @Patch(':id')
-    @UseGuards(AuthenticationGuard)
-    async update_order(@Param('id') id: string, @Body() data: UpdateOrderDto){
-        return await this.ordersService.update_order(parseInt(id), data)
     }
 
     @Delete(':id')

@@ -1,10 +1,11 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { Order } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service'
+import { OrderproductsService } from '../orderproducts/orderproducts.service'
 
 @Injectable()
 export class OrdersService {
-    constructor(private readonly prisma: PrismaService) { }
+    constructor(private readonly prisma: PrismaService, private readonly orderProductsService:OrderproductsService) { }
 
     async fetch_total(cart_id: number): Promise<number> {
         try {
@@ -30,9 +31,24 @@ export class OrdersService {
         return false
     }
 
-    async create_order(data): Promise<Order> {
+    async create_order(data: any): Promise<Order> {
         try {
-            return await this.prisma.prismaClient.order.create({ data })
+            const cart_products = await this.prisma.prismaClient.cartProduct.findMany({where:{cart_id:data.cart_id}})
+            delete data.cart_id
+            const order = await this.prisma.prismaClient.order.create({ data })
+            cart_products.map(async (cart_product) => {
+                const product = await this.prisma.prismaClient.product.findFirst({where:{id: cart_product.product_id}})
+                const newdata = {
+                    order_id: order.id,
+                    product_id: cart_product.product_id,
+                    quantity: cart_product.quantity,
+                    store_id: product.store_id,
+                    status: 'PREPARING'
+                }
+                await this.orderProductsService.create_orderproduct(newdata)
+            })
+            
+            return order
         } catch (error) {
             console.log(error)
             throw new BadRequestException('There was an ERROR creating the order')

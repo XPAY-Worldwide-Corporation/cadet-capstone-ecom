@@ -31,21 +31,23 @@ export default function ProductCard({ product }: ProductCardProps) {
   const ShowData = () => {
     return (
       <div
-        className="w-full h-[150px] flex gap-2"
+        className="w-full md:h-[150px] flex flex-col md:flex-row gap-2"
         onClick={() => router.push(`/products/${product?.id}`)}
       >
-        <div className="relative w-[30%] h-full">
+        <div className="relative w-full md:w-[40%] h-[250px] md:h-full">
           {product && (
-            <Image
+            <img
               src={product?.image}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
               alt=""
-              fill
-              sizes="(max-width: 600px) 100vw, 50vw"
-              priority
             />
           )}
         </div>
-        <div className="overflow-hidden w-[70%] h-full">
+        <div className="overflow-hidden w-full md:w-[60%] h-full">
           <div className="flex gap-2 border-b border-black justify-between w-full">
             <h1 className="text-xl font-bold uppercase truncate">
               {product?.name}

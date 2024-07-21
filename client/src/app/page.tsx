@@ -4,11 +4,12 @@ import StoreCard from "@/components/cards/StoreCard";
 import { fetch_products } from "@/redux/reducers/products_slice";
 import { fetch_stores } from "@/redux/reducers/store_slice";
 import { AppDispatch, RootState } from "@/redux/store";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Home() {
+  const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
   const { products, loading_products } = useSelector(
     (state: RootState) => state.product
@@ -90,21 +91,37 @@ export default function Home() {
 
   return (
     <section className="w-full">
-      <div className="w-full h-[250px] md:h-[500px] relative">
-        <Image src={"/images/home.jpg"} alt="" fill />
+      <div className="w-full h-[250px] md:h-[500px]">
+        <img
+          src="/images/home.jpg"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+          alt=""
+        />
       </div>
+      <hr className="my-4 w-full border border-black" />
       <div className="w-full py-[1rem]">
-        <h1>Products</h1>
+        <h1 className="uppercase font-bold text-2xl">Products</h1>
         <SampleProducts />
         <div className="w-full flex justify-center items-center py-[1rem]">
-          <button className="underline">browse all products</button>
+          <button
+            className="underline"
+            onClick={() => router.push("/products")}
+          >
+            browse all products
+          </button>
         </div>
       </div>
       <div className="w-full py-[1rem]">
-        <h1>Stores</h1>
+        <h1 className="uppercase font-bold text-2xl">Stores</h1>
         <SampleStores />
         <div className="w-full flex justify-center items-center py-[1rem]">
-          <button className="underline">browse all stores</button>
+          <button className="underline" onClick={() => router.push("/stores")}>
+            browse all stores
+          </button>
         </div>
       </div>
     </section>

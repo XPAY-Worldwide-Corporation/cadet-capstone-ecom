@@ -2,6 +2,7 @@ import { error, success } from "@/redux/reducers/notification_slice";
 import {
   create_product,
   Product,
+  update_product,
   upload_product_image,
 } from "@/redux/reducers/products_slice";
 import { AppDispatch, RootState } from "@/redux/store";
@@ -79,15 +80,22 @@ export default function UpdateProductModal({
             setStocks(parseInt(e.target.value));
           }}
         />
-        <input
-          type="text"
+        <select
+          name="category"
           className="border-b border-black w-full p-1 focus:outline-none"
-          placeholder="category"
-          defaultValue={category}
+          id=""
+          value={category}
           onChange={(e: any) => {
             setCategory(e.target.value);
           }}
-        />
+        >
+          <option value="mens products">MENS PRODUCTS</option>
+          <option value="womens products">WOMENS PRODUCTS</option>
+          <option value="jewelry">JEWELRY</option>
+          <option value="electronics">ELECTRONICS</option>
+          <option value="kitchen utensils">KITCHEN UTENSILS</option>
+          <option value="books">BOOKS</option>
+        </select>
         <div className="overflow-hidden">
           {uploadingFile ? (
             <div className="flex justify-center items-center h-[75px]">
@@ -97,12 +105,15 @@ export default function UpdateProductModal({
             <>
               {image ? (
                 <>
-                  <div className="relative w-full h-[75px]">
-                    <Image
+                  <div className="w-full h-[75px]">
+                    <img
                       src={image}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
                       alt=""
-                      fill
-                      sizes="(max-width: 600px) 100vw, 50vw"
                     />
                   </div>
                   <button className="underline" onClick={() => setImage("")}>
@@ -135,26 +146,29 @@ export default function UpdateProductModal({
         <div className="flex gap-2">
           <button
             className="bg-black text-white py-2 w-full"
-            onClick={() =>
-              dispatch(
-                create_product({
-                  name,
-                  description,
-                  price,
-                  stocks,
-                  image,
-                  category,
-                  store_id: product?.store_id,
-                })
-              ).then((res: any) => {
-                if (res.error) {
-                  dispatch(error(res.error.message));
-                } else {
-                  setProduct(res.payload);
-                  setShowUpdateModal(false);
-                }
-              })
-            }
+            onClick={() => {
+              if (product) {
+                dispatch(
+                  update_product({
+                    id: product?.id,
+                    name,
+                    description,
+                    price,
+                    stocks,
+                    image,
+                    category,
+                    store_id: product?.store_id,
+                  })
+                ).then((res: any) => {
+                  if (res.error) {
+                    dispatch(error(res.error.message));
+                  } else {
+                    setProduct(res.payload);
+                    setShowUpdateModal(false);
+                  }
+                });
+              }
+            }}
           >
             UPDATE
           </button>

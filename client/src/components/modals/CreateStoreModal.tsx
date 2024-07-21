@@ -93,7 +93,7 @@ export default function CreateStoreModal({
           </div>
           <div className="py-[1rem]">
             <button
-              className="bg-gray-500 text-white text-xl w-full py-1 rounded-lg"
+              className="bg-gray-500 text-white text-xl w-full py-1"
               onClick={() => {
                 dispatch(create_store({ name, description, image })).then(
                   (res: any) => {
@@ -109,7 +109,12 @@ export default function CreateStoreModal({
             >
               CREATE STORE
             </button>
-            <button className="underline w-full text-center">cancel</button>
+            <button
+              className="underline w-full text-center"
+              onClick={() => setShowCreateModal(false)}
+            >
+              cancel
+            </button>
           </div>
         </div>
       </div>

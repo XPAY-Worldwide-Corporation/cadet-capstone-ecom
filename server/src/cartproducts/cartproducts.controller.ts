@@ -1,7 +1,6 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Delete, Get, Param, Patch, Post, Request, UnauthorizedException, UseGuards } from '@nestjs/common';
 import { CartproductsService } from './cartproducts.service';
 import { CreateCartProductDto } from './dto/createcartproduct-dto';
-import { FetchCartProductDto } from './dto/fetchcartproducts-dto';
 import { UpdateCartProductDto } from './dto/updatecartproducts-dto';
 import { AuthenticationGuard } from '../auth/guard/authentication-guard'
 
@@ -11,7 +10,8 @@ export class CartproductsController {
 
     @Post()
     @UseGuards(AuthenticationGuard)
-    async create_cartproduct(@Body() data:CreateCartProductDto){
+    async create_cartproduct(@Body() data:CreateCartProductDto, @Request() req){
+        if(await this.cartproductsService.is_owner(data.product_id, req.user.id)) throw new UnauthorizedException('You are not AUTHORIZED to add this product to a cart.')
         return await this.cartproductsService.create_cartproduct(data)
     }
 

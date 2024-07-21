@@ -13,6 +13,9 @@ const notificationSlice = createSlice({
     error: (state, action) => {
       return toast.error(action.payload);
     },
+    set_search: (state, action) => {
+      
+    }
   },
 });
 

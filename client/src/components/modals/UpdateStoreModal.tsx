@@ -71,11 +71,14 @@ export default function UpdateStoreModal({
               {image ? (
                 <>
                   <div className="relative w-full h-[75px]">
-                    <Image
+                    <img
                       src={image}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
                       alt=""
-                      fill
-                      sizes="(max-width: 600px) 100vw, 50vw"
                     />
                   </div>
                   <button className="underline" onClick={() => setImage("")}>

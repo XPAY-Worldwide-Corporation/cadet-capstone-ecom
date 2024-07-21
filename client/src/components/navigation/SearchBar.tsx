@@ -17,7 +17,7 @@ export default function SearchBar() {
         type="search"
         placeholder="Search product"
         defaultValue={search_query}
-        className={`focus:outline-none px-2 border-b border-black w-full md:w-3/4 lg:w-full`}
+        className={`focus:outline-none px-2 border-b border-black w-full md:w-3/4 lg:w-full placeholder:text-center`}
         onChange={(e) => {
           setName(e.target.value);
           if (e.target.value === "") {

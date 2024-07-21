@@ -73,9 +73,19 @@ export default function ViewSingleMyProduct() {
 
   const ShowData = () => {
     return (
-      <div className="w-full h-screen flex flex-col md:flex-row gap-[1rem] relative">
-        <div className="w-full md:w-[70%] h-full relative">
-          {product && <Image src={product?.image} alt="" fill priority />}
+      <div className="w-full flex flex-col md:flex-row gap-[1rem] relative">
+        <div className="w-full md:w-[70%] h-[400px] md:h-[600px]">
+          {product && (
+            <img
+              src={product?.image}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+              alt=""
+            />
+          )}
         </div>
         <div className="w-full md:w-[30%] h-full space-y-[1rem]">
           <div className="flex gap-2">
@@ -113,7 +123,7 @@ export default function ViewSingleMyProduct() {
   };
 
   return (
-    <div className="w-full min-h-screen relative">
+    <div className="w-full relative">
       <div className="py-[1rem]">
         <button className="underline" onClick={() => router.back()}>
           RETURN

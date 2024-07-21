@@ -1,8 +1,13 @@
 "use client";
 import MyProductCard from "@/components/cards/MyProductCard";
+import StoreOrderCard from "@/components/cards/StoreOrderCard";
 import CreateNewProductModal from "@/components/modals/CreateNewProductModal";
 import UpdateStoreModal from "@/components/modals/UpdateStoreModal";
 import { error } from "@/redux/reducers/notification_slice";
+import {
+  fetch_storeorders,
+  OrderProduct,
+} from "@/redux/reducers/orderproduct_slice";
 import { fetch_myproducts, Product } from "@/redux/reducers/products_slice";
 import { fetch_store, Store } from "@/redux/reducers/store_slice";
 import { AppDispatch } from "@/redux/store";
@@ -21,6 +26,7 @@ export default function ViewSingleMyStore() {
   const router = useRouter();
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [showCreateModal, setShowCreateModal] = useState(false);
+  const [orders, setOrders] = useState<OrderProduct[] | []>([]);
 
   useEffect(() => {
     const fetchDatas = () => {
@@ -34,6 +40,13 @@ export default function ViewSingleMyStore() {
               dispatch(error(res.error.message));
             } else {
               setProducts(res.payload);
+            }
+          });
+          dispatch(fetch_storeorders(store_id)).then((res: any) => {
+            if (res.error) {
+              dispatch(error(res.error.message));
+            } else {
+              setOrders(res.payload);
             }
           });
         }
@@ -84,20 +97,22 @@ export default function ViewSingleMyStore() {
 
   const ShowData = () => {
     return (
-      <div className="min-h-screen">
+      <div className="">
         <div className="flex flex-col md:flex-row gap-[1rem]">
-          <div className="h-[300px] w-full md:w-1/4 relative">
+          <div className="h-[300px] w-full md:w-1/2 relative">
             {store && (
-              <Image
+              <img
                 src={store?.image}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
                 alt=""
-                fill
-                priority
-                sizes="(max-width: 600px) 100vw, 50vw"
               />
             )}
           </div>
-          <div className="space-y-2 w-full md:w-3/4">
+          <div className="space-y-2 w-full md:w-1/2">
             <h1 className="underline uppercase font-bold text-2xl">
               {store?.name}
             </h1>
@@ -105,7 +120,7 @@ export default function ViewSingleMyStore() {
           </div>
         </div>
         <hr className="my-[2rem] bg-black h-[4px]" />
-        <div>
+        <div className="min-h-[200px]">
           <h1 className="uppercase text-xl py-2">PRODUCTS</h1>
           <div className="py-[1rem]">
             <button
@@ -115,22 +130,47 @@ export default function ViewSingleMyStore() {
               NEW PRODUCT
             </button>
           </div>
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1rem]">
-            {products.map((product) => {
-              return (
-                <li key={String(product.id)}>
-                  <MyProductCard product={product} />
-                </li>
-              );
-            })}
-          </ul>
+          {products.length > 0 ? (
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1rem]">
+              {products.map((product) => {
+                return (
+                  <li key={String(product.id)}>
+                    <MyProductCard product={product} />
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <div className="flex justify-center items-center h-[200px] bg-black bg-opacity-25">
+              <h1>EMPTY</h1>
+            </div>
+          )}
+        </div>
+        <hr className="my-[2rem] bg-black h-[4px]" />
+        <div className="min-h-[200px]">
+          <h1 className="uppercase text-xl py-2">ORDERS</h1>
+          {orders.length > 0 ? (
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1rem]">
+              {orders.map((order) => {
+                return (
+                  <li key={String(order.id)}>
+                    <StoreOrderCard orderProduct={order} />
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <div className="flex justify-center items-center h-[200px] bg-black bg-opacity-25">
+              <h1>EMPTY</h1>
+            </div>
+          )}
         </div>
       </div>
     );
   };
 
   return (
-    <div className="w-full min-h-screen space-y-[1rem] relative">
+    <div className="w-full space-y-[1rem] relative">
       {showUpdateModal && (
         <UpdateStoreModal
           store={store}

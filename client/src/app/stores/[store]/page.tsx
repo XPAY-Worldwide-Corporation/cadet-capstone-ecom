@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 
 export default function ViewSingleStore() {
   const pathname = usePathname();
-  const store_id = pathname.split("/")[2];
+  const store_id = parseInt(pathname.split("/")[2]);
   const dispatch = useDispatch<AppDispatch>();
   const [store, setStore] = useState<Store | null>(null);
   const [products, setProducts] = useState<Product[] | []>([]);
@@ -82,18 +82,20 @@ export default function ViewSingleStore() {
     return (
       <div className="min-h-screen">
         <div className="flex flex-col md:flex-row gap-[1rem]">
-          <div className="h-[200px] w-full md:w-1/4 relative">
+          <div className="h-[400px] w-full md:w-1/2 relative">
             {store && (
-              <Image
+              <img
                 src={store?.image}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
                 alt=""
-                fill
-                priority
-                sizes="(max-width: 600px) 100vw, 50vw"
               />
             )}
           </div>
-          <div className="space-y-2 w-full md:w-3/4">
+          <div className="space-y-2 w-full md:w-1/2">
             <h1 className="underline uppercase font-bold text-2xl">
               {store?.name}
             </h1>

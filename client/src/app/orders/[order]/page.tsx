@@ -1,12 +1,11 @@
 "use client";
 import OrderProductCard from "@/components/cards/OrderProductCard";
-import { calculate_total } from "@/redux/reducers/cart_slice";
+import { error } from "@/redux/reducers/notification_slice";
+import { fetch_order, Order } from "@/redux/reducers/order_slice";
 import {
-  CartProduct,
-  fetch_cartproducts,
-} from "@/redux/reducers/cartproduct_slice";
-import { error, success } from "@/redux/reducers/notification_slice";
-import { cancel_order, fetch_order, Order } from "@/redux/reducers/order_slice";
+  fetch_orderproducts,
+  OrderProduct,
+} from "@/redux/reducers/orderproduct_slice";
 import { AppDispatch, RootState } from "@/redux/store";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -17,11 +16,9 @@ export default function ViewSingleOrder() {
   const order_id = parseInt(pathname.split("/")[2]);
   const dispatch = useDispatch<AppDispatch>();
   const [order, setOrder] = useState<Order | null>(null);
-  const [products, setProducts] = useState<CartProduct[] | []>([]);
+  const [products, setProducts] = useState<OrderProduct[] | []>([]);
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [total, setTotal] = useState(0);
-  const { loading_cancel } = useSelector((state: RootState) => state.order);
 
   useEffect(() => {
     const fetchData = () => {
@@ -31,20 +28,15 @@ export default function ViewSingleOrder() {
           dispatch(error(res.error.message));
         } else {
           setOrder(res.payload);
-          dispatch(fetch_cartproducts(res.payload.cart_id)).then((res: any) => {
+
+          dispatch(fetch_orderproducts(order_id)).then((res: any) => {
             if (res.error) {
               dispatch(error(res.error.message));
             } else {
               setProducts(res.payload);
             }
           });
-          dispatch(calculate_total(res.payload.cart_id)).then((res: any) => {
-            if (res.error) {
-              dispatch(error(res.error.message));
-            } else {
-              setTotal(res.payload);
-            }
-          });
+
           setIsLoading(false);
         }
       });
@@ -61,22 +53,22 @@ export default function ViewSingleOrder() {
           <h1 className="uppercase text-xl pb-2">PRODUCTS</h1>
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1rem]">
             <li>
-              <OrderProductCard cartProduct={null} />
+              <OrderProductCard orderProduct={null} />
             </li>
             <li>
-              <OrderProductCard cartProduct={null} />
+              <OrderProductCard orderProduct={null} />
             </li>
             <li>
-              <OrderProductCard cartProduct={null} />
+              <OrderProductCard orderProduct={null} />
             </li>
             <li>
-              <OrderProductCard cartProduct={null} />
+              <OrderProductCard orderProduct={null} />
             </li>
             <li>
-              <OrderProductCard cartProduct={null} />
+              <OrderProductCard orderProduct={null} />
             </li>
             <li>
-              <OrderProductCard cartProduct={null} />
+              <OrderProductCard orderProduct={null} />
             </li>
           </ul>
         </div>
@@ -90,7 +82,6 @@ export default function ViewSingleOrder() {
         <div className="w-full">{`ORDER ID : ${order?.id}`}</div>
         <div className="w-full">{`MOP : ${order?.mode_of_payment}`}</div>
         <div className="w-full">{`DESTINATION : ${order?.destination}`}</div>
-        <div className="w-full">{`STATUS : ${order?.status}`}</div>
         <div className="w-full">{`MESSAGE : ${order?.message || ""}`}</div>
         <hr className="my-[2rem] bg-black h-[4px]" />
         <div>
@@ -99,7 +90,7 @@ export default function ViewSingleOrder() {
             {products.map((product) => {
               return (
                 <li key={String(product.id)}>
-                  <OrderProductCard cartProduct={product} />
+                  <OrderProductCard orderProduct={product} />
                 </li>
               );
             })}
@@ -118,23 +109,7 @@ export default function ViewSingleOrder() {
       </div>
       {isLoading ? <Skeleton /> : <ShowData />}
       <div className="w-full md:w-1/2 lg:w-1/4 space-y-2 sticky bottom-[1rem] md:bottom-[2rem]">
-        <h1 className="text-white bg-gray-600 p-[2rem]">{`$${total}`}</h1>
-        <button
-          disabled={loading_cancel}
-          className="text-xl px-2 py-1 bg-black text-white"
-          onClick={() => {
-            dispatch(cancel_order(order_id)).then((res: any) => {
-              if (res.error) {
-                dispatch(error(res.error.message));
-              } else {
-                dispatch(success("Order has been cancelled"));
-                router.back();
-              }
-            });
-          }}
-        >
-          {loading_cancel ? "CANCELLING..." : "CANCEL ORDER"}
-        </button>
+        <h1 className="text-white bg-gray-600 p-[2rem]">{`TOTAL PRICE: $${order?.total}`}</h1>
       </div>
     </div>
   );

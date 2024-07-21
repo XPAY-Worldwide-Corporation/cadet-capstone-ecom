@@ -38,11 +38,14 @@ export default function MyProductCard({ product }: ProductCardProps) {
       >
         <div className="relative w-[30%] h-full">
           {product && (
-            <Image
+            <img
               src={product?.image}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
               alt=""
-              fill
-              sizes="(max-width: 600px) 100vw, 50vw"
             />
           )}
         </div>

@@ -57,11 +57,9 @@ CREATE TABLE "CartProduct" (
 -- CreateTable
 CREATE TABLE "Order" (
     "id" SERIAL NOT NULL,
-    "cart_id" INTEGER NOT NULL,
     "user_id" INTEGER NOT NULL,
     "total" DOUBLE PRECISION NOT NULL,
     "mode_of_payment" TEXT NOT NULL,
-    "status" TEXT NOT NULL,
     "message" TEXT NOT NULL,
     "destination" TEXT NOT NULL,
 
@@ -69,15 +67,15 @@ CREATE TABLE "Order" (
 );
 
 -- CreateTable
-CREATE TABLE "Review" (
+CREATE TABLE "OrderProduct" (
     "id" SERIAL NOT NULL,
+    "order_id" INTEGER NOT NULL,
     "product_id" INTEGER NOT NULL,
-    "user_id" INTEGER NOT NULL,
-    "title" TEXT NOT NULL,
-    "message" TEXT NOT NULL,
-    "rate" INTEGER NOT NULL,
+    "quantity" INTEGER NOT NULL,
+    "store_id" INTEGER NOT NULL,
+    "status" TEXT NOT NULL,
 
-    CONSTRAINT "Review_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "OrderProduct_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

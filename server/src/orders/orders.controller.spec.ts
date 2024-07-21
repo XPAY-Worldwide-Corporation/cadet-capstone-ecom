@@ -6,6 +6,7 @@ import { PrismaService } from '../prisma/prisma.service'
 import { AuthenticationGuard } from '../auth/guard/authentication-guard'
 import { BadRequestException, UnauthorizedException } from '@nestjs/common';
 import { ValidationError } from 'class-validator';
+import { OrderproductsService } from '../orderproducts/orderproducts.service'
 
 describe('OrdersController', () => {
   let controller: OrdersController;
@@ -17,7 +18,9 @@ describe('OrdersController', () => {
         useValue: {
           canActivate: jest.fn().mockReturnValue(true), // Mock canActivate behavior
         },
-      },],
+      },
+      OrderproductsService
+    ],
       controllers: [OrdersController],
     }).compile();
 
@@ -98,11 +101,9 @@ describe('OrdersController', () => {
     jest.spyOn(controller, 'fetch_orders').mockResolvedValue([
       {
         id:1,
-        cart_id:1,
         mode_of_payment:'COD',
         total:9999,
         destination:'',
-        status:'PENDING',
         user_id:1,
         message:''
       }
@@ -120,43 +121,14 @@ describe('OrdersController', () => {
     jest.spyOn(controller, 'fetch_order').mockResolvedValue(
       {
         id:1,
-        cart_id:1,
         mode_of_payment:'COD',
         total:9999,
         destination:'',
-        status:'PENDING',
         user_id:1,
         message:''
       }
     )
     const res = await controller.fetch_order('1')
-    expect(res).toEqual(expect.any(Object))
-  })
-
-  it('should be able to update a single order', async () => {
-    jest.spyOn(controller, 'update_order').mockResolvedValue(
-      {
-        id:1,
-        cart_id:1,
-        mode_of_payment:'COD',
-        total:9999,
-        destination:'',
-        status:'CANCELLED',
-        user_id:1,
-        message:''
-      }
-    )
-    const inputs = {
-      id:1,
-      cart_id:1,
-      mode_of_payment:'COD',
-      total:9999,
-      destination:'',
-      status:'CANCELLED',
-      user_id:1,
-      message:''
-    }
-    const res = await controller.update_order('1',inputs)
     expect(res).toEqual(expect.any(Object))
   })
 });

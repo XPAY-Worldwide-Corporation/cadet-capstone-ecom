@@ -31,8 +31,8 @@ export default function Signup() {
 
   return (
     <div className="h-screen w-full flex justify-center items-center">
-      <div className="border p-2 rounded-lg w-full sm:w-3/4 md:w-1/2 lg:w-1/4 bg-white drop-shadow-lg space-y-2 relative overflow-hidden">
-        <div className="bg-gray-400 h-[75px] text-white flex justify-center items-center text-2xl rounded-lg"></div>
+      <div className="border p-2 w-full sm:w-3/4 md:w-1/2 lg:w-1/4 bg-white drop-shadow-lg space-y-2 relative overflow-hidden">
+        <div className="bg-gray-400 h-[75px] text-white flex justify-center items-center text-2xl"></div>
         <div className="border-b border-black">
           <input
             type="text"
@@ -74,11 +74,14 @@ export default function Signup() {
             <>
               {image ? (
                 <div className="relative w-full h-[75px]">
-                  <Image
+                  <img
                     src={image}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
                     alt=""
-                    fill
-                    sizes="(max-width: 600px) 100vw, 50vw"
                   />
                 </div>
               ) : (
@@ -107,7 +110,7 @@ export default function Signup() {
 
         <div className="py-[1rem]">
           <button
-            className="bg-gray-500 text-white text-xl w-full py-1 rounded-lg"
+            className="bg-gray-500 text-white text-xl w-full py-1"
             onClick={() => {
               setLoading(true);
               dispatch(

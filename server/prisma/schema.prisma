@@ -50,20 +50,18 @@ model CartProduct {
 
 model Order {
   id              Int    @id @default(autoincrement())
-  cart_id         Int
   user_id         Int
   total           Float
   mode_of_payment String
-  status          String
   message         String
   destination     String
 }
 
-model Review {
+model OrderProduct {
   id         Int    @id @default(autoincrement())
+  order_id   Int
   product_id Int
-  user_id    Int
-  title      String
-  message    String
-  rate       Int
+  quantity   Int
+  store_id   Int
+  status     String //PREPARING CANCELLED SHIPPED
 }

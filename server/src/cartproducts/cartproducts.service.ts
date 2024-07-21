@@ -6,6 +6,13 @@ import { PrismaService } from '../prisma/prisma.service'
 export class CartproductsService {
     constructor(private readonly prisma:PrismaService){}
 
+    async is_owner(product_id: number, user_id: number): Promise<boolean>{
+        const product = await this.prisma.prismaClient.product.findFirst({where:{id:product_id}})
+        const store = await this.prisma.prismaClient.store.findFirst({where:{id: product.store_id}})
+        if(user_id === store.user_id) return true
+        return false
+    }
+
     async cartproduct_exist(query:Object): Promise<Boolean>{
         const res = await this.prisma.prismaClient.cartProduct.findFirst({where:query})
         if(res) return true
@@ -38,9 +45,10 @@ export class CartproductsService {
 
     async update_cartproduct(id: number, data): Promise<CartProduct>{
         try {
+            if(data.quantity < 1) throw new BadRequestException('Quantity should not be ZERO')
             return this.prisma.prismaClient.cartProduct.update({where:{id}, data})
         } catch (error) {
-            throw new BadRequestException('There was an ERROR updating the cart product')
+            throw new BadRequestException(error.message)
         }
     }
 

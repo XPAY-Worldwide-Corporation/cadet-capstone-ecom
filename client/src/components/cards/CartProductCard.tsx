@@ -64,17 +64,19 @@ export default function CartProductCard({
       <div className="w-full h-[150px] flex gap-2">
         <div className="relative w-[30%] h-full">
           {product && (
-            <Image
+            <img
               src={product?.image}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
               alt=""
-              fill
-              sizes="(max-width: 600px) 100vw, 50vw"
-              priority
             />
           )}
         </div>
         <div className="overflow-hidden w-[70%] h-full relative">
-          <div className="flex gap-2 border-b border-black">
+          <div className="flex gap-2 border-b border-black justify-between">
             <h1 className="text-xl font-bold uppercase truncate">
               {product?.name}
             </h1>

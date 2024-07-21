@@ -28,21 +28,23 @@ export default function StoreCard({ store }: StoreCardProps) {
   const ShowData = () => {
     return (
       <div
-        className="h-[150px] flex gap-2"
+        className="md:h-[150px] flex flex-col md:flex-row gap-2"
         onClick={() => router.push(`/stores/${store?.id}`)}
       >
-        <div className="bg-gray-400 h-full w-[40%] relative">
+        <div className="bg-gray-400 h-[200px] md:h-full w-full md:w-[40%] relative">
           {store && (
-            <Image
+            <img
               src={store?.image}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
               alt=""
-              fill
-              sizes="(max-width: 600px) 100vw, 50vw"
-              priority
             />
           )}
         </div>
-        <div className="overflow-hidden w-[70%] h-full">
+        <div className="overflow-hidden w-full md:w-[60%] h-full">
           <div className="flex gap-2 border-b border-black">
             <h1 className="text-xl font-bold uppercase truncate">
               {store?.name}

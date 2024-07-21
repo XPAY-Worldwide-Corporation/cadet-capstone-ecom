@@ -11,7 +11,7 @@ export default function CartCard({ cart }: CartCardProps) {
   const router = useRouter();
   const Skeleton = () => {
     return (
-      <div className="h-[150px] flex gap-2 justify-center items-center px-2">
+      <div className="h-[50px] flex gap-2 justify-center items-center px-2">
         <div className="bg-gray-400 h-[30px] w-full"></div>
       </div>
     );
@@ -20,7 +20,7 @@ export default function CartCard({ cart }: CartCardProps) {
   const ShowData = () => {
     return (
       <div
-        className="h-[150px] flex gap-2 justify-center items-center px-2"
+        className="h-[50px] flex gap-2 justify-center items-center px-2"
         onClick={() => router.push(`/carts/${cart?.id}`)}
       >
         <h1>{cart?.name}</h1>

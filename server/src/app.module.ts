@@ -10,7 +10,7 @@ import { ProductsModule } from './products/products.module';
 import { CartsModule } from './carts/carts.module';
 import { CartproductsModule } from './cartproducts/cartproducts.module';
 import { OrdersModule } from './orders/orders.module';
-import { ReviewsModule } from './reviews/reviews.module';
+import { OrderproductsModule } from './orderproducts/orderproducts.module';
 
 @Module({
   imports: [PrismaModule,
@@ -25,7 +25,7 @@ import { ReviewsModule } from './reviews/reviews.module';
     CartsModule,
     CartproductsModule,
     OrdersModule,
-    ReviewsModule, 
+    OrderproductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

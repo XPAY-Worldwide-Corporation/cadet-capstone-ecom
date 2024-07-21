@@ -5,7 +5,6 @@ import { error } from "@/redux/reducers/notification_slice";
 import { fetch_product, Product } from "@/redux/reducers/products_slice";
 import { fetch_store, Store } from "@/redux/reducers/store_slice";
 import { AppDispatch } from "@/redux/store";
-import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -76,7 +75,7 @@ export default function ViewSingleProduct() {
 
   const ShowData = () => {
     return (
-      <div className="w-full h-screen flex flex-col md:flex-row gap-[1rem] relative">
+      <div className="w-full flex flex-col md:flex-row gap-[1rem] relative">
         {product && (
           <>
             {showAddToCartModal && (
@@ -87,8 +86,18 @@ export default function ViewSingleProduct() {
             )}
           </>
         )}
-        <div className="w-full md:w-[70%] h-full relative">
-          {store && <Image src={store?.image} alt="" fill priority />}
+        <div className="w-full md:w-[70%] h-[400px] md:h-[600px]">
+          {product && (
+            <img
+              src={product?.image}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+              alt=""
+            />
+          )}
         </div>
         <div className="w-full md:w-[30%] h-full space-y-[1rem]">
           <div className="">
@@ -114,7 +123,7 @@ export default function ViewSingleProduct() {
   };
 
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full">
       <div className="py-[1rem]">
         <button className="underline" onClick={() => router.back()}>
           RETURN

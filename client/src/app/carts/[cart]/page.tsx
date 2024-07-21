@@ -137,7 +137,11 @@ export default function ViewSingleCart() {
   return (
     <div className="w-full min-h-screen space-y-[1rem] relative">
       {showCheckOut && (
-        <CheckOutCartModal setCheckOut={setShowCheckOut} cart_id={cart_id} />
+        <CheckOutCartModal
+          setCheckOut={setShowCheckOut}
+          cart_id={cart_id}
+          total={total}
+        />
       )}
       <div className="pt-[1rem]">
         <button className="underline" onClick={() => router.back()}>

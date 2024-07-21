@@ -86,6 +86,14 @@ export const delete_product = createAsyncThunk('/delete_product', async (id: num
     }
 })
 
+export const update_product = createAsyncThunk('/update_product', async (data: any) => {
+    try {
+        return (await AxiosInstance.patch(`/products/${data.id}`, data)).data
+    } catch (error: any) {
+        throw new Error(error.response.data.message)
+    }
+})
+
 const productSlice = createSlice({
     name:'product',
     initialState,
