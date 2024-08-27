@@ -1,0 +1,290 @@
+E-commerce User Stories
+1. Sign Up for New User
+User Story:
+As a new customer,
+I want to sign up for an account,
+So that I can start using the platform and make purchases.
+And I should receive a confirmation email to verify my account.
+
+Acceptance Criteria:
+Given I am a new customer,
+When I choose to sign up,
+Then I should be able to create an account by providing my name, email, password, and other required details.
+And I should receive a confirmation email to verify my account.
+
+2. Login
+User Story:
+As a registered customer,
+I want to log in to my account,
+So that I can access my account information and start shopping.
+
+Acceptance Criteria:
+Given I have an existing account,
+When I enter my credentials (email/username and password),
+Then I should be able to successfully log in to my account.
+
+3. Change Account Details Information
+User Story:
+As a logged-in customer,
+I want to change my account details,
+So that I can keep my information up-to-date and accurate.
+
+Acceptance Criteria:
+Given I am logged in,
+When I navigate to my account settings,
+Then I should be able to update my personal information, including name, email, password, and shipping address.
+And the changes should be saved and reflected immediately.
+
+
+4. Search
+User Story:
+As a customer,
+I want to search for products,
+So that I can find items that match my interests quickly.
+
+Acceptance Criteria:
+Given I am on the platform,
+When I enter a search term in the search bar,
+Then I should see relevant products displayed with options to filter or sort the results.
+
+
+5. View Product Details
+User Story:
+As a customer,
+I want to view detailed information about a product,
+So that I can make an informed decision before purchasing.
+
+Acceptance Criteria:
+Given I find a product of interest,
+When I click on the product,
+Then I should be able to view detailed information including images, descriptions, pricing, availability, and customer reviews.
+
+
+6. Add to Cart
+User Story:
+As a customer,
+I want to add items to my cart,
+So that I can review and purchase multiple items in one transaction.
+
+Acceptance Criteria:
+Given I am viewing a product,
+When I choose to add it to my cart,
+Then the product should be added to my shopping cart, and I should be able to view and modify the cart’s contents.
+
+
+7. Add to Wishlist/Favorites
+User Story:
+As a customer,
+I want to add products to my wishlist or favorites,
+So that I can save items for future reference or purchase later.
+
+Acceptance Criteria:
+Given I am viewing a product,
+When I choose to add it to my wishlist or favorites,
+Then the product should be saved in my wishlist/favorites section for future access.
+
+
+8. Add Voucher or Discount
+User Story:
+As a customer,
+I want to apply a voucher or discount code,
+So that I can receive a discount on my purchase.
+
+Acceptance Criteria:
+Given I have items in my cart,
+When I enter a valid voucher or discount code,
+Then the discount should be applied to the total amount in my cart.
+
+
+
+9. Review Order
+User Story:
+As a customer,
+I want to review my order before finalizing,
+So that I can ensure all details are correct and confirm my purchase.
+
+Acceptance Criteria:
+Given I am ready to checkout,
+When I review my cart,
+Then I should see all selected items, their quantities, prices, and any applied discounts before proceeding to payment.
+
+10. Shipping Address that Can Be Edited or Chosen
+User Story:
+As a customer,
+I want to choose or edit my shipping address,
+So that I can ensure my order is delivered to the correct location.
+
+Acceptance Criteria:
+Given I am at the checkout stage,
+When I reach the shipping step,
+Then I should be able to choose from my saved addresses or edit/add a new shipping address.
+
+
+
+
+11. Payment
+User Story:
+As a customer,
+I want to select a payment method and complete my purchase,
+So that I can finalize my order and pay securely.
+
+Acceptance Criteria:
+Given I have confirmed my shipping details,
+When I proceed to the payment step,
+Then I should be able to select a payment method and securely complete the transaction.
+
+12. Complete Order and Receive SMS or Email Confirmation
+User Story:
+As a customer,
+I want to receive an order confirmation via SMS or email,
+So that I can be assured that my order has been successfully placed and know the details.
+
+Acceptance Criteria:
+Given I have completed the payment,
+When my order is confirmed,
+Then I should receive an SMS or email with my order details and estimated delivery time.
+
+
+
+
+13. Track Order
+User Story:
+As a customer,
+I want to track my order,
+So that I can monitor its delivery status and estimate when it will arrive.
+
+Acceptance Criteria:
+Given I have placed an order,
+When my order is processed and shipped,
+Then I should receive a tracking number and be able to monitor the delivery status of my order in real-time through the platform.
+
+14. Check Order History
+User Story:
+As a customer,
+I want to view my order history,
+So that I can review past purchases and manage my orders.
+
+Acceptance Criteria:
+Given I have made previous purchases,
+When I navigate to my account dashboard,
+Then I should be able to view my complete order history, including details of each order and its status.
+
+
+
+
+15. Feedback or Rate
+User Story:
+As a customer,
+I want to provide feedback or rate products,
+So that I can share my experience and help other customers make informed decisions.
+
+Acceptance Criteria:
+Given I have received my order,
+When I access the product page or order history,
+Then I should be able to leave a review or rating for the product.
+
+
+16. Return Item for Loss or Damage
+User Story:
+As a customer,
+I want to return an item if it is damaged or lost,
+So that I can resolve issues with my order and get a replacement or refund.
+
+Acceptance Criteria:
+Given I received a damaged item or my order was lost,
+When I navigate to my order history,
+Then I should be able to initiate a return or replacement request, specifying the reason as loss or damage.
+
+
+
+merchant user stories for an ecommerce.
+
+Here are a few user stories for a merchant in an e-commerce system, complete with acceptance criteria and explanations:
+
+Manage Product Listing:
+As a merchant,
+I want to manage my product listings,
+So that I can update, remove, or modify products as needed.
+
+Acceptance Criteria:
+Given I am on my merchant dashboard,
+When I navigate to the “Product Listings” section,
+Then I should see a list of all my products, and then I should be able to edit product details (e.g., name, price, description), delete a product, or mark it as out of stock.
+Then any changes should be reflected in the store immediately.
+
+
+
+Order Management:
+As a merchant,
+I want to manage customer orders,
+So that I can process and fulfill them efficiently.
+
+Acceptance Criteria:
+Given I am on my merchant dashboard,
+When I access the “Orders” section and select a specific order,
+Then I should see order details (e.g., items, customer information, payment status), and then I should be able to update the order status (e.g., processing, shipped, delivered).
+Then the customer should be notified of any status changes.
+
+
+
+
+Inventory Management:
+As a merchant,
+I want to manage my inventory,
+So that I can ensure products are in stock and prevent overselling.
+
+Acceptance Criteria:
+Given I am on my merchant dashboard,
+When I access the “Inventory Management” section,
+Then I should see a list of all products with current stock levels, and then I should be able to manually update inventory, set low-stock alerts, and upload inventory updates in bulk.
+Then the system should prevent customers from purchasing out-of-stock items.
+
+
+
+
+Check Feedback:
+As a merchant,
+I want to check customer feedback on my products,
+So that I can make improvements based on customer reviews.
+
+Acceptance Criteria:
+
+Given I am on my merchant dashboard,
+When I navigate to the “Customer Feedback” or “Reviews” section,
+Then I should see a list of customer feedback and reviews for my products, and then I should be able to filter feedback by product, rating, or date.
+Then I should be able to respond to reviews or flag inappropriate feedback.
+
+
+
+
+Payment Management:
+As a merchant,
+I want to manage payments for orders,
+So that I can ensure all transactions are handled correctly.
+
+Acceptance Criteria:
+
+Given I am on my merchant dashboard,
+When I access the “Payments” section,
+Then I should see the payment status of all orders (e.g., pending, completed, failed), and then I should be able to process refunds, view payment history, and resolve any payment issues.
+Then the customer should be notified of any payment updates.
+
+
+
+
+Reports:
+As a merchant,
+I want to generate reports on my sales, inventory, and customer activity,
+So that I can make data-driven decisions to improve my business.
+
+Acceptance Criteria:
+
+Given I am on my merchant dashboard,
+When I access the “Reports” section,
+Then I should be able to generate reports on sales performance, inventory levels, and customer activity, and then I should be able to filter reports by date range, product category, or specific metrics.
+Then I should be able to export the reports in various formats (e.g., PDF, CSV) for further analysis.
+
+
+
+
+
