@@ -1,0 +1,316 @@
+Customer Journey
+
+User Registration and Authentication
+As a new customer, I want to sign up using my email address, so that I can create an account on the platform.
+	 -The sign-up form should accept valid email addresses and passwords.
+	 -The user should receive a confirmation email after successful registration.
+	 -Error messages should display for invalid inputs (e.g., existing email, weak password).
+
+As a new customer, I want to sign up using my social media account so that I can create an account quickly without entering my details manually.
+	 -Users should be able to sign up via Social Media
+	 -The system should pull basic information (name, email) from the social account.
+	 -The user should be redirected to their account dashboard upon successful registration.
+
+As a returning customer, I want to log in using my email and password, so that I can access my account securely
+	 -The login form should accept a valid email and password.
+	 -Users should be redirected to their dashboard upon successful login.
+	 -Error messages should display for incorrect email or password.
+
+As a returning customer, I want to reset my password if I forget it, so that I can regain access to my account.
+	 -Users should be able to request a password reset by entering their email.
+	 -The system should send a reset link to the user’s email.
+	 -Users should be able to reset their password via the link and log in with the new password.
+
+
+User Profile Management
+As a customer, I want to view and update my personal profile information (e.g., profile picture, name, email, phone number), so that my account details are accurate and up-to-date.
+	 -The user can access their profile page from the account dashboard.
+	 -The profile page displays the current profile picture, name, email, and phone number.
+	 -Users can edit their name, email, and phone number.
+	 -The system validates the updated information (e.g., checking for valid email format and phone number).
+	 -Users can upload a new profile picture or remove the current one.
+	 -If any required fields are missing or invalid, an error message is displayed, preventing the update.
+
+
+Product Browsing and Search
+As a customer, I want to browse products by category (e.g., electronics, fashion), so that I can explore items in a specific area of interest.
+	 -The homepage should display product categories.
+	 -Clicking on a category should show relevant products within that category.
+
+As a customer, I want to search for products by name or keyword, so that I can quickly locate a specific item.
+	 -The search bar must be easily accessible on all pages.
+	 -The search results should include products that match the name or keyword.
+	 -The search results page must support sorting and filtering options.
+
+ 
+Product Details and Reviews
+As a customer, I want to view multiple images of a product, so that I can see it from different angles before purchasing.
+	 -The product detail page must display a gallery of images.
+	 -Customers should be able to view the images.
+	 -The images should load quickly and maintain clarity across different devices.
+
+As a customer, I want to read detailed product specifications (e.g., size, color, material), so that I can ensure it meets my requirements.
+	 -The product specifications must be clearly listed on the product detail page.
+	 -Specifications should include all relevant details such as size, color, and material.
+	 -The information must be easily readable and well-organized, with clear headings.
+
+As a customer, I want to view the average star rating of a product, so that I can quickly gauge its quality.
+	 -The average star rating must be displayed prominently on the product detail page.
+	 -The rating should be based on customer reviews.
+
+
+Add to Cart and Wishlist
+As a customer, I want to add a product to my cart from the product detail page, so that I can purchase it later.
+	 -An "Add to Cart" button must be clearly visible on the product detail page.
+	 -The cart icon should update in real-time to reflect the addition.
+
+As a customer, I want to update the quantity of an item in my cart, so that I can buy multiple units of the same product.
+	 -The cart page must allow customers to change the quantity of each item.
+	 -The cart total should update automatically based on the quantity selected.
+	 -If stock is limited, the system must notify the customer if they exceed the available quantity.
+
+As a customer, I want to save a product to my wishlist from the product detail page, so that I can consider buying it later.
+	 -The wishlist icon or section should update to reflect the addition.
+	 -The customer should be able to access their wishlist from their account dashboard.
+
+As a customer, I want to move items from my wishlist to my cart, so that I can easily purchase them when ready.
+	 -The wishlist page must provide an option to "Move to Cart" for each item.
+	 -The cart and wishlist should update accordingly after moving an item.
+ 
+
+Checkout and Payment
+As a customer, I want to review the items in my cart before proceeding to checkout, so that I can confirm my order details.
+	 -The checkout process must include a step for reviewing the cart contents.
+	 -The total price, including discounts and shipping, should be clearly displayed.
+	 -The customer must be able to remove or modify items in the cart during this step.
+
+As a customer, I want to enter my shipping address during checkout, so that my order is delivered to the correct location.
+	 -The checkout process must include a step for entering or selecting a shipping address.
+	 -The address form should validate entries for completeness and accuracy.
+	 -The system must allow the customer to save multiple addresses and choose between them.
+
+As a customer, I want to select my payment method (e.g., credit card, GCash, COD), so that I can complete the purchase using my preferred option.
+	 -The checkout process must offer multiple payment methods.
+	 -The payment method must be securely processed following PCI DSS standards.
+	 -The customer should receive an order confirmation after successful payment.
+
+As a customer, I want to apply a discount code during checkout, so that I can reduce the total amount I need to pay.
+	 -The checkout process must include a field for entering a discount code.
+	 -The system should validate the discount code and apply the discount to the total price.
+	 -An error message must be displayed if the discount code is invalid or expired.
+
+
+Order Tracking and Notifications
+As a customer, I want to receive an email confirmation after placing an order, so that I have a record of my purchase.
+	 -The system must automatically send an email confirmation after an order is placed.
+	 -The email should include order details such as items purchased, total cost, and delivery information.
+	 -The customer should receive the email within a few minutes of order placement.
+
+As a customer, I want to receive notifications when my order status changes (e.g., shipped, out for delivery), so that I can stay informed about my order’s progress.
+	 -The system must send notifications for key order status updates.
+	 -Notifications should be sent in real-time as the order status changes.
+
+As a customer, I want to track my order, so that I can monitor its delivery status.
+	 -The order confirmation page must display a tracking number if available.
+	 -The customer should be notified if the tracking information is (e.g., shipped, out for delivery).
+	 -The customer must be able to view the delivery status in the shipping information
+
+As a customer, I want to view my order history in my account dashboard, so that I can see all my past purchases.
+	 -The account dashboard must include an order history section.
+	 -Each order entry should include details such as order number, date, and total cost.
+	 -Customers must be able to view the status and details of each order.
+
+ 
+Order History and Reordering
+As a customer, I want to view a list of all my past orders, so that I can review what I have purchased previously.
+	 -The account dashboard must have a section for order history.
+	 -The order history should display a list of all past orders with order numbers and dates.
+	 -Customers should be able to click on an order to view its detailed contents and add their feedbacks.
+
+As a customer, I want to reorder items from my past orders, so that I can quickly purchase products I frequently buy without searching for them again.
+	 -Each order in the order history must include a "Reorder" button.
+	 -Clicking "Reorder" should add all items from the selected order back to the cart.
+	 -The customer should be redirected to the cart page to review and complete the purchase.
+
+Return Refunds
+As a customer, I want to initiate a return request for a product from my order history, so that I can return items that are defective or not as described.
+	 -The order history page must include an option to initiate a return request for each item.
+	 -The return request form should allow the customer to specify the reason for the return.
+	 -The customer should receive a confirmation and instructions for returning the item after submitting the request.
+
+As a customer, I want to track the status of my return request, so that I know when to expect my refund or replacement.
+	 -The return request status should be visible in the order history or a separate returns section.
+	 -The system must provide updates on the return status (e.g., received, processed).
+	 -The customer should receive an email notification when the return is processed and a refund or replacement is issued.
+
+ 
+
+
+
+Merchant Journey
+
+Merchant Registration and Authentication
+As a new merchant, I want to sign up using my email, so that I can create a seller account on the platform.
+	 -The system should provide a sign-up form with fields for email, business permit, password, and confirmation password.
+	 -The email field should validate the correct format (e.g., user@business.com).
+	 -Password should be at least 8 characters long.
+	 -Upon successful verification, the merchant should be able to log in.
+	 -A confirmation email should be sent to the provided email address with a link to verify the account.
+
+As a returning merchant, I want to log in using my email and password, so that I can access my seller dashboard securely.
+	 -The system should provide a login form with fields for email and password
+	 -If the credentials are incorrect, an error message should be displayed
+	 -If the credentials are correct, the merchant should be logged in and redirected to the seller dashboard.
+
+As a returning merchant, I want to reset my password if I forget it, so that I can regain access to my seller account.
+	 -The system should provide a "Forgot Password" link on the login page.
+	 -Upon clicking the link, the merchant should be prompted to enter their registered email address.
+	 -A password reset email should be sent with a link to reset the password.
+	 -After resetting the password, the merchant should be able to log in with the new credentials
+
+
+Store Setup and Management
+As a merchant, I want to create and customize my store profile (e.g., store name, logo, banner), so that I can build my brand on the platform.
+	 -The system should provide a form for entering store details (e.g., store name, logo, banner).
+	 -Store name should be unique.
+	 -The logo and banner should be uploaded in the correct format (e.g., PNG, JPEG).
+	 -Changes to the store profile should be saved and reflected in the store's public page.
+
+As a merchant, I want to update my store information (e.g., business hours, contact details), so that customers have accurate information about my store.
+	 -The system should provide a form for updating store information (e.g., business hours, contact details).
+	 -Changes should be saved and immediately reflected on the store's public page.
+	 -The updated information should be displayed in a clear and accessible manner on the store’s profile page.
+
+As a merchant, I want to add and categorize my products into different sections (e.g., electronics, fashion), so that customers can easily find them
+	 -The system should allow merchants to create categories for products.
+	 -The category structure should be visible to customers when browsing the store.
+	 -The system should display a clear categories on the store’s product pages and search results.
+
+
+Product Listing and Management
+As a merchant, I want to add new products with detailed descriptions, images, and prices, so that customers can view and purchase them.
+	 -The system should provide a product listing form with fields for product name, description, images, price, and stock quantity
+	 -The product name should be unique within the merchant's store.
+	 -Product images should be uploaded in the correct format (e.g., PNG, JPEG).
+	 -The product should be listed in the store and searchable by customers.
+
+As a merchant, I want to edit product details (e.g., price, description, stock levels) after listing, so that I can keep my listings accurate and up-to-date.
+	 -The system should allow merchants to edit product details from the product management dashboard.
+	 -Changes should be saved and immediately reflected in the store's product listings.
+	 -If the product is out of stock, it should be marked as such in the listing.
+
+As a merchant, I want to manage product variants (e.g., sizes, colors), so that customers can choose different options when purchasing.
+	 -The system should provide an option to add variants for each product (e.g., size, color).
+	 -Variants should have their own stock levels and prices if applicable.
+	 -Customers should be able to select variants when purchasing the product.
+
+
+Order Management
+As a merchant, I want to receive notifications when a new order is placed, so that I can prepare the items for shipping.
+	 -The system should display notifications in the merchant dashboard for new orders.
+	 -New orders should be highlighted in the order management section.
+
+As a merchant, I want to view and manage all orders from my dashboard, so that I can track their status (e.g., pending, shipped, delivered).
+	 -The system should provide a list of all orders with details (e.g., customer name, order items, status).
+	 -Merchants should be able to filter orders by status (e.g., pending, shipped, delivered).
+	 -The order list should support sorting by date, status, or customer name.
+
+As a merchant, I want to update the status of an order (e.g., mark as shipped, delivered), so that customers know the progress of their orders.
+	 -The system should allow merchants to update the status of orders from the order management dashboard.
+	 -Customers should receive updates on their order status (e.g., "Your order has been shipped").
+	 -The system should display a timeline of order status changes for both merchants and customers.
+
+
+Inventory Management
+As a merchant, I want to track my inventory levels for each product, so that I can avoid overselling items that are out of stock.
+	 -When a product is sold, the inventory should automatically update.
+	 -The system should prevent orders from being placed if a product is out of stock.
+	 -The system should display current stock levels for each product in the inventory management dashboard.
+
+As a merchant, I want to set up automatic inventory updates when an order is placed, so that my stock levels are always accurate.
+	 -The system should automatically deduct the quantity of products sold from the inventory when an order is confirmed.
+	 -Merchants should be able to set minimum stock levels.
+	 -Merchants should be able to view inventory changes.
+
+
+Sales and Performance Analytics
+As a merchant, I want to view sales reports (e.g., daily, weekly, monthly), so that I can analyze my store's performance over time.
+	 -The system should provide sales reports with filters for different time periods (e.g., daily, weekly, monthly).
+	 -Reports should include metrics such as total sales, number of orders, and average order value.
+	 -The system should display graphical representations of sales data for easier analysis.
+
+As a merchant, I want to generate a PDF of my sales performance, so that I can easily share and keep a record of my store's performance.
+
+- The system should provide an option to generate and download a PDF version of the sales report.
+- Merchants should be able to select the desired time period (e.g., daily, weekly, monthly) for which they want the PDF report.
+- The PDF report should include key sales metrics such as total sales, number of orders, and average order value.
+- Graphical representations of sales data (e.g., charts or graphs) should be included in the PDF for visual analysis.
+
+
+
+Customer Reviews and Feedback
+As a merchant, I want to receive and manage customer reviews for my products, so that I can improve my offerings and build trust with potential customers.
+	 -The system should allow customers to leave reviews and ratings for purchased products.
+	 -Merchants should have the ability to respond to reviews publicly.
+	 -Negative reviews should be flagged for further review if they contain inappropriate content.
+
+As a merchant, I want to display customer reviews on my product pages, so that new customers can see the feedback from previous buyers.
+	 -The system should display customer reviews and ratings on product pages.
+	 -Reviews should be sorted by most recent or highest-rated by default, with filters available for customers.
+     -Each review should display the customer's name (or username), date of the review, and the product rating (e.g., stars out of five).
+    -The system should allow customers to upload images with their reviews, which will be displayed alongside the text review.
+
+
+Customer Returns and Refunds
+As a merchant, I want to set up and manage my return and refund policy, so that customers can easily request returns and refunds.
+	 -The system should allow merchants to define return and refund policies, including eligible items, timeframes, and conditions.
+	 -The return policy should be clearly displayed on product pages and during checkout.
+	 -Merchants should be able to review and approve return requests, and issue refunds within the platform.
+     -The system should allow merchants to define conditions under which returns and refunds can be disapproved (e.g., non-eligible items, past the return timeframe, or item not in original condition).
+
+As a merchant, I want to process returns and refunds efficiently, so that customers have a smooth experience.
+	 -The system should provide a return management interface where merchants can view and process return requests.
+	 -Refunds should be issued through the original payment method, and the system should update the order status accordingly.
+	 -Merchants should be notified when a return is initiated, processed, and completed.
+     -Merchants should have the option to approve or disapprove return requests. If a request is disapproved, the system should notify the customer with a clear reason and provide next steps.
+
+
+Payouts and Financial Management
+
+As a merchant, I want to view my earnings and transaction history, so that I can keep track of my sales and payments.
+     -The system should display a summary of total earnings and recent transactions on the merchant dashboard.
+     -Merchants should be able to click on the earnings summary to view a detailed list of transactions, including sales and payouts.
+     -Each transaction should show details such as date, amount, and type (e.g., sale, fee, payout).
+
+As a merchant, I want to manage my payouts, so that I can receive my earnings directly into my account when I choose.
+     -The system should allow merchants to see their available balance and initiate a payout request at any time.
+     -Merchants should be able to specify the payout amount, provided it does not exceed their available balance.
+     -The system should provide a secure form for entering and verifying bank account details for payouts.
+     -Merchants should receive a confirmation email or notification each time a payout is successfully initiated.
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
