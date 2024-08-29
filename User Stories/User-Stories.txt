@@ -23,13 +23,12 @@ As a returning customer, I want to reset my password if I forget it, so that I c
 
 
 User Profile Management
-As a customer, I want to view and update my personal profile information (e.g., profile picture, name, email, phone number), so that my account details are accurate and up-to-date.
+As a customer, I want to view and update my personal profile information (e.g., profile picture, name, email), so that my account details are accurate and up-to-date.
 	 -The user can access their profile page from the account dashboard.
-	 -The profile page displays the current profile picture, name, email, and phone number.
-	 -Users can edit their name, email, and phone number.
-	 -The system validates the updated information (e.g., checking for valid email format and phone number).
+	 -The profile page displays the current profile picture, name, email.
+	 -Users can edit their name, email.
+	 -The system validates the updated information (e.g., checking for valid email format).
 	 -Users can upload a new profile picture or remove the current one.
-	 -If any required fields are missing or invalid, an error message is displayed, preventing the update.
 
 
 Product Browsing and Search
@@ -58,6 +57,11 @@ As a customer, I want to view the average star rating of a product, so that I ca
 	 -The average star rating must be displayed prominently on the product detail page.
 	 -The rating should be based on customer reviews.
 
+As a customer, I want to select from available product variants (e.g., size, color), so that I can choose the one that best suits my needs.
+	 -The product detail page must display all available variants (e.g., size, color) for the product in a clearly visible section.
+	 -Each variant option (e.g., Small, Medium, Large for size; Red, Blue, Green for color) should be selectable.
+	 -If a variant is out of stock, it should be visually marked as "Out of Stock" and be unselectable.
+	 -If a selected variant is out of stock, customers should receive a prompt to choose another available variant.
 
 Add to Cart and Wishlist
 As a customer, I want to add a product to my cart from the product detail page, so that I can purchase it later.
@@ -84,6 +88,11 @@ As a customer, I want to review the items in my cart before proceeding to checko
 	 -The total price, including discounts and shipping, should be clearly displayed.
 	 -The customer must be able to remove or modify items in the cart during this step.
 
+As a customer, I want to apply a discount code during checkout, so that I can reduce the total amount I need to pay.
+	 -The checkout process must include a field for entering a discount code.
+	 -The system should validate the discount code and apply the discount to the total price.
+	 -An error message must be displayed if the discount code is invalid or expired.
+
 As a customer, I want to enter my shipping address during checkout, so that my order is delivered to the correct location.
 	 -The checkout process must include a step for entering or selecting a shipping address.
 	 -The address form should validate entries for completeness and accuracy.
@@ -94,10 +103,6 @@ As a customer, I want to select my payment method (e.g., credit card, GCash, COD
 	 -The payment method must be securely processed following PCI DSS standards.
 	 -The customer should receive an order confirmation after successful payment.
 
-As a customer, I want to apply a discount code during checkout, so that I can reduce the total amount I need to pay.
-	 -The checkout process must include a field for entering a discount code.
-	 -The system should validate the discount code and apply the discount to the total price.
-	 -An error message must be displayed if the discount code is invalid or expired.
 
 
 Order Tracking and Notifications
@@ -125,7 +130,12 @@ Order History and Reordering
 As a customer, I want to view a list of all my past orders, so that I can review what I have purchased previously.
 	 -The account dashboard must have a section for order history.
 	 -The order history should display a list of all past orders with order numbers and dates.
-	 -Customers should be able to click on an order to view its detailed contents and add their feedbacks.
+	 -Customers should be able to click on an order to view its detailed contents.
+
+As a customer, I want to leave reviews and upload images for products I've purchased, so that I can share my experience with other shoppers.
+	 -The review form should include fields for a star rating, text review, and image upload.
+	 -Reviews should be displayed in order of most recent or highest-rated.
+	 -The system should allow customers to edit their reviews.
 
 As a customer, I want to reorder items from my past orders, so that I can quickly purchase products I frequently buy without searching for them again.
 	 -Each order in the order history must include a "Reorder" button.
@@ -139,9 +149,9 @@ As a customer, I want to initiate a return request for a product from my order h
 	 -The customer should receive a confirmation and instructions for returning the item after submitting the request.
 
 As a customer, I want to track the status of my return request, so that I know when to expect my refund or replacement.
-	 -The return request status should be visible in the order history or a separate returns section.
+	 -The return request status should be visible in the order history section.
 	 -The system must provide updates on the return status (e.g., received, processed).
-	 -The customer should receive an email notification when the return is processed and a refund or replacement is issued.
+	 -The customer should receive notification when the return is processed and a refund or replacement is issued.
 
  
 
@@ -199,16 +209,12 @@ As a merchant, I want to edit product details (e.g., price, description, stock l
 	 -Changes should be saved and immediately reflected in the store's product listings.
 	 -If the product is out of stock, it should be marked as such in the listing.
 
-As a merchant, I want to manage product variants (e.g., sizes, colors), so that customers can choose different options when purchasing.
-	 -The system should provide an option to add variants for each product (e.g., size, color).
-	 -Variants should have their own stock levels and prices if applicable.
-	 -Customers should be able to select variants when purchasing the product.
-
 
 Order Management
 As a merchant, I want to receive notifications when a new order is placed, so that I can prepare the items for shipping.
 	 -The system should display notifications in the merchant dashboard for new orders.
-	 -New orders should be highlighted in the order management section.
+	 -New orders should be viewable in the order management section.
+	 -The merchant should be able to generate and print shipping label.
 
 As a merchant, I want to view and manage all orders from my dashboard, so that I can track their status (e.g., pending, shipped, delivered).
 	 -The system should provide a list of all orders with details (e.g., customer name, order items, status).
@@ -247,12 +253,10 @@ As a merchant, I want to generate a PDF of my sales performance, so that I can e
 - Graphical representations of sales data (e.g., charts or graphs) should be included in the PDF for visual analysis.
 
 
-
 Customer Reviews and Feedback
 As a merchant, I want to receive and manage customer reviews for my products, so that I can improve my offerings and build trust with potential customers.
 	 -The system should allow customers to leave reviews and ratings for purchased products.
 	 -Merchants should have the ability to respond to reviews publicly.
-	 -Negative reviews should be flagged for further review if they contain inappropriate content.
 
 As a merchant, I want to display customer reviews on my product pages, so that new customers can see the feedback from previous buyers.
 	 -The system should display customer reviews and ratings on product pages.
@@ -276,7 +280,6 @@ As a merchant, I want to process returns and refunds efficiently, so that custom
 
 
 Payouts and Financial Management
-
 As a merchant, I want to view my earnings and transaction history, so that I can keep track of my sales and payments.
      -The system should display a summary of total earnings and recent transactions on the merchant dashboard.
      -Merchants should be able to click on the earnings summary to view a detailed list of transactions, including sales and payouts.
@@ -287,6 +290,12 @@ As a merchant, I want to manage my payouts, so that I can receive my earnings di
      -Merchants should be able to specify the payout amount, provided it does not exceed their available balance.
      -The system should provide a secure form for entering and verifying bank account details for payouts.
      -Merchants should receive a confirmation email or notification each time a payout is successfully initiated.
+
+Discounts and Promotions
+As a merchant, I want to create discounts for my products, so that I can attract more customers and increase sales.
+	 -The system should allow merchants to create discount offers on specific products or categories.
+	 -Merchants should be able to set the start and end dates for the discount to ensure it expires automatically.
+	 -Customers should see the discount applied on the product detail page, in the cart, and at checkout if the discount is active.
 
 
 
