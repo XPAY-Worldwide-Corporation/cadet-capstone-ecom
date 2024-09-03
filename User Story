@@ -16,13 +16,13 @@ Acceptance Criteria:
 •	After submitting the form, I should receive a verification email or SMS.
 •	Upon verification, my account should be activated, and I should be able to access the platform’s features.
 •	I should be able to update my personal information as needed.
-•	The system should validate mandatory fields during the registration process.
+
 
 
 2.	Login
 As a customer,
 I want to log in to my account securely,
-So that I can access my personal information, view my order history, and manage my account settings.
+So that I can access my personal information, view my order history, my favorites, and manage my account settings.
 
 Acceptance Criteria:
 •	Given I have an existing account,
@@ -31,7 +31,7 @@ Then I should be able to successfully log in to my account.
 •	Given that I have forgotten my password,
 When I click on the "Forgot Password" link,
 Then I should be able to reset my password through a verification process and regain access to my account.
-•	Upon successful login, the user should be redirected to their account dashboard or the page they were attempting to access.
+•	Upon successful login, the user should be redirected to home or the page they were attempting to access.
 •	Upon failed login, the user should be redirected to the login page again. 
 
 3.	Manage Account
@@ -42,10 +42,11 @@ So that I can keep my personal information up to date and ensure accurate billin
 Acceptance Criteria:
 •	Given I am logged in,
 •	When I navigate to my account settings,
-•	Then I should be able to update my personal information, including name, email, password, and shipping address.
+•	Then I should be able to update my personal information, including name, email, password, phone number, and gender.
+• Then I should be able to upload profile picture.
 •	And the changes should be saved and reflected immediately.
 •	The customer should be able to navigate to the account details section to view and edit their personal information.
-•	The system should provide a clear option in the customer dashboard or account menu for accessing account settings.
+•	The customer should be able to view their favorites and order history from user profile dashboards. 
 
 4.	Product Browsing/Search
 As a customer,
@@ -69,7 +70,8 @@ So that I can make an informed decision before purchasing it.
 Acceptance Criteria:
 •	Given I find a product of interest,
 •	When I click on the product,
-•	Then I should be able to view detailed information including images, descriptions, pricing, availability, and customer reviews.
+•	Then I should be able to view detailed information including images, descriptions, pricing, and customer reviews.
+• Then I should be able to change colors, size, and quantity before adding it to cart.
 •	Then the product should be saved in my wishlist/favorites section for future access.
 •	Then the product should be added to my shopping cart, and I should be able to view and modify the cart’s contents.
 •	The customer should be able to access the product details page by clicking on a product from the product listing, search results, or any promotional content.
@@ -85,8 +87,11 @@ Acceptance Criteria:
 •	When I click on the cart icon or "View Cart" link,
 •	Then I should be directed to the cart page, where I can see all items, including their names, images, quantities, and prices.
 •	The customer should be able to modify the quantity of items in the cart.
+• The customer should be able to apply promo/discount code.
 •	The system should automatically update the total price based on quantity changes.
-•	The customer should be able to remove items from the cart.
+•	The customer should be able to remove items from the cart or add another item.
+• The customer should be able to Proceed Checkout or add item and go back to homepage to browse.
+
 
 7.	Checkout Process
 Title: Seamless Checkout Process
@@ -98,9 +103,9 @@ Acceptance Criteria:
 •	Given I have items in my shopping cart,
 •	When I click on the "Proceed to Checkout" button,
 •	Then I should be directed to the checkout page where I can review and edit my order details.
-•	Customers should be able to review their order, including item details, shipping method, and total cost (including taxes and discounts) before finalizing the purchase.
-•	Customers should be able to enter or select a shipping address. The system should validate the address for correctness.
-•	The system should display available shipping options with associated costs and estimated delivery times. Customers should be able to select their preferred shipping method.
+•	Customers should be able to review their order, including item details, shipping method, and total cost (including discounts) before finalizing the purchase.
+•	Customers should be able to enter shipping details, add shipping address or select a shipping address. 
+•	The system should display available shipping method options with associated costs and estimated delivery times. Customers should be able to select their preferred shipping method.
 
 8.	Payment Method
 As a customer,
@@ -113,9 +118,10 @@ Acceptance Criteria:
 •	When I view the payment method selection section,
 •	Then I should see multiple payment options such as Online payment or Cash on delivery.
 •	Customers should be able to apply their selected payment method to their order and review the payment details before finalizing the purchase.
+•	Then customers should be able to review order and confirm order to proceed.
+• Then customers should be able to receive the order confirmation once she/he proceed.
 •	Upon successful payment, the system should display a confirmation message and process the payment, reflecting the transaction status on the order summary page.
-•	Then customers should be able to receive the order confirmation once she/he order placed.
-•	Customers should be able to enter and apply voucher or discount codes during checkout. The system should validate the codes and apply the discount to the total price if the code is valid.
+
 
 9.	Track Order
 As a customer,
@@ -127,6 +133,7 @@ Acceptance Criteria:
 •	When I check the status of my order,
 •	Then I should see detailed information including current location, shipping carrier, and estimated delivery date.
 •	Customers should be able to access order tracking information from their account dashboard or through an order confirmation sms/email.
+•	Customers should be able to see the items, order details such as order summary, shipping method, and payment method.
 •	Customers should be able to view their order history, including tracking details, in their account dashboard.
 •	Customers should receive notifications via email or SMS when there are significant updates to their order status (e.g., out for delivery, delivered).
 
