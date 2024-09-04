@@ -47,6 +47,9 @@ Acceptance Criteria:
 •	And the changes should be saved and reflected immediately.
 •	The customer should be able to navigate to the account details section to view and edit their personal information.
 •	The customer should be able to view their favorites and order history from user profile dashboards. 
+• The customer should be able to logout his/her account from manage account page.
+• The customer should be able to send my inquiries to merchants through a single communication platform.
+• The platform should have a messaging system where I can ask questions and receive responses from merchants.
 
 4.	Product Browsing/Search
 As a customer,
@@ -123,7 +126,7 @@ Acceptance Criteria:
 •	Upon successful payment, the system should display a confirmation message and process the payment, reflecting the transaction status on the order summary page.
 
 
-9.	Track Order
+9.	Orders
 As a customer,
 I want to track my order,
 So that I can know the status and expected delivery time of my purchase.
@@ -286,14 +289,14 @@ Acceptance Criteria:
 •	Merchants should receive notifications for new messages.
 
 
-10.	Analytics and Reporting
+10.	Dashboard
 As a merchant,
 I want to view detailed analytics and reports on my sales performance,
 so that I can make informed decisions to improve my business.
 
 Acceptance Criteria:
-•	The platform should provide sales reports, including total sales, top-selling products, and customer demographics.
-•	Merchants should be able to filter data by date ranges, product categories, and other relevant metrics.
+•	The platform should provide sales reports, including total sales, top-selling products, and customer recent orders.
+•	Merchants should be able to filter data by date ranges and other relevant metrics.
 •	Reports should include metrics such as total revenue, average order value, and sales growth.
 •	The system should allow the merchant to export reports in various formats (e.g., CSV, PDF) for further analysis or sharing with stakeholders.
 
