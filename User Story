@@ -50,6 +50,7 @@ Acceptance Criteria:
 • The customer should be able to logout his/her account from manage account page.
 • The customer should be able to send my inquiries to merchants through a single communication platform.
 • The platform should have a messaging system where I can ask questions and receive responses from merchants.
+• The platform should have a logout system where I can logout my account.
 
 4.	Product Browsing/Search
 As a customer,
@@ -165,7 +166,7 @@ Acceptance Criteria:
 "MERCHANT STORY"
 
 
-1.	Merchant Registration and Verification
+Merchant Registration and Verification
 As a new merchant,
 I want to register and verify my account on the platform,
 so that I can start selling my products to customers.
@@ -177,7 +178,7 @@ Acceptance Criteria:
 •	The merchant should be able to update their business information (e.g., address, tax ID, bank details for payouts).
 •	The system should validate mandatory fields (e.g., tax ID, bank account number).
 
-2.	Login
+Login
 As a registered merchant,
 I want to log in to my account,
 so that I can access my account information and manage my store.
@@ -193,38 +194,29 @@ Then I should be able to reset my password through a verification process and re
 •	Upon failed login, the merchant should be redirected to the login page again. 
 
 
-3.	Product Listing
+Products Listing --
 As a merchant,
 I want to create and manage product listings,
 so that I can display my products for customers to browse and purchase.
 
 Acceptance Criteria:
+• Each product should display key details such as product image, name, and price.
+•	The merchant should be able to search for products various criteria, such as name and category using a search bar.
+•	The merchant should be able to filter products listing by various criteria, such as type, month, rating, price range
+• The system should have an add items or delete items.
 •	The merchant should be able to upload images, set prices, and add descriptions for each product.
-•	The platform should allow for categories and tags to organize products.
 •	Merchants should be able to edit or remove listings as needed.
-•	The merchant should be able to update details such as price, description, stock quantity, and images.
-•	The merchant should be able to add product variants (e.g., different sizes, and colors).
-•	Each variant should have its owns price, details, and stock quantity.
-•	The system should allow the merchant to manage variant-specific images.
+•	The merchant should be able to update/edit details such as price, description, stock quantity, category and images.
+•	The merchant should be able to add product variants/categories (e.g., different sizes, and colors).
+•	The merchant should be able to add/edit shipping delivery details (e.g., weight, length, width
 •	The merchant should be able to update stock quantities for individual products or in bulk.
 •	The merchant should be able to set the status of a product (e.g., active, inactive, out of stock).
-•	Inactive products should not be visible to customers, but the merchant should be able to reactivate them at any time.
-
-4.	Promotions and Discounts
-As a merchant,
-I want to create promotions and offer discounts on my products,
-so that I can attract more customers and increase sales.
-
-Acceptance Criteria:
-•	The platform should allow merchants to create discount codes or set promotional prices for specific products.
-•	The merchant should be able to create a new promo or discount campaign by defining key details such as discount type (e.g., percentage off, fixed amount, buy one get one), eligible products or categories, and start/end dates.
-•	Merchants should be able to set start and end dates for promotions.
-•	The platform should automatically apply discounts during checkout.
-•	Merchants should be able to remove a discount/promotion. 
-•	The merchant should have access to a centralized dashboard where they can view, edit, and remove all active promotions.
+•	Inactive products should not be visible to customers, but the merchant should be able to reactivate/delete them at any time.
+•	The merchant should be able to add a new promo or discount campaign by defining key details such as discount type (e.g., percentage off, fixed amount, buy one get one), eligible products or categories, and start/end dates.
+•	The merchant should be able to manage inventory by monitoring stock levels, and when inventory is low, they should have the ability to restock items efficiently.
 
 
-5.	Order Management
+Order Management --
 As a merchant,
 I want to view and manage incoming orders,
 so that I can fulfill them efficiently and provide a good customer experience.
@@ -234,11 +226,14 @@ Acceptance Criteria:
 •	The platform should allow the merchant to update order statuses (e.g., packed, shipped, delivered).
 •	The order details should include customer information, order items, quantities, prices, and delivery details.
 •	Merchants should be able to print packing slips and shipping labels.
-•	The merchant should be able to update the status of an order (e.g., from pending to shipped).
+•	The merchant should be able to update/change the status of an order (e.g., from pending to shipped).
 •	The system should automatically notify customers when the status changes (e.g., via email or SMS).
+• The merchant should be able to view search orders listing by various criteria, such as product, name, date, id.
 
 
-6.	Payment Processing
+
+
+Payment Processing --
 As a merchant,
 I want to receive payments for the orders placed by customers,
 so that I can earn revenue from my sales.
@@ -246,26 +241,17 @@ so that I can earn revenue from my sales.
 Acceptance Criteria:
 •	The platform should support various payment methods (e.g., credit cards, bank transfers, e-wallets).
 •	Payments should be securely processed, and the funds should be transferred to the merchant's account.
-•	The merchant should be able to view payment history and track pending payouts.
-•	The merchant should be able to view payment and payout to track earnings and sales reports.
+•	The merchant should be able to collect/view payment.
 •	The merchant should be able to cancel an order if it hasn't been shipped yet.
-•	The merchant should be able to cancel or handle issues of an order if the payment process failed.
-•	The system should provide detailed payment information, including transaction ID, payment method, amount paid, and payment status (e.g., successful, pending, failed).
+•	The merchant should be able to cancel, hold and handle issues of an order if the payment process failed or pending.
+•	The system should provide detailed payment information, including transaction ID, date, name, payment method, amount paid, and payment status (e.g., successful, pending, failed).
 •	For failed or pending payments, the system should send an alert to the merchant and provide options to retry or resolve the issue.
+• The system should allow the merchant to export payments report in various formats (e.g., CSV, PDF).
+• The merchant should be able to search payments listing by various criteria, such as name, id, date.
 
 
-7.	Inventory Management
-As a merchant,
-I want to manage my product inventory,
-so that I can ensure accurate stock levels and prevent overselling.
-Acceptance Criteria:
-•	Merchants should be able to set initial stock levels for each product.
-•	The system should automatically update inventory levels based on sales.
-•	The merchant should be able to manage inventory for product variants (e.g., different sizes, colors) separately, with each variant having its own SKU and stock level.
-•	The merchant should be able to manage inventory by monitoring stock levels, and when inventory is low, they should have the ability to restock items efficiently.
 
-
-8.	Shipping Management
+Shipping Management--
 As a merchant,
 I want to manage shipping options and track deliveries,
 so that I can ensure timely delivery of products to customers.
@@ -273,23 +259,14 @@ so that I can ensure timely delivery of products to customers.
 Acceptance Criteria:
 •	Merchants should be able to select shipping providers and set shipping rates.
 •	The platform should automatically calculate shipping costs based on weight and destination.
-•	The system should integrate with multiple shipping method (e.g., J&T, SPX, Flash express) to provide various shipping options.
+•	The system should integrate with multiple shipping method (e.g., J&T, Flash express) to provide various shipping options.
 •	The system should validate customer addresses during checkout to prevent shipping errors.
 •	Merchants should be able to track shipments and update customers on their order status.
+• Merchants should be able to manage shipping and can cancel, approved, delete the shipping process.
 
 
-9.	Customer Communication
-As a merchant,
-I want to communicate with customers who have inquiries about my products,
-so that I can provide better service and increase customer satisfaction.
 
-Acceptance Criteria:
-•	The merchant should be able to manage and respond to customer inquiries through a centralized communication portal.
-•	The platform should provide a messaging system for customers to ask questions and for merchants to respond.
-•	Merchants should receive notifications for new messages.
-
-
-10.	Dashboard
+Dashboard--
 As a merchant,
 I want to view detailed analytics and reports on my sales performance,
 so that I can make informed decisions to improve my business.
@@ -301,7 +278,20 @@ Acceptance Criteria:
 •	The system should allow the merchant to export reports in various formats (e.g., CSV, PDF) for further analysis or sharing with stakeholders.
 
 
-11.	 Customer Reviews and Feedback
+Customer Communication--
+As a merchant,
+I want to communicate with customers who have inquiries about my products,
+so that I can provide better service and increase customer satisfaction.
+
+Acceptance Criteria:
+•	The merchant should be able to manage and respond to customer inquiries through a centralized communication portal.
+•	The platform should provide a messaging system for customers to ask questions and for merchants to respond.
+•	Merchants should receive notifications for new messages.
+• The merchant should be able to search messages listing by various criteria, such as name, id, date.
+ The merchant should be able to take actions as read or delete the messages.
+
+
+Customer Reviews and Feedback--
 As a merchant,
 I want to receive and manage customer reviews on my products,
 so that I can understand customer satisfaction and improve my offerings.
@@ -310,10 +300,11 @@ Acceptance Criteria:
 •	The system should automatically prompt customers to leave reviews after they receive their orders.
 •	Reviews should be displayed on product pages, showing key information such as reviewer name, rating, review text, and date.
 •	The merchant should be able to view and respond to customer reviews.
-Explanation: Customer feedback is valuable for merchants to improve their products and build a positive reputation on the platform.
+• The merchant should be able to search customers feedback listing by various criteria, such as name, id, date.
+•  The merchant should be able to take actions as delete, publish, edit, cancel, reply.
 
 
-12.	Refund  
+Refund  
 As a merchant,
 I want to manage refunds for items that are lost or damaged during shipping,
 So that I can provide a fair resolution to customers and maintain trust in my e-commerce store.
@@ -325,6 +316,10 @@ Acceptance Criteria:
 •	The system should allow the merchant to approve or reject refund requests based on the provided information and their return policy.
 •	Upon approval of a refund request, the system should initiate the refund process, either by issuing a refund to the original payment method.
 •	The system should automatically notify customers of the status of their refund request, including confirmation of receipt, approval or rejection, and completion of the refund.
-•	Begin the refund process for valid requests. Generate a return label if necessary.
+•	Begin the refund process for valid requests.
 •	Merchants should be able to provide the customer with instructions for returning the damaged item.
+•	The merchant should be able to delete, cancel, hold and handle issues of an return order if the process failed or pending.
+• The merchant should be able to view search orders listing by various criteria, such as product, name, date, id.
+
+
 
