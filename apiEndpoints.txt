@@ -52,6 +52,14 @@ Body: { "product_name": "", "content": "", "price": "", "isNew": "", "image": ""
 Delete a product:
 DELETE /api/v1/products/{id}
 
+Search Products:
+GET /api/v1/products/search
+Query Parameters:
+  - q (string): Search query term
+  - category_id (optional, integer): Filter by category
+  - price_min (optional, number): Minimum price filter
+  - price_max (optional, number): Maximum price filter
+
 Categories
 Get all categories:
 GET /api/v1/categories
@@ -142,23 +150,23 @@ Body: { "rating": "", "description": "", "image": "", "transaction_id": "" }
 Delete a comment:
 DELETE /api/v1/comments/{id}
 
-Information
-Get all information records:
-GET /api/v1/information
+Discount
+Get all discount records:
+GET /api/v1/discount
 
-Get a specific information record by ID:
-GET /api/v1/information/{id}
+Get a specific discount record by ID:
+GET /api/v1/discount/{id}
 
-Create a new information record:
-POST /api/v1/information
+Create a new discount record:
+POST /api/v1/discount
 Body: { "government_id": "", "isAccepted": "", "customer_id": "" }
 
-Update an information record:
-PUT /api/v1/information/{id}
+Update an discount record:
+PUT /api/v1/discount/{id}
 Body: { "government_id": "", "isAccepted": "", "customer_id": "" }
 
-Delete an information record:
-DELETE /api/v1/information/{id}
+Delete an discount record:
+DELETE /api/v1/discount/{id}
 
 Discounts
 Get all discounts:
@@ -177,3 +185,12 @@ Body: { "government_id": "", "customer_id": "", "merchant_id": "" }
 
 Delete a discount:
 DELETE /api/v1/discounts/{id}
+
+Authentication
+Login:
+POST /api/v1/auth/login
+Body: { "email": "", "password": "" }
+
+Logout:
+POST /api/v1/auth/logout
+Body: { "token": "" }
