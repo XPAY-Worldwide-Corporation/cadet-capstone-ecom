@@ -17,7 +17,7 @@ GET /products: Get all products
 GET /products/
 : Get a specific product by ID
 POST /products: Create a new product
-PUT /products/
+PATCH /products/
 : Update an existing product by ID
 DELETE /products/
 : Delete a product by ID
@@ -57,7 +57,7 @@ GET /transactions: Get all transactions
 GET /transactions/
 : Get a specific transaction by ID
 POST /transactions: Create a new transaction
-PUT /transactions/
+PATCH /transactions/
 : Update an existing transaction by ID
 DELETE /transactions/
 : Delete a transaction by ID
@@ -67,7 +67,7 @@ GET /refunds: Get all refunds
 GET /refunds/
 : Get a specific refund by ID
 POST /refunds: Create a new refund
-PUT /refunds/
+PATCH /refunds/
 : Update an existing refund by ID
 DELETE /refunds/
 : Delete a refund by ID
@@ -77,7 +77,7 @@ GET /reviews: Get all reviews
 GET /reviews/
 : Get a specific review by ID
 POST /reviews: Create a new review
-PUT /reviews/
+PATCH /reviews/
 : Update an existing review by ID
 DELETE /reviews/
 : Delete a review by ID
@@ -87,7 +87,7 @@ GET /discounts: Get all discounts
 GET /discounts/
 : Get a specific discount by ID
 POST /discounts: Create a new discount
-PUT /discounts/
+PATCH /discounts/
 : Update an existing discount by ID
 DELETE /discounts/
 : Delete a discount by ID
