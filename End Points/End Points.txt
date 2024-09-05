@@ -1,0 +1,106 @@
+
+Customer
+GET /customers: Get all customers.
+GET /customers/
+: Get a specific customer by ID.
+POST /customers: Create a new customer.
+PATCH /customers/
+: Partially update an existing customer by ID.
+DELETE /customers/
+: Delete a customer by ID.
+PUT /auth/customers/forgot-password: Initiate the password reset process for a customer.
+POST /auth/customers/reset-password: Reset a customer's password using a token.
+PATCH /auth/customers/update-password: Update a customer's password while logged in.
+
+Merchant
+GET /merchants: Get all merchants.
+GET /merchants/
+: Get a specific merchant by ID.
+POST /merchants: Create a new merchant.
+PATCH /merchants/
+: Partially update an existing merchant by ID.
+DELETE /merchants/
+: Delete a merchant by ID.
+PUT /auth/merchants/forgot-password: Initiate the password reset process for a merchant.
+POST /auth/merchants/reset-password: Reset a merchant's password using a token.
+PATCH /auth/merchants/update-password: Update a merchant's password while logged in.
+
+Products
+GET /products: Get all products
+GET /products/
+: Get a specific product by ID
+POST /products: Create a new product
+PATCH /products/
+: Update an existing product by ID
+DELETE /products/
+: Delete a product by ID
+
+Categories
+GET /categories: Get all categories
+GET /categories/
+: Get a specific category by ID
+POST /categories: Create a new category
+PUT /categories/
+: Update an existing category by ID
+DELETE /categories/
+: Delete a category by ID
+
+Inventory
+GET /inventory: Get all inventory items
+GET /inventory/
+: Get a specific inventory item by ID
+POST /inventory: Create a new inventory item
+PUT /inventory/
+: Update an existing inventory item by ID
+DELETE /inventory/
+: Delete an inventory item by ID
+
+Wishlist
+GET /wishlists: Get all wishlists
+GET /wishlists/
+: Get a specific wishlist by ID
+POST /wishlists: Create a new wishlist item
+PUT /wishlists/
+: Update an existing wishlist item by ID
+DELETE /wishlists/
+: Delete a wishlist item by ID
+
+Transactions
+GET /transactions: Get all transactions
+GET /transactions/
+: Get a specific transaction by ID
+POST /transactions: Create a new transaction
+PATCH /transactions/
+: Update an existing transaction by ID
+DELETE /transactions/
+: Delete a transaction by ID
+
+Refunds
+GET /refunds: Get all refunds
+GET /refunds/
+: Get a specific refund by ID
+POST /refunds: Create a new refund
+PATCH /refunds/
+: Update an existing refund by ID
+DELETE /refunds/
+: Delete a refund by ID
+
+Reviews
+GET /reviews: Get all reviews
+GET /reviews/
+: Get a specific review by ID
+POST /reviews: Create a new review
+PATCH /reviews/
+: Update an existing review by ID
+DELETE /reviews/
+: Delete a review by ID
+
+Discounts
+GET /discounts: Get all discounts
+GET /discounts/
+: Get a specific discount by ID
+POST /discounts: Create a new discount
+PATCH /discounts/
+: Update an existing discount by ID
+DELETE /discounts/
+: Delete a discount by ID
