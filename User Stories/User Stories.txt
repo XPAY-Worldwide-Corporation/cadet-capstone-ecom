@@ -1,0 +1,457 @@
+Customer Journey
+User Registration and Authentication
+
+Email Sign-Up
+As a new customer, I want to sign up using my email address, so that I can create an account on the platform.
+Acceptance Criteria:
+-The sign-up form accepts a name, profile, valid email address and password.
+-A confirmation email is sent after successful registration.
+-The system displays error messages for invalid inputs.
+-The user can access their account after email verification.
+-The user is notified if the email is already registered.
+
+Email Login
+As a returning customer, I want to log in using my email and password, so that I can access my account securely.
+Acceptance Criteria:
+-The login form requires a valid email and password.
+-The user is redirected to their dashboard upon successful login.
+-Error messages are displayed for incorrect email or password.
+-The system prevents login attempts after multiple failed tries.
+-Users can request a password reset if needed.
+
+Password Reset
+As a returning customer, I want to reset my password if I forget it, so that I can regain access to my account.
+Acceptance Criteria:
+-The login page has a "Forgot Password" link.
+-Users can request a password reset by entering their email.
+-The system sends a reset link to the user's email.
+-Users can set a new password via the reset link.
+-Users receive a confirmation email after resetting their password.
+
+
+User Profile Management
+
+Update Profile Information
+As a customer, I want to view and update my personal profile information (e.g., profile picture, name, email), so that my account details are accurate and up-to-date.
+Acceptance Criteria:
+-The user can access and edit their profile from the account dashboard.
+-Users can update their profile picture, name, and email.
+-The system validates and saves the updated information.
+-Changes are reflected immediately after saving.
+-Users receive a notification confirming profile updates.
+
+
+Product Browsing and Search
+
+Browse Products by Category
+As a customer, I want to browse products by category (e.g., electronics, fashion), so that I can explore items in a specific area of interest.
+Acceptance Criteria:
+-The homepage displays a list of product categories.
+-Clicking on a category shows products within that category.
+-Each product displays a name, image, and price.
+-Users can filter products by criteria like price or rating.
+-Users can return to the homepage easily.
+
+Search for Products
+As a customer, I want to search for products by name or keyword, so that I can quickly locate a specific item.
+Acceptance Criteria:
+-The search bar is available on all pages.
+-The search results include products matching the name or keyword.
+-Users can sort search results by relevance or price.
+-The search results page supports filtering options.
+-A message is displayed if no products match the search term.
+
+
+Product Details and Reviews
+
+View Multiple Images of a Product
+As a customer, I want to view multiple images of a product, so that I can see it from different angles before purchasing.
+Acceptance Criteria:
+-The product detail page displays a gallery of images.
+-Users can view images in full size.
+-Images are clear and load quickly on all devices.
+-Users can navigate through images using arrows or thumbnails.
+-All product images are relevant and show different angles.
+
+Read Detailed Product Specifications
+As a customer, I want to read detailed product specifications (e.g., size, color, material), so that I can ensure it meets my requirements.
+Acceptance Criteria:
+-The product detail page lists specifications clearly.
+-Specifications include size, color, material, and other relevant details.
+-Information is easy to read and well-organized.
+-Specifications are up-to-date and accurate.
+-Users can easily find additional product information if needed.
+
+View Average Star Rating of a Product
+As a customer, I want to view the average star rating of a product, so that I can quickly gauge its quality.
+Acceptance Criteria:
+-The average star rating is displayed on the product detail page.
+-Ratings are based on customer reviews.
+-The total number of reviews is shown next to the rating.
+-Users can click on the rating to view detailed reviews.
+-The rating updates automatically as new reviews are added.
+
+Select from Available Product Variants
+As a customer, I want to select from available product variants (e.g., size, color), so that I can choose the one that best suits my needs.
+Acceptance Criteria:
+-The product detail page displays all available variants.
+-Variants are selectable (e.g., size, color).
+-Out-of-stock variants are visually marked as "Out of Stock."
+-Users are prompted to choose another variant if the selected one is out of stock.
+-The system updates availability in real-time.
+
+
+Add to Cart and Wishlist
+
+Add Product to Cart
+As a customer, I want to add a product to my cart from the product detail page, so that I can purchase it later.
+Acceptance Criteria:
+-An "Add to Cart" button is visible on the product detail page.
+-Clicking the button adds the product to the cart.
+-A confirmation message is displayed after adding to the cart.
+-The cart icon updates to show the number of items.
+-Users can view the cart to see added items.
+
+Update Quantity of Item in Cart
+As a customer, I want to update the quantity of an item in my cart, so that I can buy multiple units of the same product.
+Acceptance Criteria:
+-The cart page allows users to change the quantity of each item.
+-The total price updates automatically based on the selected quantity.
+-The system notifies users if they exceed available stock.
+-Users can remove items from the cart if needed.
+-Quantity changes are saved in real-time.
+
+Save Product to Wishlist
+As a customer, I want to save a product to my wishlist from the product detail page, so that I can consider buying it later.
+Acceptance Criteria:
+-A "Save to Wishlist" button is visible on the product detail page.
+-Clicking the button adds the product to the wishlist.
+-The wishlist updates to reflect the addition.
+-Users can view their wishlist from the account dashboard.
+-Products can be moved from the wishlist to the cart.
+
+Move Items from Wishlist to Cart
+As a customer, I want to move items from my wishlist to my cart, so that I can easily purchase them when ready.
+Acceptance Criteria:
+-The wishlist page provides an option to "Move to Cart" for each item.
+-Items are added to the cart upon clicking "Move to Cart."
+-The wishlist and cart update accordingly.
+-Users are notified when items are successfully moved.
+-The cart reflects the added items immediately.
+
+
+Checkout and Payment
+
+Review Cart Before Checkout
+As a customer, I want to review the items in my cart before proceeding to checkout, so that I can confirm my order details.
+Acceptance Criteria:
+-The checkout process includes a step for reviewing the cart contents.
+-The total price, including discounts and shipping, is displayed.
+-Users can remove or modify items in the cart during this step.
+-The cart page provides a summary of the order.
+-Users can proceed to checkout after confirming the order details.
+
+Apply Discount Code During Checkout
+As a customer, I want to apply a discount code during checkout, so that I can reduce the total amount I need to pay.
+Acceptance Criteria:
+-The checkout page includes a field for entering a discount code.
+-The system validates the discount code.
+-If valid, the discount is applied to the total price.
+-An error message is displayed for invalid or expired codes.
+-The updated total is shown after applying the discount.
+
+Enter Shipping Address During Checkout
+As a customer, I want to enter my shipping address during checkout, so that my order is delivered to the correct location.
+Acceptance Criteria:
+-The checkout process includes a step for entering or selecting a shipping address.
+-The address form validates entries for completeness and accuracy.
+-Users can save multiple addresses and choose between them.
+-The selected address is displayed in the order summary.
+-Users receive a confirmation of the selected address before finalizing the purchase.
+
+Select Payment Method
+As a customer, I want to select my payment method (e.g., credit card, GCash, COD), so that I can complete the purchase using my preferred option.
+Acceptance Criteria:
+-The checkout process offers multiple payment methods.
+-Users can select their preferred payment method.
+-The system securely processes the payment.
+-Users receive a confirmation after successful payment.
+-The selected payment method is displayed in the order summary.
+
+
+Order Tracking and Notifications
+
+Receive Order Confirmation Email
+As a customer, I want to receive an email confirmation after placing an order, so that I have a record of my purchase.
+Acceptance Criteria:
+-An email confirmation is automatically sent after an order is placed.
+-The email includes order details like items purchased, total cost, and delivery information.
+-Users receive the email within a few minutes of order placement.
+-The email provides a link to view the order on the platform.
+-A contact option for support is included in the email.
+
+Track Order Status
+As a customer, I want to track my order, so that I can monitor its delivery status.
+Acceptance Criteria:
+-The order confirmation page displays a tracking number if available.
+-Users can access tracking information from their account dashboard.
+-The system updates delivery status in real-time.
+-Users receive notifications for key status updates (e.g., shipped, out for delivery).
+-The order details page provides a link to the carrier’s tracking page.
+
+View Order History
+As a customer, I want to view my order history in my account dashboard, so that I can see all my past purchases.
+Acceptance Criteria:
+-The account dashboard includes an order history section.
+-Each order entry displays details such as order number, date, and total cost.
+-Users can view the status and details of each order.
+-The order history can be filtered by date range or status.
+-Users can reorder items directly from their order history.
+
+
+Order Tracking and Delivery Confirmation
+
+Confirm Delivery and Manage Issues
+As a customer, I want to confirm that my order has been delivered, or request a return/refund if there are issues, so that I can ensure I receive what I paid for.
+Acceptance Criteria:
+-After an order is marked as delivered, a "Confirm Delivery" page is displayed in the customer account.
+-The "Confirm Delivery" page has two options: "Order Delivered" and "Request Return/Refund."
+-If the customer clicks "Order Delivered," the order status is updated to "Completed."
+-If the customer clicks "Request Return/Refund," a form is displayed to specify the reason for the return or refund.
+-The customer can upload photos and provide details about the issue when requesting a return or refund.
+
+Leave a Review
+As a customer, I want to leave a review for a product I have received, so that I can share my experience with other customers.
+Acceptance Criteria:
+-The order history page provides an option to "Leave a Review" for each product that has been confirmed as delivered.
+-Clicking "Leave a Review" opens a review form with fields for a star rating and a text review.
+-The customer can upload up to 3 images to accompany their review.
+-The review form includes a "Submit" button to post the review.
+-A confirmation message is displayed after successfully submitting the review.
+
+
+Order History and Reordering
+
+Reorder Items
+As a customer, I want to reorder items from my past orders, so that I can quickly purchase products I frequently buy without searching for them again.
+Acceptance Criteria:
+-Each order in the order history has a "Reorder" button.
+-Clicking "Reorder" adds all items from the selected order back to the cart.
+-Users can modify quantities or remove items before checkout.
+-The system notifies users if an item is no longer available.
+-Users are redirected to the cart page to review and complete the purchase.
+
+
+Return and Refunds
+
+Track Return Status
+As a customer, I want to track the status of my return request, so that I know when to expect my refund or replacement.
+Acceptance Criteria:
+-The return request status is visible in the order history section.
+-Users receive notifications for updates on the return status.
+-The system provides a timeline for the return process.
+-Users are notified when the return is processed and a refund or replacement is issued.
+-Users can contact customer support for additional help.
+
+
+
+
+
+Merchant Registration and Authentication
+
+Merchant Email Sign-Up
+As a new merchant, I want to sign up using my email, so that I can create a seller account on the platform.
+Acceptance Criteria:
+-The sign-up form includes fields for business name,business logo, email, and password.
+-The form validates the email format and password strength.
+-A confirmation email is sent to the provided email address.
+-The merchant can activate their account by clicking the verification link in the email.
+-The merchant is redirected to the login page upon successful activation.
+
+Merchant Email Login
+As a returning merchant, I want to log in using my email and password, so that I can access my seller dashboard securely.
+Acceptance Criteria:
+-The login form requires fields for email and password.
+-Merchants are redirected to the seller dashboard upon successful login.
+-Error messages are displayed for incorrect email or password.
+-Merchants can request a password reset if they forget their password.
+-The system checks for valid email and password formats before login.
+
+Merchant Password Reset
+As a returning merchant, I want to reset my password if I forget it, so that I can regain access to my seller account.
+Acceptance Criteria:
+-The login page displays a "Forgot Password" link.
+-Merchants can request a password reset by entering their registered email.
+-A password reset email is sent with a link to reset the password.
+-Merchants can set a new password via the reset link.
+-Merchants receive a confirmation email after resetting their password.
+
+
+Store Setup and Management
+
+Customize Store Profile
+As a merchant,I want to customize my store profile (e.g., business hours, contact details), so that customers have accurate information about my store.
+Acceptance Criteria:
+-The profile settings page allows merchants to edit store details.
+-Changes are saved immediately and reflected on the public page.
+-The updated information is displayed clearly on the store’s profile.
+-A success message confirms the updates.
+-Merchants can revert changes if needed.
+
+
+Product Listing and Management
+
+Add New Products
+As a merchant I want to add new products with detailed descriptions, images, and prices, so that customers can view and purchase them.
+Acceptance Criteria:
+-The product listing form includes fields for product name, description, images, price, and stock quantity.
+-The product name is validated to be unique within the merchant's store.
+-Images can be uploaded in acceptable formats (e.g., PNG, JPEG).
+-The product is listed on the store page after submission.
+-A confirmation message is shown upon successful listing.
+
+Add and Categorize Products
+As a merchant, I want categorize my products into different sections (e.g., electronics, fashion), so that customers can easily find them.
+Acceptance Criteria:
+-The system allows merchants to create categories for products.
+-Each product can be assigned to one category.
+-The category structure is visible to customers when browsing the store.
+-The system displays products within their assigned categories on the store’s product pages and search results.
+-Merchants can edit or update product categories through the product management interface.
+
+
+Edit Product Details
+ As a merchant, I want to edit product details efficiently, so I can keep my product information accurate and up-to-date.
+Acceptance Criteria:
+-The system provides a form to edit product details, including name, description, price, and images.
+-Changes to product details are saved immediately and reflected on the store page.
+-A confirmation message is displayed after successfully editing product details.
+-All fields are validated before saving any changes.
+-Merchants can revert changes if needed.
+
+Order Management
+Receive Notifications for New Orders
+As a merchant, I want to receive notifications when a new order is placed, so that I can prepare the items for shipping.
+Acceptance Criteria:
+-The merchant dashboard displays notifications for new orders.
+-New orders are viewable in the order management section.
+-Merchants can generate and print shipping labels.
+-Order details include customer information and order items.
+
+Manage All Orders
+As a merchant, I wat to view and manage all orders from my dashboard, so that I can track their status (e.g., pending, shipped, delivered).
+Acceptance Criteria:
+-The dashboard provides a list of all orders with key details.
+-Merchants can filter orders by status (e.g., pending, shipped, delivered).
+-Merchants can update order statuses from the dashboard.
+-The system provides an option to export order data.
+
+Update Order Status
+As a merchant,  want to update the status of an order (e.g., mark as shipped, delivered), so that customers know the progress of their orders.
+Acceptance Criteria:
+-The system allows merchants to update the status of orders.
+-Customers receive email updates for status changes.
+-The updated status is reflected immediately on the dashboard.
+-Merchants can view a history of status changes.
+-The system provides error messages for invalid status changes.
+
+
+Inventory Management
+Track Inventory Levels
+As a merchant, I want to manage inventory levels effectively, so I can maintain accurate stock levels and avoid overselling.
+Acceptance Criteria:
+-The system allows merchants to update stock quantity for each product.
+-Inventory levels are automatically updated when changes are made.
+-Merchants can set a minimum stock quantity to receive low-stock alerts.
+-A confirmation message is displayed after updating inventory levels.
+-The system prevents sales of products that are out of stock and alerts merchants when stock is low.
+
+
+Sales and Performance Analytics
+
+View Sales Reports
+As a merchant, I want to view sales reports (e.g., daily, weekly, monthly), so that I can analyze my store's performance over time.
+Acceptance Criteria:
+-The system provides sales reports for different time periods.
+-Reports include metrics like total sales, number of orders, and average order value.
+-Graphical representations of sales data are available.
+-Merchants can download sales reports as PDF.
+-The system displays a summary of key performance indicators on the dashboard.
+
+Generate PDF of Sales Performance
+As a merchat, I want to generate a PDF of my sales performance, so that I can easily share and keep a record of my store's performance.
+Acceptance Criteria:
+-The system provides an option to generate and download a PDF version of the sales report.
+-The PDF report includes key sales metrics and graphical data.
+-The report is formatted for easy reading and printing.
+-Merchants receive a notification when the PDF is ready for download.
+
+Customer Reviews and Feedback
+
+Manage Customer Reviews
+As a merchant, I want to receie and manage customer reviews for my products, so that I can improve my offerings and build trust with potential customers.
+Acceptance Criteria:
+-The system allows customers to leave reviews and ratings for purchased products.
+-Merchants can view customer reviews.
+-Reviews are displayed in order of most recent or highest-rated.
+-The system notifies merchants when a new review is posted.
+
+Display Customer Reviews
+As a merchant, I want to display customer reviews on my product pages, so that new customers can see the feedback from previous buyers.
+Acceptance Criteria:
+-Customer reviews and ratings are displayed on product pages.
+-Reviews can be filtered by rating or date.
+-Each review displays the customer's name, date, and rating.
+-The system allows customers to upload images with their reviews.
+-Reviews are sorted by most recent or highest-rated by default.
+
+
+Customer Returns and Refunds
+
+Manage Return and Refund Policies
+As a merchant, I want to set up and manage my return and refund policy, so that customers can easily request returns and refunds.
+Acceptance Criteria:
+-The system allows merchants to define return and refund policies.
+-Policies are clearly displayed on product pages and during checkout.
+-Merchants can update policies at any time from the dashboard.
+-Customers are informed of return conditions before making a purchase.
+-The system notifies merchants of any changes made to the return policy.
+
+Process Returns and Refunds
+As a merchant, I want to process returns and refunds efficiently, so that customers have a smooth experience.
+Acceptance Criteria:
+-The system provides a return management interface for processing requests.
+-Merchants can approve or disapprove return requests based on the policy.
+-Refunds are issued through the original payment method.
+-Merchants receive notifications when a return request is initiated or processed.
+-The system provides detailed status updates for each return request.
+
+
+Payouts and Financial Management
+
+View Earnings and Transaction History
+As a merchant, I want to view my earnings and transaction history, so that I can keep track of my sales and payments.
+Acceptance Criteria:
+-The dashboard displays a summary of total earnings and recent transactions.
+-Merchants can view a detailed list of transactions by clicking on the earnings summary.
+-Each transaction shows details such as date, amount, and type.
+
+Manage Payouts
+As a merchant, I want to manage my payouts, so that I can receive my earnings directly into my account when I choose.
+Acceptance Criteria:
+-The system displays the available balance and payout history.
+-Merchants can initiate a payout request at any time.
+-The payout request form includes fields for the amount and bank details.
+-Merchants receive a confirmation email after submitting a payout request.
+
+
+Discounts and Promotions
+
+Create Discounts for Products
+As a merchant, I want to create discounts for my products, so that I can attract more customers and increase sales.
+Acceptance Criteria:
+-The system allows merchants to create discount offers.
+-Merchants can set start and end dates for the discounts.
+-The discount details are displayed on the product page and at checkout.
+-Customers see the discounted price applied when they add products to their cart.
+-The system sends notifications to merchants when a discount is about to expire.
