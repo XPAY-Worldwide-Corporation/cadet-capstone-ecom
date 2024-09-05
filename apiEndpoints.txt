@@ -1,0 +1,179 @@
+Customers
+Get all customers:
+GET /api/v1/customers
+
+Get a specific customer by ID:
+GET /api/v1/customers/{id}
+
+Create a new customer:
+POST /api/v1/customers
+Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", "verificationCode": "", "verificationCreatedAt": "", "government_id": "" }
+
+Update a customer:
+PUT /api/v1/customers/{id}
+Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", "verificationCode": "", "verificationCreatedAt": "", "government_id": "" }
+
+Delete a customer:
+DELETE /api/v1/customers/{id}
+
+Merchants
+Get all merchants:
+GET /api/v1/merchants
+
+Get a specific merchant by ID:
+GET /api/v1/merchants/{id}
+
+Create a new merchant:
+POST /api/v1/merchants
+Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", "verificationCode": "", "verificationCreatedAt": "" }
+
+Update a merchant:
+PUT /api/v1/merchants/{id}
+Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", "verificationCode": "", "verificationCreatedAt": "" }
+
+Delete a merchant:
+DELETE /api/v1/merchants/{id}
+
+Products
+Get all products:
+GET /api/v1/products
+
+Get a specific product by ID:
+GET /api/v1/products/{id}
+
+Create a new product:
+POST /api/v1/products
+Body: { "product_name": "", "content": "", "price": "", "isNew": "", "image": "", "variants_color": "", "variants_size": "", "variants_quantity": "", "category_id": "", "merchant_id": "" }
+
+Update a product:
+PUT /api/v1/products/{id}
+Body: { "product_name": "", "content": "", "price": "", "isNew": "", "image": "", "variants_color": "", "variants_size": "", "variants_quantity": "", "category_id": "", "merchant_id": "" }
+
+Delete a product:
+DELETE /api/v1/products/{id}
+
+Categories
+Get all categories:
+GET /api/v1/categories
+
+Get a specific category by ID:
+GET /api/v1/categories/{id}
+
+Create a new category:
+POST /api/v1/categories
+Body: { "name": "" }
+
+Update a category:
+PUT /api/v1/categories/{id}
+Body: { "name": "" }
+
+Delete a category:
+DELETE /api/v1/categories/{id}
+
+Inventory
+Get all inventory items:
+GET /api/v1/inventory
+
+Get a specific inventory item by ID:
+GET /api/v1/inventory/{id}
+
+Create a new inventory item:
+POST /api/v1/inventory
+Body: { "stock": "", "product_id": "" }
+
+Update an inventory item:
+PUT /api/v1/inventory/{id}
+Body: { "stock": "", "product_id": "" }
+
+Delete an inventory item:
+DELETE /api/v1/inventory/{id}
+
+Transactions
+Get all transactions:
+GET /api/v1/transactions
+
+Get a specific transaction by ID:
+GET /api/v1/transactions/{id}
+
+Create a new transaction:
+POST /api/v1/transactions
+Body: { "payment": "", "date": "", "status": "", "product_id": "", "customer_id": "" }
+
+Update a transaction:
+PUT /api/v1/transactions/{id}
+Body: { "payment": "", "date": "", "status": "", "product_id": "", "customer_id": "" }
+
+Delete a transaction:
+DELETE /api/v1/transactions/{id}
+
+Refunds
+Get all refunds:
+GET /api/v1/refunds
+
+Get a specific refund by ID:
+GET /api/v1/refunds/{id}
+
+Create a new refund:
+POST /api/v1/refunds
+Body: { "isRefund": "", "reason": "", "return_date": "", "refund_status": "", "transaction_id": "" }
+
+Update a refund:
+PUT /api/v1/refunds/{id}
+Body: { "isRefund": "", "reason": "", "return_date": "", "refund_status": "", "transaction_id": "" }
+
+Delete a refund:
+DELETE /api/v1/refunds/{id}
+
+Comments
+Get all comments:
+GET /api/v1/comments
+
+Get a specific comment by ID:
+GET /api/v1/comments/{id}
+
+Create a new comment:
+POST /api/v1/comments
+Body: { "rating": "", "description": "", "image": "", "transaction_id": "" }
+
+Update a comment:
+PUT /api/v1/comments/{id}
+Body: { "rating": "", "description": "", "image": "", "transaction_id": "" }
+
+Delete a comment:
+DELETE /api/v1/comments/{id}
+
+Information
+Get all information records:
+GET /api/v1/information
+
+Get a specific information record by ID:
+GET /api/v1/information/{id}
+
+Create a new information record:
+POST /api/v1/information
+Body: { "government_id": "", "isAccepted": "", "customer_id": "" }
+
+Update an information record:
+PUT /api/v1/information/{id}
+Body: { "government_id": "", "isAccepted": "", "customer_id": "" }
+
+Delete an information record:
+DELETE /api/v1/information/{id}
+
+Discounts
+Get all discounts:
+GET /api/v1/discounts
+
+Get a specific discount by ID:
+GET /api/v1/discounts/{id}
+
+Create a new discount:
+POST /api/v1/discounts
+Body: { "government_id": "", "customer_id": "", "merchant_id": "" }
+
+Update a discount:
+PUT /api/v1/discounts/{id}
+Body: { "government_id": "", "customer_id": "", "merchant_id": "" }
+
+Delete a discount:
+DELETE /api/v1/discounts/{id}
