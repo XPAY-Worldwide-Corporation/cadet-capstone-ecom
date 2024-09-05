@@ -1,0 +1,54 @@
+Authentication / Registration
+
+POST 		api/v1/auth/signin				    # authenticate user		
+POST		api/v1/auth/signup				    # add new user
+POST 		api/v1/auth/password-reset		# reset user’s password
+
+
+Products
+
+GET		api/v1/products				            # retrieve all products
+GET		api/v1/products?category=?		    # retrieve products by category
+GET 	api/v1/products?store_id=? 		    # retrieve all products of a store
+GET		api/v1/products?store_category=?	# retrieve products by store category
+GET		api/v1/products?pageSize=?&page=?	# retrieve paginated products
+GET 	api/v1/products?sortBy=?			    # retrieve sorted products by price
+
+POST	api/v1/products				            # add a product to listing
+
+GET		api/v1/products/:prod_id			    # retrieves a product
+PATCH   api/v1/products/:prod_id			  # update a product
+DELETE 	api/v1/products/:prod_id			  # delete a product
+
+
+Ratings and Reviews
+
+GET 		api/v1/ratings-reviews			    # retrieve all reviews associated to store
+GET 		api/v1/ratings-reviews			    # retrieve all reviews associated to customer
+GET 		api/v1/ratings-reviews?prod_id=?	# retrieve all reviews of a product
+POST 		api/v1/ratings-reviews			      # add review to a product 
+
+
+Cart
+
+GET 		api/v1/carts					            # retrieve cart of customer
+POST 		api/v1/carts					            # add item to user's cart
+PATCH		api/v1/carts/:cart_id/item/:item_id	  # update cart item
+DELETE	api/v1/carts/:cart_id/item/:item_id	  # delete item from cart
+
+
+Bookmark	
+
+GET 		api/v1/bookmarks/				          # retrieves the bookmark list of customer
+POST 		api/v1/bookmarks/:bookmark_id	    # add item to bookmark
+DELETE 	api/v1/bookmarks/:bookmark_id/item/:item_id 	# delete item from bookmark
+
+
+Role-Specific Endpoints
+
+GET 		api/v1/customer/addresses		       # retrieve all addresses of customer
+GET 		api/v1/customer/addresses/:add_id	 # retrieve an address of customer
+PATCH 	api/v1/customer/addresses/:add_id	 # update all addresses of customer
+DELETE  api/v1/customer/addresses/:add_id	 # update all addresses of customer
+POST 		api/v1/customer/addresses		       # add address to customer’s addresses
+
