@@ -7,11 +7,11 @@ GET /api/v1/customers/{id}
 
 Create a new customer:
 POST /api/v1/customers
-Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", "verificationCode": "", "verificationCreatedAt": "", "government_id": "" }
+Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", "government_id": "" }
 
 Update a customer:
 PUT /api/v1/customers/{id}
-Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", "verificationCode": "", "verificationCreatedAt": "", "government_id": "" }
+Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", "government_id": "" }
 
 Delete a customer:
 DELETE /api/v1/customers/{id}
@@ -25,11 +25,11 @@ GET /api/v1/merchants/{id}
 
 Create a new merchant:
 POST /api/v1/merchants
-Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", "verificationCode": "", "verificationCreatedAt": "" }
+Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", }
 
 Update a merchant:
 PUT /api/v1/merchants/{id}
-Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", "verificationCode": "", "verificationCreatedAt": "" }
+Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "" }
 
 Delete a merchant:
 DELETE /api/v1/merchants/{id}
@@ -59,6 +59,8 @@ Query Parameters:
   - category_id (optional, integer): Filter by category
   - price_min (optional, number): Minimum price filter
   - price_max (optional, number): Maximum price filter
+  - ratings(optional, number): Filter by ratings
+
 
 Categories
 Get all categories:
@@ -109,7 +111,7 @@ Body: { "payment": "", "date": "", "status": "", "product_id": "", "customer_id"
 
 Update a transaction:
 PUT /api/v1/transactions/{id}
-Body: { "payment": "", "date": "", "status": "", "product_id": "", "customer_id": "" }
+Body: { "status": "" }
 
 Delete a transaction:
 DELETE /api/v1/transactions/{id}
@@ -127,7 +129,7 @@ Body: { "isRefund": "", "reason": "", "return_date": "", "refund_status": "", "t
 
 Update a refund:
 PUT /api/v1/refunds/{id}
-Body: { "isRefund": "", "reason": "", "return_date": "", "refund_status": "", "transaction_id": "" }
+Body: { "isRefund": "","return_date": "", "refund_status": "" }
 
 Delete a refund:
 DELETE /api/v1/refunds/{id}
@@ -163,28 +165,10 @@ Body: { "government_id": "", "isAccepted": "", "customer_id": "" }
 
 Update an discount record:
 PUT /api/v1/discount/{id}
-Body: { "government_id": "", "isAccepted": "", "customer_id": "" }
+Body: { "isAccepted": "" }
 
 Delete an discount record:
 DELETE /api/v1/discount/{id}
-
-Discounts
-Get all discounts:
-GET /api/v1/discounts
-
-Get a specific discount by ID:
-GET /api/v1/discounts/{id}
-
-Create a new discount:
-POST /api/v1/discounts
-Body: { "government_id": "", "customer_id": "", "merchant_id": "" }
-
-Update a discount:
-PUT /api/v1/discounts/{id}
-Body: { "government_id": "", "customer_id": "", "merchant_id": "" }
-
-Delete a discount:
-DELETE /api/v1/discounts/{id}
 
 Authentication
 Login:
