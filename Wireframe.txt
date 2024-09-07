@@ -1,0 +1,9 @@
+Wireframe
+
+
+User:
+https://www.figma.com/design/SJF0J6agMDhSeSxOHZzjR5/XPAY-User(Final)?node-id=0-1&t=YXzj5dqZGcInaNPU-1
+
+
+Merchant:
+https://www.figma.com/design/vpnXOZVg8LHLFYTFeGjuf1/XPAY-Merchant?t=YXzj5dqZGcInaNPU-1
