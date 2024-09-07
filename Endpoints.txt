@@ -1,0 +1,407 @@
+"Endpoints"
+
+1.	Users
+POST /api/v1/users
+Body:
+{
+  "name": "Byun Baekhyun",
+  "email": "byun.baekhyun@example.com",
+  "password": "password123",
+  "phone_number": "1234567890",
+  "profile_picture": "http://example.com/baekhyun.jpg",
+  "gender": "Male"
+}
+
+GET /api/v1/users
+Body:
+[
+  {
+    "id": 1,
+    "name": "Byun Baekhyun",
+    "email": " byun.baekhyun@example.com",
+    "phone_number": "1234567890",
+    "created_at": "2023-09-01T12:34:56"
+  }
+]
+
+GET /api/v1/users/{id}
+Body:
+{
+  "id": 1,
+  "name": "Byun Baekhyun",
+  "email": "byun.baekhyun@example.com",
+  "phone_number": "1234567890",
+  "created_at": "2023-09-01T12:34:56"
+}
+
+GET /api/v1/users/{id}
+Body:
+{
+  "id": 1,
+  "name": "Byun Baekhyun",
+  "email": "byun.baekhyun@example.com",
+  "phone_number": "1234567890",
+  "created_at": "2023-09-01T12:34:56"
+}
+
+PUT /api/v1/users/{id}
+Body:
+{
+  "name": "Byun Baekhyun",
+  "email": "byun.baekhyun@example.com",
+  "phone_number": "0987654321"
+}
+
+DELETE /api/v1/users/{id}
+
+
+
+2.	Merchants
+POST /api/v1/merchants
+Body:
+{
+  "name": "Kim Taeyeon",
+  "email": "kim.taeyeon@example.com",
+  "password": "password123",
+  "phone_number": "9876543210",
+  "business_name": "Taeyeon's Store",
+  "business_address": "123 Market St",
+  "tax_id": "123456789",
+  "bank_details": "Account No: 123456789"
+}
+
+GET /api/v1/merchants
+[
+  {
+    "id": 1,
+    "name": "Kim Taeyeon",
+    "business_name": "Taeyeon's Store",
+    "business_address": "123 Market St",
+    "email": "kim.taeyeon@example.com"
+  }
+]
+
+GET /api/v1/merchants/{id}
+Body:
+{
+  "id": 1,
+  "name": "Kim Taeyeon",
+  "business_name": "Taeyeon’s Store",
+  "email": "kim.taeyeon@example.com",
+  "phone_number": "9876543210"
+}
+
+PUT /api/v1/merchants/{id}
+Body:
+{
+  "business_name": "Taeyeon’s Updated Store",
+  "business_address": "456 New St"
+}
+
+DELETE /api/v1/merchants/{id}
+
+3.	Products
+POST /api/v1/products
+Body:
+{
+  "merchant_id": 1,
+  "name": "Product A",
+  "description": "This is a product",
+  "price": 50.00,
+  "stock_quantity": 100,
+  "category": "Electronics"
+}
+
+GET /api/v1/products
+Body:
+[
+  {
+    "id": 1,
+    "name": "Product A",
+    "description": "This is a product",
+    "price": 50.00,
+    "stock_quantity": 100
+  }
+]
+
+
+GET /api/v1/products/{id}
+Body:
+{
+  "id": 1,
+  "name": "Product A",
+  "description": "This is a product",
+  "price": 50.00,
+  "stock_quantity": 100
+}
+
+
+PUT /api/v1/products/{id}
+Body:
+{
+  "name": "Updated Product",
+  "price": 55.00,
+  "stock_quantity": 150
+}
+
+DELETE /api/v1/products/{id}
+
+
+4. Product Images
+POST /api/v1/product-images
+Body:
+{
+  "product_id": 1,
+  "image_url": "http://example.com/image1.jpg"
+}
+
+GET /api/v1/products/{id}/images
+Body:
+[
+  {
+    "id": 1,
+    "product_id": 1,
+    "image_url": "http://example.com/image1.jpg"
+  }
+]
+
+DELETE /api/v1/product-images/{id}
+
+
+5. Orders
+POST /api/v1/orders
+Body:
+{
+  "user_id": 1,
+  "merchant_id": 1,
+  "status": "Pending",
+  "total_price": 150.00,
+  "shipping_address": "123 Street, City",
+  "payment_method": "Credit Card"
+}
+
+GET /api/v1/orders
+GET /api/v1/orders/{id}
+PUT /api/v1/orders/{id}
+Body:
+{
+  "status": "Shipped"
+}
+
+DELETE /api/v1/orders/{id}
+
+
+6. Order Items
+POST /api/v1/order-items
+Body:
+{
+  "order_id": 1,
+  "product_id": 1,
+  "quantity": 2,
+  "price": 50.00
+}
+
+GET /api/v1/orders/{id}/items
+DELETE /api/v1/order-items/{id}
+
+
+7. Shopping Carts
+POST /api/v1/shopping-carts
+Body:
+{
+  "user_id": 1
+}
+
+GET /api/v1/users/{id}/cart
+DELETE /api/v1/shopping-carts/{id}
+
+
+8. Cart Items
+POST /api/v1/cart-items
+Body:
+{
+  "cart_id": 1,
+  "product_id": 1,
+  "quantity": 2
+}
+
+GET /api/v1/carts/{id}/items
+DELETE /api/v1/cart-items/{id}
+
+
+9. Refunds
+POST /api/v1/refunds
+Body:
+{
+  "order_id": 1,
+  "user_id": 1,
+  "reason": "Defective product",
+  "status": "Pending"
+}
+
+GET /api/v1/refunds/{id}
+PUT /api/v1/refunds/{id}
+
+
+10. Reviews
+POST /api/v1/reviews
+Body:
+{
+  "product_id": 1,
+  "user_id": 1,
+  "rating": 5,
+  "review_text": "Great product!"
+}
+
+GET /api/v1/products/{id}/reviews
+DELETE /api/v1/reviews/{id}
+
+
+11. Wishlists
+POST /api/v1/wishlists
+Body:
+{
+  "user_id": 1
+}
+
+GET /api/v1/users/{id}/wishlists
+DELETE /api/v1/wishlists/{id}
+
+
+12. Wishlist Items
+POST /api/v1/wishlist-items
+Body:
+{
+  "wishlist_id": 1,
+  "product_id": 1
+}
+GET /api/v1/wishlists/{id}/items
+DELETE /api/v1/wishlist-items/{id}
+
+
+13. Messages
+POST /api/v1/messages
+Body:
+{
+  "user_id": 1,
+  "merchant_id": 1,
+  "message_text": "I have a question about my order."
+}
+
+GET /api/v1/users/{id}/messages
+DELETE /api/v1/messages/{id}
+
+
+14. Orders by User (Additional)
+GET /api/v1/users/{id}/orders
+Body:
+[
+  {
+    "id": 1,
+    "merchant_id": 1,
+    "status": "Pending",
+    "total_price": 150.00,
+    "shipping_address": "123 Street, City",
+    "created_at": "2023-09-01T12:34:56"
+  },
+  {
+    "id": 2,
+    "merchant_id": 2,
+    "status": "Delivered",
+    "total_price": 200.00,
+    "shipping_address": "456 Avenue, City",
+    "created_at": "2023-08-15T10:22:45"
+  }
+]
+
+GET /api/v1/users/{user_id}/orders/{order_id}
+Body:
+{
+  "id": 1,
+  "merchant_id": 1,
+  "status": "Pending",
+  "total_price": 150.00,
+  "shipping_address": "123 Street, City",
+  "created_at": "2023-09-01T12:34:56"
+}
+
+PUT /api/v1/users/{user_id}/orders/{order_id}
+Body:
+{
+  "status": "Shipped"
+}
+
+DELETE /api/v1/users/{user_id}/orders/{order_id}
+
+
+15. Products by Merchant
+GET /api/v1/merchants/{id}/products
+Body:
+[
+  {
+    "id": 1,
+    "name": "Product A",
+    "description": "This is a product",
+    "price": 50.00,
+    "stock_quantity": 100,
+    "category": "Electronics",
+    "created_at": "2023-09-01T12:34:56"
+  },
+  {
+    "id": 2,
+    "name": "Product B",
+    "description": "This is another product",
+    "price": 100.00,
+    "stock_quantity": 50,
+    "category": "Home Appliance",
+    "created_at": "2023-08-15T10:22:45"
+  }
+]
+
+POST /api/v1/merchants/{id}/products
+Body:
+{
+  "name": "New Product",
+  "description": "This is a new product",
+  "price": 75.00,
+  "stock_quantity": 200,
+  "category": "Fashion"
+}
+
+PUT /api/v1/merchants/{merchant_id}/products/{product_id}
+Body:
+{
+  "name": "Updated Product",
+  "price": 80.00,
+  "stock_quantity": 150
+}
+
+DELETE /api/v1/merchants/{merchant_id}/products/{product_id}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
