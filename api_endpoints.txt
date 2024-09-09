@@ -3,12 +3,14 @@ Authentication / Registration
 POST 		api/v1/auth/signin				    # authenticate user		
 POST		api/v1/auth/signup				    # add new user
 POST 		api/v1/auth/password-reset		# reset user’s password
+GET		  api/v1/auth/signout			      # sign user out
 
 
 Products
 
 GET		api/v1/products				            # retrieve all products
 GET		api/v1/products?category=?		    # retrieve products by category
+GET 	api/v1/products?search=?		      # search product w/ name or keyword   
 GET 	api/v1/products?store_id=? 		    # retrieve all products of a store
 GET		api/v1/products?store_category=?	# retrieve products by store category
 GET		api/v1/products?pageSize=?&page=?	# retrieve paginated products
@@ -16,7 +18,7 @@ GET 	api/v1/products?sortBy=?			    # retrieve sorted products by price
 
 POST	api/v1/products				            # add a product to listing
 
-GET		api/v1/products/:prod_id			    # retrieves a product
+GET		 api/v1/products/:prod_id			    # retrieves a product
 PATCH   api/v1/products/:prod_id			  # update a product
 DELETE 	api/v1/products/:prod_id			  # delete a product
 
@@ -43,6 +45,31 @@ GET 		api/v1/bookmarks/				          # retrieves the bookmark list of customer
 POST 		api/v1/bookmarks/:bookmark_id	    # add item to bookmark
 DELETE 	api/v1/bookmarks/:bookmark_id/item/:item_id 	# delete item from bookmark
 
+Orders
+
+GET 		api/v1/orders				              # retrieve all orders 
+GET 		api/v1/orders/:order_id			      # retrieve an order
+GET 		api/v1/orders?status=?			      # retrieve orders by status
+POST		api/v1/orders				              # place a new order
+PATCH 	api/v1/orders/:order_id 			    # update an order
+
+GET 		api/v1/order-items/:order_item_id	# retrieve an order item
+PATCH 	api/v1/order-items/:order_item_id	# update an order_item
+
+
+Returns
+
+GET 		api/v1/returns				            # get all returns
+GET 		api/v1/returns/:return_id			    # retrieve a status
+GET 		api/v1/returns?status=?			      # retrieve returns by status
+POST  	api/v1/returns 				            # add a new return
+PATCH 	api/v1/returns/:return_id			    # update a return
+DELETE 	api/v1/return/:return_id			    # delete a return
+
+
+Categories
+
+GET		api/v1/categories				# retrieves all categories (platform)
 
 Role-Specific Endpoints
 
