@@ -58,7 +58,7 @@ As a customer, I want to update my notification preferences so that I receive on
 
 Acceptance Criteria:
 - The account settings page displays a section for managing notification preferences.
-- The customer can select or deselect notifications.	
+- The customer can select or deselect notifications.
 - Changes to notification preferences are saved immediately after the customer makes a selection.
 - A success message confirms that the notification preferences have been updated.
 - The updated preferences are reflected in the customer’s account without requiring a page refresh.
