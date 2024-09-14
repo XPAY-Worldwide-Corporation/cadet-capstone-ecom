@@ -1,3 +1,13 @@
+Managing Roles (Merchant and Customer)
+I can create, view, update, and delete roles (Merchant and Customer) to manage user roles effectively.
+
+Acceptance Criteria:
+
+I can create a role by entering "Merchant" or "Customer" in the role creation form, with validation to allow only these two roles.
+I can view a list of all roles (Merchant and Customer) in a table that displays role names and unique identifiers.
+I can update a role by selecting it from the list and changing its name to either "Merchant" or "Customer."
+I can delete a role by selecting it from the list, confirming the deletion, and receiving a success message if it is successfully removed.
+
 CUSTOMER USER STORIES
 
 Customer Registration and Login
