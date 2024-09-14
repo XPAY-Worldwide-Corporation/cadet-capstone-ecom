@@ -1,56 +1,74 @@
+Roles
+Get all roles:
+GET /api/v1/roles - done
+
+Get a specific role by ID:
+GET /api/v1/roles/:id - done
+
+Create a new role:
+POST /api/v1/roles - done
+Body: { "roleName": "" }
+
+Update a role:
+PATCH /api/v1/roles/:id - done
+Body: { "roleName": "" }
+
+Delete a role: - done
+DELETE /api/v1/roles/:id
+
 Customers
 Get all customers:
-GET /api/v1/customers
+GET /api/v1/customers - done
 
 Get a specific customer by ID:
-GET /api/v1/customers/{id}
+GET /api/v1/customers/:id - done
 
 Create a new customer:
-POST /api/v1/customers
+POST /api/v1/customers - done
 Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", "government_id": "" }
 
 Update a customer:
-PATCH /api/v1/customers/{id}
+PATCH /api/v1/customers/:id
 Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", "government_id": "" }
 
 Delete a customer:
-DELETE /api/v1/customers/{id}
+DELETE /api/v1/customers/:id
 
 Merchants
 Get all merchants:
 GET /api/v1/merchants
 
 Get a specific merchant by ID:
-GET /api/v1/merchants/{id}
+GET /api/v1/merchants/:id
 
 Create a new merchant:
 POST /api/v1/merchants
 Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", }
 
 Update a merchant:
-PATCH /api/v1/merchants/{id}
+PATCH /api/v1/merchants/:id
 Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "" }
 
 Delete a merchant:
-DELETE /api/v1/merchants/{id}
+DELETE /api/v1/merchants/:id
 
 Products
 Get all products:
 GET /api/v1/products
 
 Get a specific product by ID:
-GET /api/v1/products/{id}
+GET /api/v1/products/:id
 
 Create a new product:
 POST /api/v1/products
 Body: { "product_name": "", "content": "", "price": "", "isNew": "", "image": "", "variants_color": "", "variants_size": "", "variants_quantity": "", "category_id": "", "merchant_id": "" }
 
 Update a product:
-PATCH /api/v1/products/{id}
+PATCH /api/v1/products/:id
 Body: { "product_name": "", "content": "", "price": "", "isNew": "", "image": "", "variants_color": "", "variants_size": "", "variants_quantity": "", "category_id": "", "merchant_id": "" }
 
 Delete a product:
-DELETE /api/v1/products/{id}
+DELETE /api/v1/products/:id
 
 Search Products:
 GET /api/v1/products/search
@@ -66,108 +84,108 @@ Get all categories:
 GET /api/v1/categories
 
 Get a specific category by ID:
-GET /api/v1/categories/{id}
+GET /api/v1/categories/:id
 
 Create a new category:
 POST /api/v1/categories
 Body: { "name": "" }
 
 Update a category:
-PATCH /api/v1/categories/{id}
+PATCH /api/v1/categories/:id
 Body: { "name": "" }
 
 Delete a category:
-DELETE /api/v1/categories/{id}
+DELETE /api/v1/categories/:id
 
 Inventory
 Get all inventory items:
 GET /api/v1/inventory
 
 Get a specific inventory item by ID:
-GET /api/v1/inventory/{id}
+GET /api/v1/inventory/:id
 
 Create a new inventory item:
 POST /api/v1/inventory
 Body: { "stock": "", "product_id": "" }
 
 Update an inventory item:
-PATCH /api/v1/inventory/{id}
+PATCH /api/v1/inventory/:id
 Body: { "stock": "", "product_id": "" }
 
 Delete an inventory item:
-DELETE /api/v1/inventory/{id}
+DELETE /api/v1/inventory/:id
 
 Transactions
 Get all transactions:
 GET /api/v1/transactions
 
 Get a specific transaction by ID:
-GET /api/v1/transactions/{id}
+GET /api/v1/transactions/:id
 
 Create a new transaction:
 POST /api/v1/transactions
 Body: { "payment": "", "date": "", "status": "", "product_id": "", "customer_id": "" }
 
 Update a transaction:
-PATCH /api/v1/transactions/{id}
+PATCH /api/v1/transactions/:id
 Body: { "status": "" }
 
 Delete a transaction:
-DELETE /api/v1/transactions/{id}
+DELETE /api/v1/transactions/:id
 
 Refunds
 Get all refunds:
 GET /api/v1/refunds
 
 Get a specific refund by ID:
-GET /api/v1/refunds/{id}
+GET /api/v1/refunds/:id
 
 Create a new refund:
 POST /api/v1/refunds
 Body: { "isRefund": "", "reason": "", "return_date": "", "refund_status": "", "transaction_id": "" }
 
 Update a refund:
-PATCH /api/v1/refunds/{id}
+PATCH /api/v1/refunds/:id
 Body: { "isRefund": "","return_date": "", "refund_status": "" }
 
 Delete a refund:
-DELETE /api/v1/refunds/{id}
+DELETE /api/v1/refunds/:id
 
 Comments
 Get all comments:
 GET /api/v1/comments
 
 Get a specific comment by ID:
-GET /api/v1/comments/{id}
+GET /api/v1/comments/:id
 
 Create a new comment:
 POST /api/v1/comments
 Body: { "rating": "", "description": "", "image": "", "transaction_id": "" }
 
 Update a comment:
-PATCH /api/v1/comments/{id}
+PATCH /api/v1/comments/:id
 Body: { "rating": "", "description": "", "image": "" }
 
 Delete a comment:
-DELETE /api/v1/comments/{id}
+DELETE /api/v1/comments/:id
 
 Discount
 Get all discount records:
 GET /api/v1/discount
 
 Get a specific discount record by ID:
-GET /api/v1/discount/{id}
+GET /api/v1/discount/:id
 
 Create a new discount record:
 POST /api/v1/discount
 Body: { "government_id": "", "isAccepted": "", "customer_id": "" }
 
 Update an discount record:
-PATCH /api/v1/discount/{id}
+PATCH /api/v1/discount/:id
 Body: { "isAccepted": "" }
 
 Delete an discount record:
-DELETE /api/v1/discount/{id}
+DELETE /api/v1/discount/:id
 
 Authentication
 Login:
