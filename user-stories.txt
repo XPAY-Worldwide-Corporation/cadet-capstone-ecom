@@ -95,7 +95,7 @@ Acceptance Criteria
 - Customer reviews and ratings are visible on the product page, along with an option to write a review.
 - The product page includes availability status (e.g., in stock, out of stock).
 - Related products or recommendations are shown below the product details.
-- An "Add to Cart" button is prominently displayed, along with options to select quantity and variations (e.g., size, color).
+- An "Add to Cart" button is prominently displayed, along with options to select quantity.
 
 Adding Products to Cart
 
@@ -106,7 +106,6 @@ Acceptance Criteria:
 - Clicking the "Add to Cart" button adds the selected product to the shopping cart.
 - A confirmation message or notification appears indicating that the product has been successfully added to the cart.
 - The cart icon or cart summary is updated immediately to reflect the new item count.
-- If the product has variations (e.g., size, color), the customer must select options before adding the item to the cart.
 - The customer remains on the product page after adding the product to the cart, with an option to view the cart or continue shopping.
 - The added product, along with its quantity and selected options, is visible in the cart for review.
 
@@ -223,7 +222,7 @@ As a customer, I want to initiate a return or exchange if I'm unsatisfied with m
 
 Acceptance Criteria:
 - The order details page includes a "Return/Exchange" option for eligible items.
-- Customers can select the reason for the return or exchange from a predefined list (e.g., defective product, wrong size).
+- Customers can select the reason for the return or exchange from a predefined list (e.g., defective product).
 - Customers choose a preferred resolution (e.g., refund, replacement) during the return/exchange process.
 - The return/exchange form displays the return policy and any applicable terms.
 - Once initiated, customers receive a confirmation message with further instructions.
@@ -429,7 +428,6 @@ As a merchant, I want to process exchanges for returned items so that customers 
 
 Acceptance Criteria:
 - The return management system includes options to initiate exchanges for returned items.
-- Merchants can select alternative products (e.g., different sizes, colors, or models) for the exchange.
 - The system updates the order details to reflect the new product(s) being sent.
 - Customers receive a notification about the new shipment, including tracking information if applicable.
 - The original order status is updated to reflect the exchange process.
