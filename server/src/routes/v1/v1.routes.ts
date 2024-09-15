@@ -5,6 +5,13 @@ import {
   MerchantsModule,
   CustomersModule,
   AuthModule,
+  CategoriesModule,
+  ProductsModule,
+  InventoriesModule,
+  DiscountsModule,
+  TransactionsModule,
+  CommentsModule,
+  RefundModule,
 } from "../v1";
 
 export const v1Routes: RouteTree[] = [
@@ -23,5 +30,37 @@ export const v1Routes: RouteTree[] = [
   {
     path: RESOURCE.AUTH,
     module: AuthModule,
+  },
+  {
+    path: RESOURCE.AUTH,
+    module: AuthModule,
+  },
+  {
+    path: RESOURCE.CATEGORIES,
+    module: CategoriesModule,
+  },
+  {
+    path: RESOURCE.PRODUCTS,
+    module: ProductsModule,
+  },
+  {
+    path: RESOURCE.INVENTORIES,
+    module: InventoriesModule,
+  },
+  {
+    path: RESOURCE.DISCOUNTS,
+    module: DiscountsModule,
+  },
+  {
+    path: RESOURCE.TRANSACTIONS,
+    module: TransactionsModule,
+  },
+  {
+    path: RESOURCE.COMMENTS,
+    module: CommentsModule,
+  },
+  {
+    path: RESOURCE.REFUNDS,
+    module: RefundModule,
   },
 ];
