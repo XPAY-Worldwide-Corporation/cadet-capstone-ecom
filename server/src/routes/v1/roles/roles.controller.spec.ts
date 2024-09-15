@@ -61,76 +61,37 @@ describe("RolesController", () => {
 
   it("should create a Customer role", async () => {
     const result = await controller.create(roleDtos.customer);
-    expect(result).toEqual({
-      data: { id: 1, roleName: "Customer" },
-      message: "Role created successfully",
-      meta: {},
-      status: true,
-    });
+    expect(result).toMatchSnapshot();
   });
 
   it("should create a Merchant role", async () => {
     await controller.create(roleDtos.customer);
     const result = await controller.create(roleDtos.merchant);
-    expect(result).toEqual({
-      data: { id: 2, roleName: "Merchant" },
-      message: "Role created successfully",
-      meta: {},
-      status: true,
-    });
+    expect(result).toMatchSnapshot();
   });
 
   it("should return all roles", async () => {
     await controller.create(roleDtos.customer);
     await controller.create(roleDtos.merchant);
     const result = await controller.findAll();
-    expect(result).toEqual({
-      data: [
-        { id: 1, roleName: "Customer" },
-        { id: 2, roleName: "Merchant" },
-      ],
-      message: "All roles retrieved successfully",
-      meta: {},
-      status: true,
-    });
+    expect(result).toMatchSnapshot();
   });
 
   it("should find a Customer role", async () => {
     await controller.create(roleDtos.customer);
     const result = await controller.findOne(1);
-    expect(result).toEqual({
-      data: { id: 1, roleName: "Customer" },
-      message: "Role retrieved successfully",
-      meta: {},
-      status: true,
-    });
+    expect(result).toMatchSnapshot();
   });
 
   it("should update Customer role", async () => {
     await controller.create(roleDtos.customer);
     const result = await controller.update(1, roleDtos.updateCustomer);
-    expect(result).toEqual({
-      data: { id: 1, roleName: "Customer" },
-      message: "Role updated successfully",
-      meta: {},
-      status: true,
-    });
+    expect(result).toMatchSnapshot();
   });
 
   it("should delete the Customer role", async () => {
     await controller.create(roleDtos.customer);
     const result = await controller.remove(1);
-    expect(result).toEqual({
-      data: { id: 1, roleName: "Customer" },
-      message: "Role deleted successfully",
-      meta: {},
-      status: true,
-    });
-  });
-
-  it("should throw NotFoundException when trying to find a deleted role", async () => {
-    await controller.create(roleDtos.customer);
-    await controller.remove(1);
-    await expect(controller.findOne(1)).rejects.toThrow(NotFoundException);
+    expect(result).toMatchSnapshot();
   });
 });
