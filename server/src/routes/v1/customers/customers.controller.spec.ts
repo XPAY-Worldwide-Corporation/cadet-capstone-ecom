@@ -203,6 +203,7 @@ describe("CustomersController", () => {
     expect(result).toEqual(
       mockResponse(mockCustomer, "Customer created successfully"),
     );
+    expect(result).toMatchSnapshot();
   });
 
   it("should return all customers", async () => {
@@ -222,6 +223,7 @@ describe("CustomersController", () => {
         "All customers retrieved successfully",
       ),
     );
+    expect(result).toMatchSnapshot();
   });
 
   it("should return a single customer", async () => {
@@ -235,6 +237,7 @@ describe("CustomersController", () => {
     expect(result).toEqual(
       mockResponse(mockCustomer, "Customer retrieved successfully"),
     );
+    expect(result).toMatchSnapshot();
   });
 
   it("should update a Customer's details", async () => {
@@ -280,6 +283,7 @@ describe("CustomersController", () => {
         "Customer updated successfully",
       ),
     );
+    expect(result).toMatchSnapshot();
   });
 
   it("should delete a Customer", async () => {
@@ -296,5 +300,6 @@ describe("CustomersController", () => {
     expect(result).toEqual(
       mockResponse(mockCustomer, "Customer deleted successfully"),
     );
+    expect(result).toMatchSnapshot();
   });
 });
