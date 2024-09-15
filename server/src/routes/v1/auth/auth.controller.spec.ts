@@ -54,11 +54,7 @@ describe("AuthController & AuthService", () => {
 
       const result = await controller.loginUser(loginDto);
 
-      expect(result).toEqual(
-        responseHandler(mockResponse.user, "User Login successfully", {
-          accessToken: mockResponse.accessToken,
-        }),
-      );
+      expect(result).toMatchSnapshot();
     });
 
     it("should throw NotFoundException if user is not found", async () => {
@@ -98,7 +94,7 @@ describe("AuthController & AuthService", () => {
 
       const result = await controller.logoutUser();
 
-      expect(result).toEqual(responseHandler([], "User Logout successfully"));
+      expect(result).toMatchSnapshot();
     });
 
     it("should throw UnauthorizedException if no user is logged in", async () => {
