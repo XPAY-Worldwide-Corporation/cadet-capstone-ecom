@@ -61,11 +61,11 @@ GET /api/v1/products/:id
 
 Create a new product:
 POST /api/v1/products
-Body: { "product_name": "", "content": "", "price": "", "isNew": "", "image": "", "variants_color": "", "variants_size": "", "variants_quantity": "", "category_id": "", "merchant_id": "" }
+Body: { "product_name": "", "content": "", "price": "", "isNew": "", "image": "", "category_id": "", "merchant_id": "" }
 
 Update a product:
 PATCH /api/v1/products/:id
-Body: { "product_name": "", "content": "", "price": "", "isNew": "", "image": "", "variants_color": "", "variants_size": "", "variants_quantity": "", "category_id": "", "merchant_id": "" }
+Body: { "product_name": "", "content": "", "price": "", "isNew": "", "image": "", "category_id": "", "merchant_id": "" }
 
 Delete a product:
 DELETE /api/v1/products/:id
