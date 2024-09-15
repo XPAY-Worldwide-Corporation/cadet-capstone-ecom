@@ -153,21 +153,19 @@ describe("MerchantsController", () => {
       password: hashedPassword,
     };
 
-    const files: any[] = [
+    const files = [
       {
         originalname: "image1.jpg",
         mimetype: "image/jpeg",
         size: 1234,
-      },
+      } as Express.Multer.File,
     ];
 
     const result = await controller.create(
       createMerchantDtoWithPassword,
       files,
     );
-    expect(result).toEqual(
-      mockResponse(mockMerchant, "Merchant created successfully"),
-    );
+    expect(result).toMatchSnapshot();
   });
 
   it("should return all merchants", async () => {
@@ -181,12 +179,7 @@ describe("MerchantsController", () => {
     );
 
     const result = await controller.findAll();
-    expect(result).toEqual(
-      mockResponse(
-        mockService.merchants,
-        "All merchants retrieved successfully",
-      ),
-    );
+    expect(result).toMatchSnapshot();
   });
 
   it("should return a single merchant", async () => {
@@ -197,9 +190,7 @@ describe("MerchantsController", () => {
     );
 
     const result = await controller.findOne(1);
-    expect(result).toEqual(
-      mockResponse(mockMerchant, "Merchant retrieved successfully"),
-    );
+    expect(result).toMatchSnapshot();
   });
 
   it("should update a Merchant's details", async () => {
@@ -215,16 +206,16 @@ describe("MerchantsController", () => {
       ),
     );
 
-    const result = await controller.update(1, updateMerchantDto, []);
-    expect(result).toEqual(
-      mockResponse(
-        {
-          ...mockMerchant,
-          ...updateMerchantDto,
-        },
-        "Merchant updated successfully",
-      ),
-    );
+    const files = [
+      {
+        originalname: "image2.jpg",
+        mimetype: "image/jpeg",
+        size: 1234,
+      } as Express.Multer.File,
+    ];
+
+    const result = await controller.update(1, updateMerchantDto, files);
+    expect(result).toMatchSnapshot();
   });
 
   it("should delete a Merchant", async () => {
@@ -235,8 +226,6 @@ describe("MerchantsController", () => {
     );
 
     const result = await controller.remove(1);
-    expect(result).toEqual(
-      mockResponse(mockMerchant, "Merchant deleted successfully"),
-    );
+    expect(result).toMatchSnapshot();
   });
 });
