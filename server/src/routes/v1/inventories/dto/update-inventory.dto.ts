@@ -1,10 +1,10 @@
 import { PartialType } from "@nestjs/mapped-types";
 import { CreateInventoryDto } from "./create-inventory.dto";
-import { IsString, IsNotEmpty, IsInt } from "class-validator";
+import { IsNotEmpty, IsInt } from "class-validator";
 import { Transform } from "class-transformer";
 
 export class UpdateInventoryDto extends PartialType(CreateInventoryDto) {
-  @IsString()
+  @IsInt()
   @IsNotEmpty()
   stock: string;
 
