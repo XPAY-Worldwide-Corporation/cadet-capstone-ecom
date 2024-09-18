@@ -19,7 +19,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"johndoe@test.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"raw": "{\r\n    \"email\": \"supermario@test.com\",\r\n    \"password\": \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -690,9 +690,8 @@
 							],
 							"variable": [
 								{
-									"id": "cb626530-6b4d-415b-9f14-1cc562767a0a",
 									"key": "id",
-									"value": "1"
+									"value": "2"
 								}
 							]
 						}
@@ -896,12 +895,12 @@
 							"formdata": [
 								{
 									"key": "product_name",
-									"value": "T-Shirt",
+									"value": "Another T-Shirt",
 									"type": "text"
 								},
 								{
 									"key": "price",
-									"value": "300",
+									"value": "500",
 									"type": "text"
 								},
 								{
@@ -960,7 +959,7 @@
 								},
 								{
 									"key": "categoryId",
-									"value": "1",
+									"value": "2",
 									"type": "text"
 								},
 								{
@@ -981,7 +980,6 @@
 							],
 							"variable": [
 								{
-									"id": "5c28b37b-9f9f-4f62-aac2-6ef00c9074cf",
 									"key": "id",
 									"value": "1"
 								}
@@ -1027,183 +1025,6 @@
 				}
 			],
 			"id": "08b906c1-4a94-41a3-a06b-58dfb7f06757"
-		},
-		{
-			"name": "INVENTORIES",
-			"item": [
-				{
-					"name": "GET ALL INVENTORIES",
-					"id": "3c3139c5-dfb7-40d9-bbe8-06a91a6ba7a8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{Bearer}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "",
-									"value": "",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						},
-						"url": "{{URI}}{{V1}}inventories"
-					},
-					"response": []
-				},
-				{
-					"name": "GET SINGLE INVENTORY",
-					"id": "17708218-311c-49f6-b489-059a73aa5e95",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{Bearer}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{URI}}{{V1}}inventories/:id",
-							"host": [
-								"{{URI}}{{V1}}inventories"
-							],
-							"path": [
-								":id"
-							],
-							"variable": [
-								{
-									"id": "ad443bcc-8092-497e-a764-bb03b0678115",
-									"key": "id",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "CREATE INVENTORY",
-					"id": "7095ade1-08e6-47ff-b605-77893d3701f3",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{Bearer}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"stock\": 999,\r\n    \"productId\": \"1\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{URI}}{{V1}}inventories"
-					},
-					"response": []
-				},
-				{
-					"name": "EDIT INVENTORY",
-					"id": "24b6fe4e-a16d-4f88-940b-3fefc6fb90be",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{Bearer}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Clothes\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{URI}}{{V1}}inventories/edit/:id",
-							"host": [
-								"{{URI}}{{V1}}inventories"
-							],
-							"path": [
-								"edit",
-								":id"
-							],
-							"variable": [
-								{
-									"id": "ee26643a-1879-40b8-96bb-a2db5ab9e33e",
-									"key": "id",
-									"value": "2"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "DELETE INVENTORY",
-					"id": "a1627a8d-0372-4781-a753-c5680d009b8d",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{Bearer}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{URI}}{{V1}}inventories/delete/:id",
-							"host": [
-								"{{URI}}{{V1}}inventories"
-							],
-							"path": [
-								"delete",
-								":id"
-							],
-							"variable": [
-								{
-									"id": "6defaac1-a9a0-4527-bd1c-a0b33bf1f7e9",
-									"key": "id",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"id": "a17f852f-eb35-4846-88f4-0ee47deabb0a"
 		},
 		{
 			"name": "DISCOUNTS",
@@ -1466,7 +1287,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"payment\": \"Cash\",\r\n    \"productTotal\": 10,\r\n    \"inventoryId\": 1,\r\n    \"customerId\": 1\r\n}",
+							"raw": "{\r\n    \"payment\": \"Cash\",\r\n    \"productIds\": [1, 2],\r\n    \"customerId\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1494,7 +1315,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"status\": \"Refund\"\r\n}",
+							"raw": "{\r\n    \"status\": \"Completed\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1512,7 +1333,6 @@
 							],
 							"variable": [
 								{
-									"id": "ebf25d3c-ffad-4210-b1d5-ad7d54a2a09a",
 									"key": "id",
 									"value": "1"
 								}
@@ -1657,7 +1477,7 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/gabriel/Downloads/image 100.png"
+									"src": "/C:/Users/gabriel/Downloads/image 100 (3).png"
 								},
 								{
 									"key": "transactionId",
@@ -1955,30 +1775,30 @@
 		{
 			"listen": "prerequest",
 			"script": {
+				"id": "a61bbb8d-37ec-4533-9dd0-153ea7136e21",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					""
-				],
-				"id": "2e132a1d-da33-44bc-b8e4-86dc6d596d31"
+				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
+				"id": "9967550a-b0e3-4066-b8b6-3fc469e15a84",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					""
-				],
-				"id": "81a38277-8306-4995-acbd-89f90d7af270"
+				]
 			}
 		}
 	],
 	"variable": [
 		{
 			"key": "Bearer",
-			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Ik1lcmNoYW50IiwiaWF0IjoxNzI2Mzg1NTM4LCJleHAiOjE3MjY5OTAzMzh9.Nv5h99TC679hKEhOBHIUReC_vO-3z1IuwIDZnY1CYZo",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkN1c3RvbWVyIiwiaWF0IjoxNzI2NjU1MTExLCJleHAiOjE3MjcyNTk5MTF9.UlIny7YJGStOYXNx-lVL93F5PXOye9UoNuKoZR99HAk",
 			"type": "string"
 		}
 	]
