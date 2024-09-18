@@ -2,7 +2,8 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import { PrismaConfigService } from "src/config";
 import { CreateTransactionDto } from "./dto/create-transaction.dto";
 import { UpdateTransactionDto } from "./dto/update-transaction.dto";
-
+import { v4 as uuidv4 } from "uuid";
+const sdk = require("api")("@paymaya/v5.18#1bmd73pl9p4h9zf");
 @Injectable()
 export class TransactionsService {
   constructor(private readonly prisma: PrismaConfigService) {}
@@ -31,8 +32,13 @@ export class TransactionsService {
   }
 
   async add(createTransactionDto: CreateTransactionDto) {
-    const { customerId, productIds, productTotal, ...transactionData } =
-      createTransactionDto;
+    const {
+      customerId,
+      productIds,
+      payment,
+      productTotal,
+      ...transactionData
+    } = createTransactionDto;
 
     const customer = await this.prisma.customer.findUnique({
       where: { id: customerId },
@@ -51,9 +57,10 @@ export class TransactionsService {
       0,
     );
 
-    return this.prisma.transaction.create({
+    const transaction = await this.prisma.transaction.create({
       data: {
         ...transactionData,
+        payment,
         productTotal: Number(totalPrice),
         customer: {
           connect: { id: customerId },
@@ -67,6 +74,40 @@ export class TransactionsService {
         products: true,
       },
     });
+
+    if (payment === "Maya") {
+      sdk.auth(
+        "pk-Z0OSzLvIcOI2UIvDhdTGVVfRSSeiGStnceqwUE7n0Ah",
+        "sk-X8qolYjy62kIzEbr0QRK1h4b4KDVHaNcwMYk39jInSl",
+      );
+      sdk.server("https://pg-sandbox.paymaya.com/checkout/v1/checkouts");
+
+      const uuid = uuidv4();
+      const formattedUuid = uuid
+        .replace(/-/g, "")
+        .slice(0, 32)
+        .replace(/(\w{8})(\w{4})(\w{4})(\w{4})(\w{12})/, "$1-$2-$3-$4-$5");
+
+      const { data } = await sdk.createV1Checkout({
+        totalAmount: {
+          value: totalPrice,
+          currency: "PHP",
+        },
+        buyer: {
+          firstName: customer.first_name,
+          lastName: customer.last_name,
+        },
+        items: products.map((product) => ({
+          name: product.product_name,
+          totalAmount: { value: product.price },
+        })),
+        requestReferenceNumber: formattedUuid,
+      });
+
+      return { transaction, checkoutUrl: data.redirectUrl };
+    }
+
+    return transaction;
   }
 
   async update(id: number, updateTransactionDto: UpdateTransactionDto) {

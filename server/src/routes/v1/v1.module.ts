@@ -9,9 +9,9 @@ import { AuthModule } from "./auth/auth.module";
 import { CategoriesModule } from "./categories/categories.module";
 import { ProductsModule } from "./products/products.module";
 import { DiscountsModule } from "./discounts/discounts.module";
-import { TransactionsModule } from './transactions/transactions.module';
-import { CommentsModule } from './comments/comments.module';
-import { RefundModule } from './refund/refund.module';
+import { TransactionsModule } from "./transactions/transactions.module";
+import { CommentsModule } from "./comments/comments.module";
+import { RefundModule } from "./refund/refund.module";
 
 @Module({
   imports: [
