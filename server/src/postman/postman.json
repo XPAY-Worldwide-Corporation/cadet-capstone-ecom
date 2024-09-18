@@ -1271,7 +1271,7 @@
 					"response": []
 				},
 				{
-					"name": "CREATE TRANSACTION",
+					"name": "CREATE TRANSACTION CASH",
 					"id": "519ad153-d59d-4c0d-ada1-100352b60b13",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1288,6 +1288,34 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"payment\": \"Cash\",\r\n    \"productIds\": [1, 2],\r\n    \"customerId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URI}}{{V1}}transactions"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE TRANSACTION MAYA",
+					"id": "87afd3e2-d78c-4294-8581-7b9cecb7ef02",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payment\": \"Maya\",\r\n    \"productIds\": [1, 2],\r\n    \"customerId\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1775,7 +1803,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a61bbb8d-37ec-4533-9dd0-153ea7136e21",
+				"id": "64d9e9ff-f23a-4ab3-b1be-5d4d0e22de73",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1786,7 +1814,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "9967550a-b0e3-4066-b8b6-3fc469e15a84",
+				"id": "8f112616-c4c8-4613-b974-2a849e0a6f13",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1798,7 +1826,7 @@
 	"variable": [
 		{
 			"key": "Bearer",
-			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkN1c3RvbWVyIiwiaWF0IjoxNzI2NjU1MTExLCJleHAiOjE3MjcyNTk5MTF9.UlIny7YJGStOYXNx-lVL93F5PXOye9UoNuKoZR99HAk",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkN1c3RvbWVyIiwiaWF0IjoxNzI2NjU3NzQ0LCJleHAiOjE3MjcyNjI1NDR9.-ia0qhZ-N1lbb2u5GIaXbylLaGjkNes9fnr_cLb2cfo",
 			"type": "string"
 		}
 	]
