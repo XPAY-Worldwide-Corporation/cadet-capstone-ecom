@@ -19,14 +19,13 @@ export async function multipleImages(
             .upload_stream(
               { folder: RESOURCE.CLOUDINARY_FOLDER },
               (error, result) => {
-                resolve({
-                  public_id: result?.public_id,
-                  url: result?.secure_url.replace(
-                    /\/([^\/]+)$/,
-                    `/${file.originalname}`,
-                  ),
-                  originalname: file.originalname,
-                });
+                error
+                  ? reject(error)
+                  : resolve({
+                      public_id: result?.public_id || "",
+                      url: result?.secure_url || "",
+                      originalname: file.originalname,
+                    });
               },
             )
             .end(file.buffer),
