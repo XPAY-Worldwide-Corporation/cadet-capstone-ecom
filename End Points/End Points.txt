@@ -1,0 +1,103 @@
+ Customer
+GET /customers: Retrieve a list of all customers
+
+GET /customers/{id}: Retrieve a specific customer by their ID
+
+POST /customers: Create a new customer account
+
+PATCH /customers/{id}: Partially update an existing customer's details by their ID
+
+DELETE /customers/{id}: Delete a specific customer by their ID
+
+PATCH /auth/customers/update-password: Update a customer's password while logged in
+
+POST /auth/customers/login: Log in a customer and issue a session token.
+
+POST /auth/customers/logout: Log out a customer and invalidate the session token.
+
+
+
+ Merchant
+GET /merchants: Retrieve a list of all merchants
+
+GET /merchants/{id}: Retrieve a specific merchant by their ID
+
+POST /merchants: Create a new merchant account
+
+PATCH /merchants/{id}: Partially update an existing merchant's details by their ID
+
+DELETE /merchants/{id}: Delete a specific merchant by their ID
+
+PATCH /auth/merchants/update-password: Update a merchant's password while logged in
+
+POST /auth/merchants/login: Log in a merchant and issue a session token.
+
+POST /auth/merchants/logout: Log out a merchant and invalidate the session token.
+
+
+
+ Products
+GET /products: Retrieve a list of all products
+
+GET /products/{id}: Retrieve a specific product by its ID
+
+POST /products: Create a new product listing
+
+PATCH /products/{id}: Update an existing product's details by its ID
+
+DELETE /products/{id}: Delete a specific product by its ID
+
+GET /products/search: Search for products by name or keyword.
+
+
+
+ Categories
+GET /categories: Retrieve a list of all product categories
+
+GET /categories/{id}: Retrieve a specific category by its ID
+
+POST /categories: Create a new product category
+
+PUT /categories/{id}: Update an existing product category by its ID
+
+DELETE /categories/{id}: Delete a specific product category by its ID
+
+
+
+ Transactions
+GET /transactions: Retrieve a list of all transactions
+
+GET /transactions/{id}: Retrieve a specific transaction by its ID
+
+POST /transactions: Create a new transaction record
+
+PATCH /transactions/{id}: Update an existing transaction's details by its ID
+
+DELETE /transactions/{id}: Delete a specific transaction by its ID
+
+
+
+ Reviews
+GET /reviews: Retrieve a list of all reviews
+
+GET /reviews/{id}: Retrieve a specific review by its ID
+
+POST /reviews: Create a new product review
+
+PATCH /reviews/{id}: Update an existing review by its ID
+
+DELETE /reviews/{id}: Delete a specific review by its ID
+
+
+
+ Discounts
+GET /discounts: Retrieve a list of all discounts
+
+GET /discounts/{id}: Retrieve a specific discount by its ID
+
+POST /discounts: Create a new discount offer
+
+PATCH /discounts/{id}: Update an existing discount's details by its ID
+
+DELETE /discounts/{id}: Delete a specific discount by its ID
+
