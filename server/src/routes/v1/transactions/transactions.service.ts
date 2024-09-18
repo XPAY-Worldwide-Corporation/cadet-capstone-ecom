@@ -11,7 +11,7 @@ export class TransactionsService {
     return this.prisma.transaction.findMany({
       include: {
         customer: true,
-        inventory: true,
+        products: true,
       },
     });
   }
@@ -21,7 +21,7 @@ export class TransactionsService {
       where: { id },
       include: {
         customer: true,
-        inventory: true,
+        products: true,
       },
     });
 
@@ -31,7 +31,7 @@ export class TransactionsService {
   }
 
   async add(createTransactionDto: CreateTransactionDto) {
-    const { customerId, inventoryId, productTotal, ...transactionData } =
+    const { customerId, productIds, productTotal, ...transactionData } =
       createTransactionDto;
 
     const customer = await this.prisma.customer.findUnique({
@@ -39,20 +39,32 @@ export class TransactionsService {
     });
     if (!customer) throw new NotFoundException("Customer not found");
 
+    const products = await this.prisma.product.findMany({
+      where: { id: { in: productIds } },
+    });
+
+    if (products.length === 0)
+      throw new NotFoundException("Products not found");
+
+    const totalPrice = products.reduce(
+      (sum, product) => sum + product.price,
+      0,
+    );
+
     return this.prisma.transaction.create({
       data: {
         ...transactionData,
-        productTotal: Number(productTotal),
+        productTotal: Number(totalPrice),
         customer: {
           connect: { id: customerId },
         },
-        inventory: {
-          connect: { id: inventoryId },
+        products: {
+          connect: productIds.map((id) => ({ id })),
         },
       },
       include: {
         customer: true,
-        inventory: true,
+        products: true,
       },
     });
   }
@@ -62,26 +74,11 @@ export class TransactionsService {
       where: { id },
       include: {
         customer: true,
-        inventory: true,
+        products: true,
       },
     });
 
     if (!transaction) throw new NotFoundException("Transaction not found");
-
-    if (updateTransactionDto.status === "Completed") {
-      const inventory = await this.prisma.inventory.findUnique({
-        where: { id: transaction.inventoryId },
-      });
-
-      if (!inventory) throw new NotFoundException("Inventory not found");
-
-      await this.prisma.inventory.update({
-        where: { id: inventory.id },
-        data: {
-          stock: inventory.stock - transaction.productTotal,
-        },
-      });
-    }
 
     return this.prisma.transaction.update({
       where: { id },
@@ -90,7 +87,7 @@ export class TransactionsService {
       },
       include: {
         customer: true,
-        inventory: true,
+        products: true,
       },
     });
   }
@@ -100,7 +97,7 @@ export class TransactionsService {
       where: { id },
       include: {
         customer: true,
-        inventory: true,
+        products: true,
       },
     });
 
@@ -110,7 +107,7 @@ export class TransactionsService {
       where: { id },
       include: {
         customer: true,
-        inventory: true,
+        products: true,
       },
     });
   }

@@ -1,4 +1,4 @@
-import { IsInt, IsString, IsNotEmpty } from "class-validator";
+import { IsInt, IsString, IsNotEmpty, IsArray, IsOptional } from "class-validator";
 
 export class CreateTransactionDto {
   @IsString()
@@ -6,12 +6,13 @@ export class CreateTransactionDto {
   payment: string;
 
   @IsInt()
-  @IsNotEmpty()
+  @IsOptional()
   productTotal: number;
 
-  @IsInt()
+  @IsArray()
+  @IsInt({ each: true })
   @IsNotEmpty()
-  inventoryId: number;
+  productIds: number[];
 
   @IsInt()
   @IsNotEmpty()

@@ -13,7 +13,6 @@ export const RESOURCE = {
   AUTH: "/auth",
   CATEGORIES: "/categories",
   PRODUCTS: "/products",
-  INVENTORIES: "/inventories",
   DISCOUNTS: "/discounts",
   TRANSACTIONS: "/transactions",
   COMMENTS: "/comments",

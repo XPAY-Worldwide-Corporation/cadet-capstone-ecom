@@ -8,7 +8,6 @@ import { RolesModule } from "./roles/roles.module";
 import { AuthModule } from "./auth/auth.module";
 import { CategoriesModule } from "./categories/categories.module";
 import { ProductsModule } from "./products/products.module";
-import { InventoriesModule } from "./inventories/inventories.module";
 import { DiscountsModule } from "./discounts/discounts.module";
 import { TransactionsModule } from './transactions/transactions.module';
 import { CommentsModule } from './comments/comments.module';
@@ -29,7 +28,6 @@ import { RefundModule } from './refund/refund.module';
     AuthModule,
     CategoriesModule,
     ProductsModule,
-    InventoriesModule,
     DiscountsModule,
     TransactionsModule,
     CommentsModule,

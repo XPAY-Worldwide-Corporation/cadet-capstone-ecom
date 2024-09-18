@@ -97,24 +97,6 @@ Body: { "name": "" }
 Delete a category:
 DELETE /api/v1/categories/:id
 
-Inventory
-Get all inventory items:
-GET /api/v1/inventory
-
-Get a specific inventory item by ID:
-GET /api/v1/inventory/:id
-
-Create a new inventory item:
-POST /api/v1/inventory
-Body: { "stock": "", "product_id": "" }
-
-Update an inventory item:
-PATCH /api/v1/inventory/:id
-Body: { "stock": "", "product_id": "" }
-
-Delete an inventory item:
-DELETE /api/v1/inventory/:id
-
 Transactions
 Get all transactions:
 GET /api/v1/transactions

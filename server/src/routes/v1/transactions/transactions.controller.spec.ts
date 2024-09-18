@@ -26,6 +26,7 @@ describe("TransactionsController", () => {
       const newTransaction = {
         id: mockService.transactions.length + 1,
         ...dto,
+        productTotal: dto.productTotal,
       };
       mockService.transactions.push(newTransaction);
       return Promise.resolve(newTransaction);
@@ -76,11 +77,12 @@ describe("TransactionsController", () => {
     createTransaction: {
       payment: "Credit Card",
       productTotal: 100,
-      inventoryId: 1,
+      productIds: [1, 2],
       customerId: 1,
     } as CreateTransactionDto,
     updateTransaction: {
       payment: "Debit Card",
+      status: "Completed",
     } as UpdateTransactionDto,
   };
 

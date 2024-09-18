@@ -7,7 +7,6 @@ import {
   AuthModule,
   CategoriesModule,
   ProductsModule,
-  InventoriesModule,
   DiscountsModule,
   TransactionsModule,
   CommentsModule,
@@ -42,10 +41,6 @@ export const v1Routes: RouteTree[] = [
   {
     path: RESOURCE.PRODUCTS,
     module: ProductsModule,
-  },
-  {
-    path: RESOURCE.INVENTORIES,
-    module: InventoriesModule,
   },
   {
     path: RESOURCE.DISCOUNTS,
