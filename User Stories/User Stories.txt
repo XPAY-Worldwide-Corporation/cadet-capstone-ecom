@@ -75,21 +75,6 @@ Acceptance Criteria:
 
 
 
-Product Deletion
-As a merchant,
-I want to remove products from my listings,
-so that customers no longer see products that are out of stock.
-
-Acceptance Criteria:
-
-- Ability to delete products from the system.
-- Product removal from listings is immediate.
-- Associated data (like reviews) is handled appropriately.
-- Confirmation is required before deletion.
-- Error messages for issues during deletion.
-
-
-
 Order Management
 As a merchant,
 I want to view and manage customer orders,
@@ -99,7 +84,7 @@ Acceptance Criteria:
 
 - Ability to view orders with details like products and customer info.
 - Update order status (e.g., Shipped, Delivered).
-- Manage order fulfillment and cancellations.
+- Manage order fulfillment.
 - Notifications for order status changes.
 - Error handling for issues during management.
 
@@ -113,9 +98,7 @@ so that I can manage stock efficiently.
 Acceptance Criteria:
 
 - View current inventory levels for each product.
-- Receive notifications for low stock.
 - Update inventory levels when products are sold.
-- Generate inventory reports.
 - Validation of stock levels during updates.
 
 
@@ -131,21 +114,19 @@ Acceptance Criteria:
 - Discounts are applied to transactions correctly.
 - Manage and edit existing discount codes.
 - Validation of discount code parameters.
-- Notifications for discount code usage.
 
 
 
 Profile Management
 As a merchant,
 I want to update my profile information,
-so that my contact details and business information are current.
+so that my address details and business information are current.
 
 Acceptance Criteria:
 
-- Update profile information like business name and contact details.
+- Update profile information like business name and address details.
 - Changes are saved and reflected immediately.
 - Validation for updated information.
-- Secure handling of sensitive data.
 - Notifications confirming profile updates.
 
 
@@ -209,7 +190,6 @@ Acceptance Criteria:
 
 - Search functionality by keywords, categories, or filters.
 - Display of search results with product details.
-- Sorting and filtering options available.
 - No results message when no products match the criteria.
 - Accurate and relevant search results.
 
@@ -233,13 +213,12 @@ Acceptance Criteria:
 Order Tracking
 As a customer,
 I want to track my orders,
-so that I can know the status and estimated delivery time.
+so that I can know the status.
 
 Acceptance Criteria:
 
 - View order status and tracking information.
 - Notifications for status updates (e.g., Pending, Completed).
-- Estimated delivery time provided.
 - Access to order history.
 - Error handling for tracking issues.
 
@@ -256,7 +235,6 @@ Acceptance Criteria:
 - Reviews are linked to the correct product and transaction.
 - Validation of review content and rating.
 - Reviews are displayed on the product page.
-- Notification of successful review submission.
 
 
 
