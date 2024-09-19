@@ -19,7 +19,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"supermario@test.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"raw": "{\r\n    \"email\": \"johndoe@test.com\",\r\n    \"password\": \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -959,7 +959,7 @@
 								},
 								{
 									"key": "categoryId",
-									"value": "2",
+									"value": "1",
 									"type": "text"
 								},
 								{
@@ -1803,7 +1803,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "64d9e9ff-f23a-4ab3-b1be-5d4d0e22de73",
+				"id": "4b270961-1de4-4f63-9cb3-c619c9c97741",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1814,7 +1814,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "8f112616-c4c8-4613-b974-2a849e0a6f13",
+				"id": "1db2d2c3-c79d-4822-8e30-5fd0f30bd58d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1826,7 +1826,7 @@
 	"variable": [
 		{
 			"key": "Bearer",
-			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkN1c3RvbWVyIiwiaWF0IjoxNzI2NjU3NzQ0LCJleHAiOjE3MjcyNjI1NDR9.-ia0qhZ-N1lbb2u5GIaXbylLaGjkNes9fnr_cLb2cfo",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Ik1lcmNoYW50IiwiaWF0IjoxNzI2NzUyOTM3LCJleHAiOjE3MjczNTc3Mzd9.29FBkcMfMHJx6wReSBYOdwHhZ1DeVvwA8-oIlOcvqCY",
 			"type": "string"
 		}
 	]
