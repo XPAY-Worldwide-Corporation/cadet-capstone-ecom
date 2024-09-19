@@ -1,85 +1,95 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+Here’s a more polished and organized version of the instructions for your `README.md` file on GitHub:
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+```markdown
+# Project Setup Guide
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This guide will walk you through installing the necessary tools and setting up the backend for this project.
 
-## Description
+## Prerequisites
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Make sure you have the following installed on your system:
 
-## Project setup
+- **Node.js**: [Download Node.js](https://nodejs.org/)
+- **PostgreSQL**: [Download PostgreSQL](https://www.postgresql.org/download/)
+
+## Step 1: Install PostgreSQL
+
+1. Go to the [PostgreSQL download page](https://www.postgresql.org/download/).
+2. Select your operating system.
+3. Click on **Download the Installer** and follow the instructions.
+4. You will be redirected to [EnterpriseDB](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
+5. Download and install the latest version of PostgreSQL.
+
+## Step 2: Install NestJS CLI
+
+To scaffold a new NestJS project, install the Nest CLI globally:
 
 ```bash
-$ npm install
+npm install -g @nestjs/cli
 ```
 
-## Compile and run the project
+## Step 3: Create a New NestJS Project
+
+Once Nest CLI is installed, create a new project:
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+nest new .
 ```
 
-## Run tests
+## Step 4: Run Prettier for Code Formatting
+
+Ensure your code is properly formatted with Prettier by running the following command:
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm run format
 ```
 
-## Resources
+## Step 5: Check for Outdated Packages
 
-Check out a few resources that may come in handy when working with NestJS:
+To see if there are any outdated npm packages in your project, run:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+```bash
+npm outdated
+```
 
-## Support
+## Step 6: Install Prisma
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Prisma will be used as the ORM for database management. To install Prisma and initialize it in your project:
 
-## Stay in touch
+```bash
+npm install prisma
+npx prisma init
+npm install @prisma/client
+```
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Step 7: Set Up the Database
 
-## License
+After installing Prisma, set up your database with the following migration command:
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+```bash
+npx prisma migrate dev --name init
+```
+
+## Step 8: Generate a New Resource
+
+You can automatically create a new resource using the following command (omit test files with `--no-spec`):
+
+```bash
+nest generate resource folder_name --no-spec
+```
+
+## Step 9: Run the Backend
+
+Start the development server using the following command:
+
+```bash
+npm run start:dev
+```
+
+---
+
+### Additional Notes
+
+- Make sure your PostgreSQL database is running before starting the server.
+- For further details about NestJS, visit the [NestJS documentation](https://docs.nestjs.com/).
+- For Prisma documentation, visit [Prisma Docs](https://www.prisma.io/docs/).
