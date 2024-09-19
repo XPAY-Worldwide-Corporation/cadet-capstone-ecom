@@ -1,30 +1,30 @@
 Roles
 Get all roles:
-GET /api/v1/roles - done
+GET /api/v1/roles
 
 Get a specific role by ID:
-GET /api/v1/roles/:id - done
+GET /api/v1/roles/:id
 
 Create a new role:
-POST /api/v1/roles - done
+POST /api/v1/roles
 Body: { "roleName": "" }
 
 Update a role:
-PATCH /api/v1/roles/:id - done
+PATCH /api/v1/roles/:id
 Body: { "roleName": "" }
 
-Delete a role: - done
+Delete a role:
 DELETE /api/v1/roles/:id
 
 Customers
 Get all customers:
-GET /api/v1/customers - done
+GET /api/v1/customers
 
 Get a specific customer by ID:
-GET /api/v1/customers/:id - done
+GET /api/v1/customers/:id
 
 Create a new customer:
-POST /api/v1/customers - done
+POST /api/v1/customers
 Body: { "first_name": "", "last_name": "", "email": "", "password": "", "image": "", "address": "", "government_id": "" }
 
 Update a customer:
@@ -69,15 +69,6 @@ Body: { "product_name": "", "content": "", "price": "", "isNew": "", "image": ""
 
 Delete a product:
 DELETE /api/v1/products/:id
-
-Search Products:
-GET /api/v1/products/search
-Query Parameters:
-  - q (string): Search query term
-  - category_id (optional, integer): Filter by category
-  - price_min (optional, number): Minimum price filter
-  - price_max (optional, number): Maximum price filter
-  - ratings(optional, number): Filter by ratings
 
 Categories
 Get all categories:
