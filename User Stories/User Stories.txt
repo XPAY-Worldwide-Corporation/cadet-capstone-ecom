@@ -83,7 +83,7 @@ so that I can fulfill them efficiently.
 Acceptance Criteria:
 
 - Ability to view orders with details like products and customer info.
-- Update order status (e.g., Shipped, Delivered).
+- Update order status (e.g., Pending, Delivered).
 - Manage order fulfillment.
 - Notifications for order status changes.
 - Error handling for issues during management.
@@ -181,17 +181,16 @@ Acceptance Criteria:
 
 
 
-Product Search
+Product Browse
 As a customer,
-I want to search for products,
+I want to browse for products,
 so that I can find items that interest me.
 
 Acceptance Criteria:
 
-- Search functionality by keywords, categories, or filters.
-- Display of search results with product details.
-- No results message when no products match the criteria.
-- Accurate and relevant search results.
+- Browse functionality by categories.
+- Display of browse results with product details.
+- Accurate and relevant browse results.
 
 
 
