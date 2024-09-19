@@ -124,9 +124,7 @@ export default function Navbar() {
           <>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className="bg-gray-600 hover:bg-gray-700">
-                  Register
-                </Button>
+                <Button variant="ghost">Register</Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white text-black mt-2 rounded shadow-lg">
                 <DropdownMenuItem
