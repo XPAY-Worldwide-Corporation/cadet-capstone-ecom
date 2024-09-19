@@ -1,5 +1,3 @@
-Here’s a more polished and organized version of the instructions for your `README.md` file on GitHub:
-
 ```markdown
 # Project Setup Guide
 
