@@ -1,0 +1,592 @@
+USER STORIES FOR ECOMMERCE WEB APPLICATION
+
+
+As a customer, I want to register as a user so that I can order and purchase products.
+
+ACCEPTANCE CRITERIA: 
+
+GIVEN the customer is on the registration page 
+AND the customer is presented a registration form containing inputs for email and
+password and a “Sign Up” button.
+WHEN the customer enters an email and a password and clicks the “Sign Up” button.
+THEN the system validates the customer inputs and checks if it passes the required criteria. 
+AND the system creates a new customer account then saves it. 
+AND the system automatically redirects users to the browsing page after successful registration.
+AND the customer views the browsing page.
+
+
+As a customer, I want to manage my account so that I can edit my account information such as my phone number, email, and address to keep it up to date. 
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is logged in and is in the “Profile” page.
+WHEN the customer clicks the “My Account” section. 
+THEN the customer views their account information.
+WHEN the customer clicks the “Edit” button.
+AND the customer edits their account information such as phone number, address, etc. 
+AND the customer clicks the “Save”  button.
+THEN the system validates the user inputs.
+AND the system saves the updated information to the customer’s account.  
+AND the system sends a success message when the update has been successfully saved.
+AND the system immediately reflects the changes on the customer's account profile.
+AND the customer views the updated information on their account profile. 
+
+
+As a customer, I want to be able to reset my password so that I can improve my account’s security or to regain access to my account in case I forgot my password.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the user is on the “Login” page.
+WHEN the user clicks the “Forgot Password”.
+THEN the system redirects the user to the reset page.
+AND the system displays an input field for the user to enter their email.
+WHEN the user enters their email.
+AND the user clicks the “Submit” button
+THEN the system sends a redirect URL containing the email and reset code to the user’s email account.
+WHEN the user clicks the redirect URL.
+THEN the redirect URL is opened in a new tab on the browser 
+AND the system displays an input field for the user to enter their new password
+WHEN the user enters their new password
+AND the user clicks the “Confirm” button.
+THEN the system validates and verifies the email and the reset code.
+AND the system validates the input and checks if the password meets the required criteria.
+THEN the system updates and saves the user’s new password.
+AND the user is redirected to the browsing page.
+
+
+As a customer, I want to add multiple shipping addresses to my account so that I can choose which address I want my order to be delivered. 
+
+ACCEPTANCE CRITERIA:
+GIVEN the customer is on the “Profile” page.
+WHEN the customer clicks the “My Address Book” section.
+THEN the customer sees the list of their addresses.
+AND the customer sees the “Add Address” button.
+WHEN the customer clicks the “Add Address” button.
+THEN the customer sees the “Add a New Address” form.
+WHEN the customer fills out the required fields such as house no., street, etc.
+AND the customer clicks the “Submit” button to save the new address.
+THEN the system validates the customer's inputs.
+AND the system saves the updated information to the customer’s profile.  
+AND the system sends a success message when the customer’s address has been successfully added and saved.
+AND the system immediately reflects the changes on the customer's list of addresses. 
+AND the customer views their updated list of addresses.
+
+
+As a customer, I want to browse or view all products so that I can see which product I would like to purchase.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the browsing page of the website.
+WHEN the customer scrolls or browses through the page.
+THEN the system returns and displays all the available products along with its thumbnail images, names and prices on the browsing page.
+AND the customer views all the available products in the browsing page.
+
+
+As a customer, I want to search for a specific product so that I can find the product easier and quicker.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the homepage.
+WHEN the customer clicks the “Search” tab and enters the product name or keyword.
+THEN the system returns and  displays all the available products with the specified name or keyword.
+AND the customer views all the available products with the specified name or keyword in the browsing page.
+
+
+As a customer, I want to view a product so that I can read the full product information and stock availability.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the homepage that displays all  the available products.
+WHEN the customer clicks a specific product displayed on the homepage.
+THEN the system redirects the customer to a page displaying the full information of the product.
+AND the customer views all the product information including its name, description, specifications, number of stocks available, price, image gallery, and its seller.
+
+
+As a customer, I want to filter products by category so that I can browse products that are of similar type. 
+
+ACCEPTANCE CRITERIA:
+GIVEN the customer is on the homepage and is presented with a “Categories” section.
+WHEN the customer selects and clicks a “Category” from the “Categories” section.
+THEN the system filters and returns all the products within the selected category, including its product details such as their name and price.
+AND the customer views all the products with their selected category on the browsingpage.
+
+
+As a customer, I want to view the product reviews so that I can see the product’s merit and drawbacks and other customer’s experience with its seller before purchasing.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the “Product” page.
+WHEN the customer scrolls down to the “Ratings and Reviews” section. 
+THEN the system returns and displays all of the customer’s reviews and ratings.
+AND the customer views all the customer reviews and ratings of the product along with additional information about the review.
+
+
+As a customer, I want to visit a store so that I can see what other products the store has to offer.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the product details page
+AND the customer can see the store name on the product details page
+WHEN the customer clicks the store
+THEN the system should redirect customer to "Store" page with the store details displayed and their products
+AND the customer views the store and browses their products
+
+
+As a customer, I want to add a product to my cart and specify its quantity so that I can add it to my order later. 
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the “Product” page.
+WHEN the customer clicks the “+” or the “-” button located under the “Quantity” title.
+THEN the system updates the displayed quantity of the product.
+AND the customer views the updated quantity.
+WHEN the customer clicks the “Add to Cart” button
+THEN the system adds the product with the specified quantity to the customer’s cart.
+THEN the system saves the changes to the customer’s cart.
+AND the system sends a success message.
+AND the system immediately reflects the newly added item to the customer’s cart.
+AND the customer views the newly added item to cart
+
+
+As a customer, I want to bookmark a product so that I can add it to my cart if I ever decide to order it later in the future.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the “Product” page.
+WHEN the customer clicks the bookmark icon button.
+THEN the system adds and saves the product to the customer’s bookmark list.
+AND the system immediately reflects the changes to the customer’s bookmark list.
+AND the customer views the newly added product to their bookmarks list.
+
+
+As a customer, I want to view my bookmarks page so that I can view the products I have added to my bookmark.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the “Profile” page.
+WHEN the customer clicks the “My Bookmarks” section.
+THEN the system returns and displays the saved products on the page.
+AND the customer views all the products they have saved.
+
+
+As a customer, I want to view my cart so that I can decide which products I would like to order and purchase.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the browsing page.
+WHEN the customer clicks the “Cart” button from the header bar.
+THEN the system returns the cart items of the customer.
+AND the system redirects the customer to the “Cart” page. 
+AND the system displays the cart list containing all the cart items of the customer.
+AND the customer views all the cart items along with the item's information on their cart list.
+
+
+As a customer, I want to remove products from my cart so that I can remove any items I do not want to purchase.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the “Cart” page.
+WHEN the customer clicks the “trash” button located besides the cart item.
+THEN the system removes the item from the customer’s cart.
+AND the system immediately reflects the changes to the customer’s cart list.
+AND the customer views their updated cart list.
+
+
+As a customer, I want to adjust the quantity of an item from my cart so that I can purchase the amount based on my needs.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the “Cart” page and the cart contains at least one item.
+WHEN the customer clicks the “+” or “-”  button located beside the cart item.
+THEN the system updates the quantity of the cart items.
+AND the system saves the updated quantity to the customer’s cart
+AND the system immediately reflects the item’s updated quantity to the “Cart” page.
+AND the customer views the item's updated quantity.
+
+ 
+As a customer, I want to add a cart item to my order so that I can proceed to checkout and purchase my order.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the “Cart” page.
+WHEN the customer checks the checkbox beside a cart item.
+THEN the system adds the item to the order list.
+AND the system displays a summary of the order that includes the total price and the current number of items added to the order list.
+WHEN the customer clicks “Proceed to Checkout”.
+THEN the system redirects the customer to the “Checkout” page.
+AND the system displays the list of orders along with the products’ information.
+AND the system displays an order summary that includes the total amount of items and the total order price.
+AND the system displays the selection fields for shipping address, courier, and payment method that the customer needs to fill out.
+
+
+As a customer, I want to redeem vouchers to use for my orders so that I can get a good deal and save money.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the “Checkout” page
+AND views the list of available vouchers.
+WHEN the customer selects and enters a voucher
+AND the customer clicks apply
+THEN the system verifies the voucher and applies the discount to the total order
+AND the system updates the displayed total order with the applied discount.
+AND the customer views the discounted total order.
+
+
+As a customer, I want to select my shipping address so that my order can be delivered to my preferred address.
+
+ACCEPTANCE CRITERIA:
+GIVEN the customer is the “Checkout” page.
+AND the customer’s shipping default address is displayed.
+WHEN the customer clicks the “Edit” button beside the customer’s address.
+THEN the system opens a modal/panel displaying a list of saved addresses along with a “Confirm” button.
+WHEN the customer selects an address from the list.
+AND the customer clicks the “Confirm” button.
+THEN the system updates the displayed shipping address of the order
+AND the customer views the updated shipping address on the “Checkout” page.
+
+
+As a customer, I want to view the available payment options and select one so that I can pay for my order with the method I find the most convenient for me.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is the “Checkout” page.
+AND the available payment methods are displayed.
+WHEN the customer selects a payment method from the available options.
+THEN the system updates the displayed payment method of the order
+AND the customer views the updated payment method on the “Checkout” page.
+
+
+As a customer, I want to view the available shipping methods so that I can choose how I want my order to be delivered.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is the “Checkout” page.
+AND the available shipping methods are displayed.
+WHEN the customer selects a shipping method from the available options.
+THEN the system updates the displayed shipping method of the order
+AND the customer views the updated shipping method on the “Checkout” page.
+
+	
+As a customer, I want to review my order so that I can check if my order details such as my shipping address and method, and payment method are correct.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is the “Checkout” page.
+AND the customer has added items to the order list and has selected the shipping address, shipping method, and payment method of their choosing.
+WHEN the customer views the summary of the order.
+THEN the system displays the summary of the order that includes the following details (the customer’s selected options must be correctly reflected by the system):
+List of order items with their information, quantities, and prices.
+total amount of items in the order 
+Payment/transaction Breakdown (Shipping fee, discounted amount, total fee)
+Selected shipping address
+Selected shipping method
+Selected payment Method
+AND the customer reviews the summary of their order.
+
+
+As a customer, I want to view all of my purchase history so that I can easily find and repurchase products I have bought before.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the “Profile” page.
+WHEN the customer clicks the “My Orders” section.
+THEN the system redirects and displays the “Order” page. 
+AND the system displays section tabs such as “All”,  “to Pay”, “ to Ship”, “to Receive”, and “Completed”
+THEN the system automatically navigates the customer to the “All” section.
+AND the system displays the list of all products the customer has purchased in the past 
+AND the customer views all their past purchases. 
+	
+
+As a customer, I want to receive notifications about the status of my order so that I'll know the estimated arrival date of my order.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer has placed an order.
+WHEN the seller updates the status of the order.
+THEN the system sends a notification to the customer via email or SMS with their order information, updated status, and estimated arrival date. 
+AND the customer views the sent notification. 
+
+
+As a customer, I want to return items and ask for a refund so that I can get my money back for unreceived or defective order items.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer has not received their order or has received defective order items.
+AND the customer is on the  “Order Details” page.
+WHEN the customer clicks the “Refund” .
+THEN the system displays form for customer to provide details for refund request.
+WHEN the customer fills out the required information 
+AND the customer clicks the “Submit” button.
+THEN the system processes the customer’s request for refund.
+AND the system gives a success message  when the customer’s request has been successfully processed.
+AND the system adds the refund request to the customer’s “Refund” section.
+AND the customer views their pending request on the “Refund” section. 
+
+
+As a customer, I want to review a product so that I can share my experience with the product and its seller to other customers.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer is on the “Order Details” page.
+WHEN the customer clicks the “Write a Review”
+THEN the system presents a review form with the inputs for review, review title, and review description.
+WHEN the customer fills out the form with their review
+AND the customer clicks “Submit”
+THEN the system should validate the inputs  
+AND the system processes and saves the customer’s reviews to the product.
+AND the system sends a success message when the customer’s review has been successfully added.
+
+
+As a seller, I want to create an account so that I can set up my store profile and list my products for sale.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the user is on the registration page 
+AND the user is presented a registration form containing inputs for email and password and a “Sign Up” button.
+WHEN the user enters an email and a password and clicks the “Sign Up” button.
+THEN the system validates the user inputs and checks if it passes the required criteria. 
+AND the system creates a new user account then saves it. 
+
+As a seller, I want to createsellestore so that I can list my products, sell products to customers, and receive feedback.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller has an account.
+AND the seller is on the registration page for sellers.
+WHEN the seller fills out the form for their store details and business information
+AND the seller clicks submit.
+THEN the system validates the input.	
+AND the system adds and saves the seller’s store and business information.
+AND the system redirects the seller to the “Seller Dashboard”.
+AND the seller views their “Seller Dashboard”.
+	
+
+As a seller, I want to manage my store profile so that I can modify my store info such as my pickup address, contact number, etc. and keep it up to date.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is on the “Seller Dashboard”.
+WHEN the seller navigates to the  "Store” profile section.
+THEN the system displays the seller’s store information such as the name, address, contact info, etc.
+WHEN the seller clicks the “Edit” button.
+THEN the system turns the store information into editable fields.
+WHEN the seller edits the information
+AND the seller clicks “Save” button
+THEN the system validates the seller’s input
+AND the system saves the updated information to the seller’s store profile.
+AND the system sends a success message when the system has updated the seller’s store profile successfully
+AND the system immediately reflects the updated information on their dashboard.
+AND the seller views their updated information.
+
+
+As a seller, I want to verify my account store so that I can receive a verified badge that will show my store’s credibility and earn my customer’s trust.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is on the “Seller Dashboard”.
+WHEN the seller clicks the seller verification button
+THEN the system displays a form for the seller to input required information and upload their verification documents.
+WHEN the seller fills out the form and uploads the verification documents
+AND the seller clicks “Submit”
+THEN the system validates the details and documents and processes the verification request
+AND the system notifies the seller when verification has been approved or rejected
+WHEN the seller’s verification  has been approved
+THEN the system displays the verification badge on the seller’s store profile.
+AND the seller views their verified badge on their store’s profile
+
+
+As a seller, I want to add products to my listing so that customers can see and purchase the new product I am offering.
+
+ACCEPTANCE CRITERIA;
+ 
+GIVEN the seller is on the “Seller Dashboard”
+WHEN the seller clicks the “Add New Product”.
+THEN the system provides the seller a form containing inputs for name, title, description, product specifications, price, images, etc.
+WHEN the seller fills out the inputs with required information
+AND the seller clicks the “Add Product” button
+THEN the system verifies seller input
+AND the system adds and saves the new product to the seller’s inventory
+AND the system immediately reflects the newly added product to the seller's dashboard.
+AND the seller views the newly added product on their dashboard.
+
+
+As a seller, I want to bulk upload  products so that I can add multiple products to my listing in one go.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is on the “Seller Dashboard”
+WHEN the seller clicks “Bulk Upload Products”
+AND the seller uploads an spreadsheet or csv file containing  multiple products and their details
+THEN the system processes each product and adds product to the seller’s product listing
+AND the system sends a success message when the system has successfully added all products to the listing. 
+AND the system immediately reflects the changes to the seller’s product listing
+AND the seller views their newly added products on their listing
+
+
+As a seller, I want to modify my product’s information so that it is up to date and provide accurate product information to customers.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is on the “Products” page.
+WHEN the seller clicks the “Edit” icon button beside their selected product.
+THEN the system displays the product’s information in editable input fields.
+WHEN the seller edits the product’s information.
+AND the seller clicks the “Save” button.
+THEN the system saves the edited information of the product.
+AND the system immediately reflects the updated changes of the product on the seller’s dashboard.
+AND the seller views the newly updated product information.
+
+
+As a seller, I want to view my customers’ reviews/feedback and ratings so that I can see what my customers’ feedbacks are and make improvements on my product.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is on “Seller Dashboard”
+WHEN the seller clicks the “Reviews and Ratings” section.
+THEN the system displays the list of reviews and ratings from different customers.
+AND the seller views the list of reviews and ratings. 
+
+
+As a seller, I want to be notified when one of my product stocks is running low so that I can restock my products for my customers. 
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is on “Seller Dashboard”.
+WHEN the seller navigates to their “Inventory” section.
+THEN the system displays the product inventory list of the seller
+WHEN the seller turns on the notification for low stocks
+THEN the system saves the seller’s preference and activates the notification for low stocks
+AND the system notifies the seller when one of the products’ stock is low.
+AND the seller views the notification for low stock.
+
+
+As a seller, I want to remove/archive a product from my listing so that I can keep my listing up-to-date, prevent customers from ordering discontinued items, or maintain a clean and organized product inventory.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is on the products listing page.
+WHEN the seller clicks the remove or archive icon button beside their selected product.
+THEN the system removes the product from the listing and saves the update
+AND the system immediately reflects the updated changes to the seller’s product listing
+AND the seller views their updated product listing.
+
+
+As a seller, I want to categorize my products so that I can organize my products by category and make it easier for my customers to find a product.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is on the “Seller Dashboard”.
+WHEN the seller clicks the “Add category” button
+THEN the system displays a form for the seller to add a new product category.
+WHEN the seller enters category name
+AND the seller clicks the “Submit” button 
+THEN the system adds and saves the new category to the seller’s category list
+AND the system immediately reflects the newly added category to the seller’s category list
+AND the seller views their newly added category
+
+
+As a seller, I want to confirm pending orders so that I can process orders and receive payment. 
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is on the “Seller Dashboard” 
+WHEN the seller navigates to the “Orders” page.
+THEN the system displays all pending orders from customers
+WHEN the seller confirms a pending order
+THEN the system updates the status of the order and makes it available for packing and shipment
+AND the system immediately reflects the updated order to the seller’s “Orders” page
+AND the seller views the newly updated order.
+
+
+As a seller, I want to update my customer’s order status so that I can inform them of the current status of their order.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is on the “Seller Dashboard”.
+WHEN the seller navigates to the “Orders” page.
+THEN the system displays the list of orders with their current statuses
+WHEN the seller updates the status of their selected order.
+THEN the system update the status of the order and saves it
+AND the system immediately reflects the updated order to the seller’s “Orders” page.
+AND the seller views the newly updated order.
+AND the system notifies the customer of their updated order status.
+
+
+As a seller, I want to view and process my customer's request for refund, so that I can refund my customer's payment and provide customers satisfactory experience with my store.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the customer has requested for a Refund with a reason of "I have not received my order."
+WHEN the seller clicks the request, 
+THEN the system should display the refund request information
+AND the seller is presented with an "Refund Payment".
+WHEN the seller clicks the "Refund Payment".
+THEN the system notifies customer of full refund.
+AND the payment is fully refunded with the customer's chosen payment method. 
+AND the refund status is updated. 
+
+GIVEN the customer has requested for a Refund with a reason of "I have received a defective order."
+WHEN the seller clicks the request, 
+THEN the system should display the refund request information
+AND the seller is presented with an "Refund Payment".
+WHEN the seller clicks the "Refund Payment"
+THEN the system notifies customer of partial refund.
+AND the payment is partially refunded with the customer's chosen payment method. 
+AND the refund status is updated. 
+
+
+As a seller, I want to give vouchers so that I can attract more customers and retain existing ones.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is on the “Vouchers” section.
+WHEN the seller clicks add a new voucher or coupon.
+THEN the system displays the form with input fields for name, code, discount rate, and expiration date.
+WHEN the seller enters the name, code, discount rate, and expiration date of the voucher.
+AND the seller clicks “Add”
+THEN the system adds and saves the new voucher to the seller’s “Vouchers” list
+AND the system immediately reflects the newly added voucher on the seller’s “Vouchers” section.
+AND the seller views their newly added voucher from their “Vouchers” section.
+
+
+As a seller, I want to delete vouchers so that customers can avoid availing any voucher that is no longer available.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is on the “Vouchers” section.
+WHEN the seller clicks the “Delete” button on their selected voucher or coupon
+THEN the system deletes the voucher and updates the seller’s voucher list.
+AND the seller views their updated voucher list.
+
+
+As a seller, I want to see the overview of my store’s sales metrics so that I can view the total sales or total orders received within a specified period. 
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is in the “Seller Dashboard” section. 
+WHEN the seller clicks the “Sales Metrics” section
+THEN the system should display the overview of the store's sales metrics including the total sales amount, total number of orders, average number of orders per day, and other relevant metrics.
+AND the seller views the overview of their store’s sales metrics. 
+
+
+As a seller, I want to receive analysis on the overall or individual performance of my products so that I can examine which products attract customers the most and which ones need improvement.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is in the “Seller Dashboard” section. 
+WHEN the seller clicks the “Product Analytics” section
+THEN the system displays the overview of the store’s products analytics  including the most to least ordered products from the store and general average of each product.
+AND the seller views the overview of their store’s products analytics.
+
+
+As a seller, I want to export my business reports into printable copies so that I can have a soft/hard copy of my reports to use offline.
+
+ACCEPTANCE CRITERIA:
+
+GIVEN the seller is in the “Analytics” section. 
+WHEN the seller clicks the “Export” button
+THEN the system presents the file format options.
+WHEN the seller selects one format from the options.
+THEN the system converts and exports the report into the specified format
+AND the seller downloads and views their analytics report.
+
