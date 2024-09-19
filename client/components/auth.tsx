@@ -3,6 +3,7 @@ import axios from "axios";
 
 export default async function fetchWithAuth(
   url: string,
+
   method: "GET" | "POST" | "PATCH" | "DELETE",
   data?: any,
 ) {

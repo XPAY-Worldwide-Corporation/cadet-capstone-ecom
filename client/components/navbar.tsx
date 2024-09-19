@@ -1,18 +1,21 @@
 "use client";
 
 import React from "react";
+import { FaShoppingCart } from "react-icons/fa";
+import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
+import { useAuthStore } from "@/state/authStore";
+import { useCartStore } from "@/state/cartStore";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
 } from "./ui/dropdown-menu";
-import { Button } from "./ui/button";
-import { useRouter } from "next/navigation";
-import { useAuthStore } from "@/state/authStore";
 
 export default function Navbar() {
   const { user } = useAuthStore();
+  const { totalQuantity } = useCartStore();
   const router = useRouter();
 
   const handleHome = () => {
@@ -36,12 +39,26 @@ export default function Navbar() {
     router.push("/login");
   };
 
+  const handleCustomerProduct = () => {
+    router.push("/dashboard/customer/product");
+  };
+
+  const handleCartClick = () => {
+    if (totalQuantity > 0) {
+      router.push("/dashboard/customer/cart");
+    }
+  };
+
   const handleCategory = () => {
     router.push("/dashboard/merchant/category");
   };
 
-  const handleProduct = () => {
+  const handleMerchantProduct = () => {
     router.push("/dashboard/merchant/product");
+  };
+
+  const handleMerchantTransaction = () => {
+    router.push("/dashboard/merchant/transaction");
   };
 
   return (
@@ -49,7 +66,33 @@ export default function Navbar() {
       <div className="text-xl font-bold cursor-pointer" onClick={handleHome}>
         Quick Shopping
       </div>
-      <div className="space-x-6">
+      <div className="space-x-6 flex items-center">
+        {user && user.role.roleName === "Customer" && (
+          <>
+            <div className="relative">
+              <Button
+                onClick={handleCartClick}
+                variant="ghost"
+                className={`flex items-center ${
+                  totalQuantity === 0 ? "cursor-not-allowed opacity-50" : ""
+                }`}
+                disabled={totalQuantity === 0}
+              >
+                <FaShoppingCart size={20} />
+                <span
+                  className={`absolute -top-2 -right-2 text-white text-xs rounded-full px-2 py-1 bg-gray-600 ${
+                    totalQuantity === 0 ? "opacity-100" : "opacity-100"
+                  }`}
+                >
+                  {totalQuantity || 0}
+                </span>
+              </Button>
+            </div>
+            <Button onClick={handleCustomerProduct} variant="ghost">
+              Products
+            </Button>
+          </>
+        )}
         {user && user.role.roleName === "Merchant" && (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -63,10 +106,16 @@ export default function Navbar() {
                 Category
               </DropdownMenuItem>
               <DropdownMenuItem
-                onClick={handleProduct}
+                onClick={handleMerchantProduct}
                 className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
               >
                 Product
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={handleMerchantTransaction}
+                className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+              >
+                Transaction
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

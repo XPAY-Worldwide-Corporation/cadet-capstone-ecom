@@ -11,7 +11,6 @@ export class CreateTransactionDto {
   @IsNotEmpty()
   payment: string;
 
-  @IsInt()
   @IsOptional()
   productTotal: number;
 

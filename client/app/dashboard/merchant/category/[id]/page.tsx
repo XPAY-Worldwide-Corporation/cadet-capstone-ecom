@@ -5,7 +5,7 @@ import { useCategoryStore } from "@/state/categoryStore";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import RouteHandler from "@/components/routeHandler";
 
 export default function CategoryDetail() {
