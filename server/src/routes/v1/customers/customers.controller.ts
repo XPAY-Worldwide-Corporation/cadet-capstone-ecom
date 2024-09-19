@@ -56,13 +56,8 @@ export class CustomersController {
     const uploadedImages = await multipleImages(files.image || [], []);
     const uploadedGovIds = await multipleImages(files.government_id || [], []);
 
-    if (
-      uploadedImages.length === STATUSCODE.ZERO ||
-      uploadedGovIds.length === STATUSCODE.ZERO
-    ) {
-      throw new BadRequestException(
-        "Both profile image and government ID are required.",
-      );
+    if (uploadedImages.length === STATUSCODE.ZERO) {
+      throw new BadRequestException("At least one image is required.");
     }
 
     const data = await this.customersService.add({
