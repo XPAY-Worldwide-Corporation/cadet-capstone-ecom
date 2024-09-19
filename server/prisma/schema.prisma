@@ -1,0 +1,119 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Role {
+  id        Int        @id @default(autoincrement())
+  roleName  String
+  merchants Merchant[]
+  customers Customer[]
+}
+
+model Merchant {
+  id               Int        @id @default(autoincrement())
+  first_name       String
+  last_name        String
+  email            String     @unique
+  password         String
+  image            Json
+  address          String
+  verificationCode Json?
+  roleId           Int
+  role             Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+  Product          Product[]
+  Discount         Discount[]
+}
+
+model Customer {
+  id               Int           @id @default(autoincrement())
+  first_name       String
+  last_name        String
+  email            String        @unique
+  password         String
+  image            Json
+  address          String
+  verificationCode Json?
+  government_id    Json?
+  roleId           Int
+  role             Role          @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  Discount         Discount[]
+  transactions     Transaction[]
+}
+
+model Category {
+  id        Int       @id @default(autoincrement())
+  name      String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  Product   Product[]
+}
+
+model Product {
+  id           Int           @id @default(autoincrement())
+  product_name String
+  isNew        Boolean       @default(true)
+  price        Float
+  image        Json
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  categoryId   Int
+  category     Category      @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  merchantId   Int
+  merchant     Merchant      @relation(fields: [merchantId], references: [id], onDelete: Cascade)
+  transactions Transaction[] @relation("TransactionProducts")
+}
+
+model Discount {
+  id         Int       @id @default(autoincrement())
+  isAccepted Boolean   @default(false)
+  customerId Int
+  customer   Customer  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  merchantId Int?
+  merchant   Merchant? @relation(fields: [merchantId], references: [id], onDelete: Cascade)
+}
+
+model Transaction {
+  id           Int       @id @default(autoincrement())
+  payment      String
+  date         DateTime  @default(now())
+  status       String    @default("Pending")
+  productTotal Int
+  customerId   Int
+  customer     Customer  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  Comment      Comment[]
+  Refund       Refund[]
+  products     Product[] @relation("TransactionProducts")
+}
+
+model Comment {
+  id            Int         @id @default(autoincrement())
+  ratings       Int
+  description   String
+  image         Json
+  transactionId Int
+  transaction   Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+}
+
+model Refund {
+  id            Int         @id @default(autoincrement())
+  isRefund      Boolean     @default(false)
+  reason        String
+  return_date   DateTime    @default(now())
+  transactionId Int
+  transaction   Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+}

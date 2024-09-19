@@ -1,0 +1,1833 @@
+{
+	"info": {
+		"_postman_id": "ca42e43b-65c6-4bb8-a307-63d14c04f278",
+		"name": "CADET-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "LOGIN",
+					"id": "a33d1921-5c7d-4919-a533-3774cb57bb5f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"johndoe@test.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URI}}{{V1}}auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "LOGOUT",
+					"id": "69254837-a63c-48d7-891c-43d01cfadd87",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URI}}{{V1}}auth/logout"
+					},
+					"response": []
+				}
+			],
+			"id": "4a249a8d-6ba9-4a89-92a0-999fdda4fa05"
+		},
+		{
+			"name": "ROLE",
+			"item": [
+				{
+					"name": "GET ALL ROLES",
+					"id": "6431c299-9b18-4b40-a45d-49d95e9cd818",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{URI}}{{V1}}roles"
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE ROLE",
+					"id": "2cb1e4b8-aef4-4f42-aff8-ec35e54d7a9f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URI}}{{V1}}roles/:id",
+							"host": [
+								"{{URI}}{{V1}}roles"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"id": "b39e14be-8eba-4f16-a1a4-9ed83d249769",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE ROLE",
+					"id": "116f2eb9-854c-4fc4-aa5c-1f9f7061cedb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleName\": \"Customer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URI}}{{V1}}roles"
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT ROLE",
+					"id": "4596723d-2b1c-435c-9ea9-b699417fbc7e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roleName\": \"Customer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}roles/edit/:id",
+							"host": [
+								"{{URI}}{{V1}}roles"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "1767e930-115a-4715-a57e-c424acfc2721",
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE ROLE",
+					"id": "f50bff7b-5d30-4e3c-a6e3-28ba5b2094c8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URI}}{{V1}}roles/delete/:id",
+							"host": [
+								"{{URI}}{{V1}}roles"
+							],
+							"path": [
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "94192b81-0921-491a-ad4e-8a285c3be668",
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "f8a097ef-9188-4aa4-a266-f02a94f9261e"
+		},
+		{
+			"name": "MERCHANT",
+			"item": [
+				{
+					"name": "GET ALL MERCHANTS",
+					"id": "b251b9ed-a751-4fcf-ac64-c7d90a17a55c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{URI}}{{V1}}merchants"
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE MERCHANT",
+					"id": "9a694396-ff89-4bb2-905b-8f925b4af641",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URI}}{{V1}}merchants/:id",
+							"host": [
+								"{{URI}}{{V1}}merchants"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"id": "743602b0-d727-4ba4-921c-501782269d82",
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE MERCHANT",
+					"id": "2e7beeaa-4a54-4f57-9792-2c3967ea466a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "john",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "doe",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "johndoe@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "South Signal Taguig City",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef160df-b838-40a0-a95f-442be4065849"
+								},
+								{
+									"key": "roleId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{URI}}{{V1}}merchants"
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT MERCHANT",
+					"id": "20912a31-d51b-4bca-b0f0-8fd88fc40902",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "john",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "doez",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "johndoe@test.com",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "South Signal Taguig City",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/gabriel/Downloads/mqdefault.jpg"
+								},
+								{
+									"key": "roleId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}merchants/edit/:id",
+							"host": [
+								"{{URI}}{{V1}}merchants"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "36bd1608-92e7-44fc-a9d7-8454ad483a8c",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE MERCHANT",
+					"id": "9925f734-6d2a-47d7-af06-31101f810353",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URI}}{{V1}}merchants/delete/:id",
+							"host": [
+								"{{URI}}{{V1}}merchants"
+							],
+							"path": [
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "8455263e-d0dc-4ec7-8b9b-caf26f6c0611",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "69d7f88f-337d-4158-a129-6e48acffef5a"
+		},
+		{
+			"name": "CUSTOMER",
+			"item": [
+				{
+					"name": "GET ALL CUSTOMERS",
+					"id": "50d4ed43-b112-4bd0-8d7e-e6dda163ab42",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{URI}}{{V1}}customers"
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE CUSTOMER",
+					"id": "1e8caa49-f6ee-443c-841c-bc48bdceb124",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URI}}{{V1}}customers/:id",
+							"host": [
+								"{{URI}}{{V1}}customers"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"id": "dfc4f179-8ccd-4955-9de3-347339682d46",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE CUSTOMER",
+					"id": "82093bd8-5224-44da-b1c9-489229dc22e8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "super",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "mario",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "supermario@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "South Signal Taguig City",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef160df-b838-40a0-a95f-442be4065849"
+								},
+								{
+									"key": "government_id",
+									"type": "file",
+									"src": "postman-cloud:///1ef7289c-8734-4be0-948d-56cf5717cef4"
+								},
+								{
+									"key": "roleId",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{URI}}{{V1}}customers"
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT CUSTOMER",
+					"id": "71c6dfbb-b14e-4ebe-a574-ad1837ef448f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "super",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "marios",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "supermario@test.com",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "South Signal Taguig City",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/gabriel/Downloads/Group 9 (2).png"
+								},
+								{
+									"key": "government_id",
+									"type": "file",
+									"src": "/C:/Users/gabriel/Downloads/mqdefault.jpg"
+								},
+								{
+									"key": "roleId",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}customers/edit/:id",
+							"host": [
+								"{{URI}}{{V1}}customers"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "8a55e440-af69-4b5c-bd52-14b47c8be30d",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CUSTOMER",
+					"id": "a04f3b7a-8fe7-46e4-85ec-1e58e80c489e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URI}}{{V1}}customers/delete/:id",
+							"host": [
+								"{{URI}}{{V1}}customers"
+							],
+							"path": [
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "ee24de4b-573e-490a-8230-c0a9a0b71f7b",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "9fb25be4-6851-4842-ac3a-17eeb3dc0ba3"
+		},
+		{
+			"name": "CATEGORIES",
+			"item": [
+				{
+					"name": "GET ALL CATEGORIES",
+					"id": "05d1d023-b2a0-4f88-8846-a85861450b78",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{URI}}{{V1}}categories"
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE CATEGORY",
+					"id": "17634cd1-0ee8-4d39-9138-e4ec7c9eaa3e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}categories/:id",
+							"host": [
+								"{{URI}}{{V1}}categories"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE CATEGORY",
+					"id": "a8ed1f99-62e4-47e9-8697-d029a97f7814",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Cloth\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URI}}{{V1}}categories"
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT CATEGORY",
+					"id": "58f27ae8-4e32-47df-840d-c9816ae70e29",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Clothes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}categories/edit/:id",
+							"host": [
+								"{{URI}}{{V1}}categories"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "91a4f491-a0b5-42cf-b324-80e33b777942",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CATEGORY",
+					"id": "1eed7ecc-fd76-4891-b115-06c26bfbe178",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}categories/delete/:id",
+							"host": [
+								"{{URI}}{{V1}}categories"
+							],
+							"path": [
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "47e4cf2c-0cb3-4d0d-bbfe-f29e8a5e24a6",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "504c9a3b-ec7d-404a-8fa7-bdf7f567b654"
+		},
+		{
+			"name": "PRODUCTS",
+			"item": [
+				{
+					"name": "GET ALL PRODUCTS",
+					"id": "7bdc5dc7-91c3-4978-bb4d-a7c418aa8c50",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{URI}}{{V1}}products"
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE PRODUCT",
+					"id": "fd519c50-89e0-46f4-8b72-c3d75b97840c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}products/:id",
+							"host": [
+								"{{URI}}{{V1}}products"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"id": "fda6f9bd-6dff-47d0-a80c-e15687948fdf",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE PRODUCT",
+					"id": "2c6e802b-e64c-404b-8c8b-1426b3097a0b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_name",
+									"value": "Another T-Shirt",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef7289c-8734-4be0-948d-56cf5717cef4"
+								},
+								{
+									"key": "categoryId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "merchantId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{URI}}{{V1}}products"
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT PRODUCT",
+					"id": "b66c6e92-02b7-4f87-9944-62cdb99b5483",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_name",
+									"value": "T-Shirt",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "299.99",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef7289c-8734-4be0-948d-56cf5717cef4"
+								},
+								{
+									"key": "categoryId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "merchantId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}products/edit/:id",
+							"host": [
+								"{{URI}}{{V1}}products"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PRODUCT",
+					"id": "581787a4-860c-476e-8d19-96030b29d5b2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}products/delete/:id",
+							"host": [
+								"{{URI}}{{V1}}products"
+							],
+							"path": [
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "4fb52f35-adb6-40c3-8079-ed7d08edfeb0",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "08b906c1-4a94-41a3-a06b-58dfb7f06757"
+		},
+		{
+			"name": "DISCOUNTS",
+			"item": [
+				{
+					"name": "GET ALL DISCOUNTS",
+					"id": "53c6cc20-9fb1-4af4-ac52-c7d5082a52a3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{URI}}{{V1}}discounts"
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE DISCOUNT",
+					"id": "f48d03c1-4828-4e4b-b5c3-c22f792c3722",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}discounts/:id",
+							"host": [
+								"{{URI}}{{V1}}discounts"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"id": "a53b0fd5-73c1-40d9-8604-9887591f0f39",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE DISCOUNT",
+					"id": "c33ce7ea-af25-43c6-9b1e-2fd6d4629755",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URI}}{{V1}}discounts"
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT DISCOUNT",
+					"id": "78cd4d8b-faa7-4be5-a646-4781eaf796be",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 1,\r\n    \"merchantId\": 1,\r\n    \"isAccepted\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}discounts/edit/:id",
+							"host": [
+								"{{URI}}{{V1}}discounts"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "fe1d6399-ab4e-4246-acb4-c0c09fd15d53",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE DISCOUNT",
+					"id": "d9385d21-2bab-42c9-a066-c710657d6557",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}discounts/delete/:id",
+							"host": [
+								"{{URI}}{{V1}}discounts"
+							],
+							"path": [
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "3175c24a-c542-47b2-a9fa-a014705d3528",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "2451b040-d8b7-43cf-ab0e-ef8086791809"
+		},
+		{
+			"name": "TRANSACTIONS",
+			"item": [
+				{
+					"name": "GET ALL TRANSACTIONS",
+					"id": "44a08ea4-b0b2-4cc2-b8be-7e57680ac533",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{URI}}{{V1}}transactions"
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE TRANSACTION",
+					"id": "b3446dc8-5269-4ed8-a385-88122e7f6bbd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}transactions/:id",
+							"host": [
+								"{{URI}}{{V1}}transactions"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"id": "04830d66-3a19-4fc9-af71-1d5b586ecc70",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE TRANSACTION CASH",
+					"id": "519ad153-d59d-4c0d-ada1-100352b60b13",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payment\": \"Cash\",\r\n    \"productIds\": [1, 2],\r\n    \"customerId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URI}}{{V1}}transactions"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE TRANSACTION MAYA",
+					"id": "87afd3e2-d78c-4294-8581-7b9cecb7ef02",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payment\": \"Maya\",\r\n    \"productIds\": [1, 2],\r\n    \"customerId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URI}}{{V1}}transactions"
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT TRANSACTION",
+					"id": "de7a2085-ce61-42bf-8356-3ef5f2fd249a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"Completed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}transactions/edit/:id",
+							"host": [
+								"{{URI}}{{V1}}transactions"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE TRANSACTION",
+					"id": "2fec9a9f-5721-4bf6-8147-9eece2d230d2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}transactions/delete/:id",
+							"host": [
+								"{{URI}}{{V1}}transactions"
+							],
+							"path": [
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "deaab63a-760e-4e24-8451-e8ac5bc849a9",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "41d82874-d1f6-4637-8072-78eb7f9b72d4"
+		},
+		{
+			"name": "COMMENTS",
+			"item": [
+				{
+					"name": "GET ALL COMMENTS",
+					"id": "4b8184e4-c916-490f-9001-ceeb406a25b2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{URI}}{{V1}}comments"
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE COMMENT",
+					"id": "4d71178b-095b-4297-9940-216765383e26",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}comments/:id",
+							"host": [
+								"{{URI}}{{V1}}comments"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"id": "07ed576d-5d9d-49f7-aa71-a4bb9eb82359",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE COMMENT",
+					"id": "6b63b5c7-4770-48c4-b33d-4c632ea4480a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ratings",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Awesome experienced",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/gabriel/Downloads/image 100 (3).png"
+								},
+								{
+									"key": "transactionId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{URI}}{{V1}}comments"
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT COMMENT",
+					"id": "18903bd5-e658-4565-ba25-46da08afe2f5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_name",
+									"value": "T-Shirt",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "299.99",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef7289c-8734-4be0-948d-56cf5717cef4"
+								},
+								{
+									"key": "categoryId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "merchantId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}comments/edit/:id",
+							"host": [
+								"{{URI}}{{V1}}comments"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "bed14ca6-1e5b-4ffe-bc4e-bcbf18d793b6",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE COMMENT",
+					"id": "a2fc8c29-7629-41fa-94a4-05572dd74def",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}comments/delete/:id",
+							"host": [
+								"{{URI}}{{V1}}comments"
+							],
+							"path": [
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "0275d91a-d3bb-4029-b323-803bffb93313",
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "5f1410a3-9fb0-4333-93fe-fdc6f03abaa6"
+		},
+		{
+			"name": "REFUNDS",
+			"item": [
+				{
+					"name": "GET ALL REFUNDS",
+					"id": "4d9107ae-e12f-4351-b111-238a93283c95",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{URI}}{{V1}}refunds"
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE REFUND",
+					"id": "91f2c383-77a0-4351-a358-cea41da8b2ff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}refunds/:id",
+							"host": [
+								"{{URI}}{{V1}}refunds"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"id": "a5f0f5fd-b7da-4188-927a-ed1a70daf064",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE REFUND",
+					"id": "f7537ac2-1225-4f82-9a30-ce1f8d34a748",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reason\": \"Damage Order\",\r\n    \"transactionId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URI}}{{V1}}refunds"
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT REFUND",
+					"id": "8424d1f6-c2da-4094-a748-af1f77590fff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isRefund\": true,\r\n    \"transactionId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}refunds/edit/:id",
+							"host": [
+								"{{URI}}{{V1}}refunds"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "89d6b0cb-974a-4b38-b488-71191db4ec3c",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE REFUND",
+					"id": "11d0ce15-808c-4aa7-9694-da79bbf14f14",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}refunds/delete/:id",
+							"host": [
+								"{{URI}}{{V1}}refunds"
+							],
+							"path": [
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "8bf6c26f-19de-45c6-a2b9-70d9437b7fd7",
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "84fac0d0-6059-41ea-b352-e071c2bc09d2"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4b270961-1de4-4f63-9cb3-c619c9c97741",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "1db2d2c3-c79d-4822-8e30-5fd0f30bd58d",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Bearer",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Ik1lcmNoYW50IiwiaWF0IjoxNzI2NzUyOTM3LCJleHAiOjE3MjczNTc3Mzd9.29FBkcMfMHJx6wReSBYOdwHhZ1DeVvwA8-oIlOcvqCY",
+			"type": "string"
+		}
+	]
+}

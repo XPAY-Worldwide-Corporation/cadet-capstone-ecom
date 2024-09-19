@@ -1,0 +1,326 @@
+Managing Roles (Merchant and Customer)
+I can create, view, update, and delete roles (Merchant and Customer) to manage user roles effectively.
+
+Acceptance Criteria:
+
+I can create a role by entering "Merchant" or "Customer" in the role creation form, with validation to allow only these two roles.
+I can view a list of all roles (Merchant and Customer) in a table that displays role names and unique identifiers.
+I can update a role by selecting it from the list and changing its name to either "Merchant" or "Customer."
+I can delete a role by selecting it from the list, confirming the deletion, and receiving a success message if it is successfully removed.
+
+CUSTOMER USER STORIES
+
+Customer Registration and Login
+
+As a customer, I want to create an account so that I can shop and make my purchases.
+Acceptance Criteria:
+- Clicking the "Register" button redirects the user to a registration form.
+- The registration form includes fields for First Name, Last Name, Email Address, and Password.
+- The form validates that all required fields are filled out and checks if the email address is already registered.
+- Upon successful form submission, an account is created for the user.
+
+As a customer, I want to log in to my account so that I can access my saved information and previous orders.
+Acceptance Criteria:
+- The login form includes fields for Email Address and Password.
+- The form validates that the email and password are entered correctly.
+- If the email or password is incorrect, an error message is displayed.
+- Upon successful login, the user is redirected to their account dashboard.
+- The user gains access to their saved information, order history, and account settings.
+
+Managing Account Preferences
+
+As a customer, I want to update my account information, including my shipping address, password, and email, so that my profile stays up-to-date.
+
+Acceptance Criteria:
+- The account settings page displays sections for managing profile information (e.g., shipping address, password, email).
+- The customer can update their shipping address, password, and email.
+- Changes to the profile information are saved immediately after the customer makes an update.
+- A success message confirms that the profile information has been updated.
+- The updated information is reflected in the customer’s account without requiring a page refresh.
+- A logout button is available if the customer wants to logout
+
+Browsing Products
+
+As a customer, I want to view detailed information about a product so that I can make an informed purchase decision.
+
+Acceptance Criteria
+- Clicking on a product from any list or search result navigates to its detailed product page.
+- The product page displays the product name, price, and multiple images from different angles.
+- A detailed description of the product is provided, including specifications, features, and materials.
+- Customer reviews and ratings are visible on the product page, along with an option to write a review.
+- An "Add to Cart" button is prominently displayed, along with options to select quantity.
+
+Adding Products to Cart
+
+As a customer, I want to add products to my cart so that I can purchase them.
+
+Acceptance Criteria:
+- The product page includes a clearly visible "Add to Cart" button.
+- Clicking the "Add to Cart" button adds the selected product to the shopping cart.
+- A confirmation message or notification appears indicating that the product has been successfully added to the cart.
+- The cart icon or cart summary is updated immediately to reflect the new item count.
+- The customer remains on the product page after adding the product to the cart, with an option to view the cart or continue shopping.
+- The added product, along with its quantity and selected options, is visible in the cart for review.
+
+As a customer, I want to change the quantity of products in my cart so that I can adjust my order before checkout.
+
+Acceptance Criteria:
+- The shopping cart page displays each product with an editable quantity field.
+- The customer can increase or decrease the quantity of each product in the cart.
+- Changing the quantity automatically updates the total cost displayed in the cart.
+- The cart reflects quantity changes in real-time without requiring a page reload.
+- If the quantity exceeds available stock, a message is displayed, and the quantity is adjusted accordingly.
+
+As a customer, I want to remove products from my cart so that I can discard items I no longer wish to purchase.
+
+Acceptance Criteria:
+- Each product in the shopping cart has a clearly visible "Remove" button.
+- Clicking the "Remove" button removes the selected product from the cart immediately.
+- A confirmation message or notification appears indicating that the product has been removed from the cart.
+- The cart total is recalculated and updated instantly after a product is removed.
+- If the cart becomes empty after removing a product, a message is displayed with a link to continue shopping.
+- The cart icon or summary reflects the updated product count and total cost after removal.
+
+Applying Discounts
+
+As a customer, I want to receive confirmation that my discount for PWD or senior citizen status has been applied, so that I am assured of the final price.
+
+- The system should verify if the customer qualifies for the PWD or senior citizen discount based on provided identification or status.
+- Once eligibility is confirmed, the appropriate discount percentage should be applied to the total amount of the transaction.
+- After applying the discount, a confirmation message should be displayed to the customer indicating that the discount has been applied successfully.
+- The confirmation message should clearly state the type of discount (PWD or senior citizen) and the amount or percentage of the discount applied.
+- The final price displayed to the customer after the discount is applied should accurately reflect the discount, and this should be shown on the checkout page and receipt.
+- The discount details should be included in the receipt or order confirmation sent to the customer, specifying the discount type and amount applied.
+- If there is an issue with applying the discount (e.g., invalid discount code or ineligible status), an error message should be displayed to the customer explaining the problem and instructing them on how to proceed.
+
+Completing Purchase
+
+As a customer, I want to proceed to checkout so that I can finalize my purchase.
+
+Acceptance Criteria:
+- The shopping cart page has a prominently placed "Proceed to Checkout" button.
+- Clicking "Proceed to Checkout" navigates the customer to the checkout page that displays a summary of the cart.
+- The checkout page includes a review of all items, quantities, and prices before proceeding.
+- Customers are required to confirm their shipping address and contact information on the checkout page.
+- Any applied discounts, taxes, and shipping fees are shown in the order summary.
+- Customers can go back to the cart to make changes before finalizing the purchase.
+
+As a customer, I want to select a payment method so that I can complete my purchase securely.
+
+Acceptance Criteria:
+- The checkout page provides a variety of payment options, such as credit/debit cards, Maya, and other payment gateways.
+- The customer can select their preferred payment method before completing the purchase.
+- The selected payment method is clearly indicated and confirmed before finalizing the order.
+
+As a customer, I want to receive an order confirmation so that I have a record of my purchase.
+
+Acceptance Criteria:
+- After successful payment, the system immediately displays an order confirmation page with order details, including order number, items purchased, total amount, and delivery information.
+- An email confirmation is automatically sent to the customer 's email address, including the order summary and expected delivery date.
+- The order confirmation page provides an option to download the receipt or save it as a PDF.
+- The order confirmation includes a breakdown of all costs, including product prices, taxes, discounts, and shipping fees.
+- Customers can view their order history and details in their account dashboard after completing the purchase.
+- The order confirmation page also offers recommendations for additional products or related items.
+
+Receiving and Reviewing Order
+
+As a customer, I want to confirm that I have received my order so that the order status updates accordingly.
+
+Acceptance Criteria:
+- The order details page prominently features a "Mark as Received" button for completed deliveries.
+- Clicking the "Mark as Received" button updates the order status to "Delivered" and removes the tracking option.
+- Customers receive a confirmation notification or email after marking the order as received.
+- The "Mark as Received" option is disabled once the status changes to "Delivered."
+- The updated status reflects in the order history and other relevant sections of the account.
+- The system prompts the customer to leave feedback after confirming receipt.
+- Customers can undo the "Mark as Received" action within a limited timeframe if there’s an error.
+
+Managing Returns and Exchanges
+
+As a customer, I want to initiate a return or exchange if I'm unsatisfied with my purchase so that I can resolve the issue.
+
+Acceptance Criteria:
+- The order details page includes a "Return/Exchange" option for eligible items.
+- Customers can select the reason for the return or exchange from a predefined list (e.g., defective product).
+- Customers choose a preferred resolution (e.g., refund, replacement) during the return/exchange process.
+- The return/exchange form displays the return policy and any applicable terms.
+- Once initiated, customers receive a confirmation message with further instructions.
+- The system shows a summary of the return/exchange request, including expected processing times.
+
+As a customer, I want to track the status of my return or exchange so that I know when the process is complete.
+
+Acceptance Criteria:
+- The account section includes a "Return/Exchange Status" page for tracking active requests.
+- Customers receive status updates (e.g., "Processing," "Shipped," "Completed") on their return or exchange requests.
+- Notifications about return/exchange status changes are sent via email or SMS.
+- The status page displays tracking information for returns or replacements if applicable.
+- Customers can view details of the return/exchange request, including resolution type and expected completion date.
+- If a return is denied or delayed, the system provides a reason and next steps.
+- A final confirmation message is sent once the return or exchange is fully processed.
+
+As a customer, I want to receive my refund or replacement after returning an item so that my issue is fully resolved.
+
+Acceptance Criteria:
+- Refunds are automatically processed back to the original payment method.
+- The system confirms the refund processing time and provides a summary in the order history.
+- Replacements are automatically shipped out and linked to the original order in the system.
+- Customers receive a notification when the replacement is shipped, including tracking information.
+- The account section displays a summary of the refund or replacement, including any relevant details.
+- Refunds and replacements are marked as completed once the process is finalized.
+
+MERCHANT USER STORIES
+
+Merchant Registration and Login
+
+As a merchant, I want to register a new account so that I can start selling on the platform.
+
+Acceptance Criteria:
+- The registration page allows merchants to enter required details such as store name, email, and password.
+- The registration form includes validation for email format and password strength.
+- An error message is displayed if registration fails due to invalid input or existing email.
+
+As a merchant, I want to log in to the platform so that I can manage my store. - done
+
+Acceptance Criteria:
+- Successful login redirects the merchant to the merchant dashboard.
+- The login form displays an error message for incorrect email or password.
+- Successful login includes a welcome message or dashboard greeting.
+- The login page requires merchants to enter their registered email and password.
+- The login form includes validation for correct email and password.
+- A logout button is available if the customer wants to logout
+
+Setting Up Store Profile
+
+As a merchant, I want to set up my store profile so that customers can learn about my business.
+
+Acceptance Criteria:
+- After saving the profile, the information is displayed on the store’s public page.
+- The store’s public page is accessible to customers and displays the entered profile information.
+- The store profile setup includes a preview option to review the changes before saving.
+- Merchants receive a confirmation message once the profile is successfully created.
+- If the profile setup fails, an error message indicates what needs to be corrected.
+- The profile setup page allows entering the store name, uploading a logo, and writing a store description.
+- The store name, logo, and description fields include validation for required inputs and format.
+
+
+As a merchant, I want to update my store information so that it stays accurate and relevant.
+
+Acceptance Criteria:
+- The profile settings page allows merchants to edit store details such as contact information and operating hours.
+- The contact information fields include validation for phone numbers and email formats.
+- Operating hours can be updated with start and end times for each day of the week.
+- Changes made to store information are reflected immediately on the store's public page.
+- The profile settings page includes a "Save Changes" button to apply updates.
+- Merchants receive a confirmation message after successfully updating the store information.
+- If the update fails, the system provides an error message with details on what needs to be corrected.
+
+Adding a New Product
+
+As a merchant, I want to add new products to my store so that customers can purchase them.
+
+Acceptance Criteria:
+- The product listing form includes fields for entering the product name, description, price, and uploading images.
+- The product name and price fields include validation for required inputs and format.
+- Successfully submitting the form adds the product to the store’s inventory and updates the product list.
+- The newly added product is visible on the store’s public page and available for purchase.
+- If the form submission fails, an error message indicates what needs to be corrected.
+
+As a merchant, I want to categorize products so that customers can easily find them.
+
+Acceptance Criteria:
+- The product listing form includes options to select or create categories for the product.
+- Each product can be assigned to one or multiple categories.
+- Categories are displayed on the storefront, allowing customers to filter products.
+- Products are listed under their assigned categories on the store’s public page.
+- Merchants can edit or update product categories through the product management interface.
+- The category assignment is visible in the product details and search results.
+- If category assignment fails, an error message indicates what needs to be corrected.
+
+Managing orders
+
+As a merchant, I want to view all incoming orders so that I can process them efficiently.
+
+Acceptance Criteria:
+- Orders can be sorted and filtered by date, status, or customer name.
+- Each order entry provides an option to view detailed order information.
+- The list updates in real-time to reflect new and updated orders.
+- Merchants can search for specific orders using order number or customer details.
+- If there is an issue loading the orders, an error message is displayed.
+- The order management page displays a list of all new and ongoing orders.
+- Each order entry includes key details such as customer name, product(s) ordered, and delivery address.
+
+As a merchant, I want to update the status of orders so that customers are informed about their purchase progress.
+
+Acceptance Criteria:
+- The order management page includes options to update the status of an order (e.g., Processing, Shipped, Delivered).
+- Each status change triggers an automatic notification to the customer via email or SMS.
+- The updated status is immediately reflected on the order management page.
+- Merchants can select a status from a predefined list of options.
+- Status updates are logged with a timestamp and the merchant’s information.
+- Merchants can view the history of status changes for each order.
+- If updating the status fails, an error message indicates the issue.
+
+Managing Discounts
+
+As a merchant, I want to verify customer IDs to offer discounts, ensuring that only eligible customers receive the discount.
+
+Acceptance Criteria:
+- When a customer applies a discount code, the merchant should be able to verify the customer’s ID to confirm eligibility for the discount.
+- If the customer is verified and eligible, the discount should be applied to their purchase, and the discount details should be reflected in the final price.
+- After applying the discount, a confirmation message should be displayed to the merchant, indicating the discount has been successfully applied and the customer’s eligibility has been confirmed.
+- If the customer’s ID does not meet the eligibility criteria or if there is an issue with the discount code, an error message should be displayed to the merchant explaining the problem and guiding them on the next steps.
+
+Managing Returns and Exchanges
+
+As a merchant, I want to manage return requests so that I can ensure customer satisfaction with the return process.
+
+Acceptance Criteria:
+- The order management page includes an option to view and handle return requests.
+- Merchants can review return requests, including reasons and item conditions.
+- An option is provided to approve or reject return requests based on store policies.
+- Approved returns automatically update the order status to "Returned" or equivalent.
+- A confirmation message is sent to the customer when a return request is approved or rejected.
+- The system provides detailed instructions for processing the return (e.g., shipping label generation).
+- An error message is shown if there are issues with processing return requests.
+
+As a merchant, I want to process exchanges for returned items so that customers can receive the correct products.
+
+Acceptance Criteria:
+- The return management system includes options to initiate exchanges for returned items.
+- The system updates the order details to reflect the new product(s) being sent.
+- Customers receive a notification about the new shipment, including tracking information if applicable.
+- The original order status is updated to reflect the exchange process.
+- The inventory system updates to reflect the new product quantities for both the returned and exchanged items.
+- An error message is shown if there are issues with processing the exchange.
+
+Analyzing Sales Performance
+
+As a merchant, I want to view sales reports so that I can analyze my store’s performance over time.
+
+Acceptance Criteria:
+- The sales dashboard displays key metrics including total sales, revenue, and average order value.
+- The reports can be filtered by various criteria such as date range, product category, or customer segment.
+- Reports can be visualized through charts or graphs for easier interpretation.
+- The dashboard provides options to download or export sales reports in formats like CSV or PDF.
+- The system ensures data accuracy and updates reports in real-time or on a defined schedule.
+- An error message is shown if there are issues with generating or displaying reports.
+
+As a merchant, I want to track best-selling products so that I can optimize my inventory and marketing strategies.
+
+Acceptance Criteria:
+- The sales dashboard includes a section for best-selling products, highlighting top items by units sold and revenue generated.
+- Product performance data is updated regularly to reflect the most current sales trends.
+- Best-selling product data can be exported for further analysis in formats like CSV or Excel.
+- The dashboard provides options to filter best-selling products by date range or product category.
+- The system alerts the merchant if there are discrepancies or issues with tracking best-selling products.
+- An error message is displayed if there are issues with accessing or exporting the data.
+
+As a merchant, I want to monitor customer behavior so that I can identify trends and improve my store’s offerings.
+
+Acceptance Criteria:
+- The analytics dashboard includes data on customer demographics, purchase frequency, and product preferences.
+- Insights are presented through visualizations like graphs and charts for easy analysis.
+- The dashboard provides options to filter customer behavior data by criteria such as date range or customer segment.
+- Insights from customer behavior can be used to tailor marketing campaigns and product offerings.
+- Data is updated regularly to reflect recent trends and customer interactions.
+- An error message is shown if there are issues with displaying or analyzing customer behavior data.
