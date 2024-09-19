@@ -47,7 +47,6 @@ PATCH /products/{id}: Update an existing product's details by its ID
 
 DELETE /products/{id}: Delete a specific product by its ID
 
-GET /products/search: Search for products by name or keyword.
 
 
 
