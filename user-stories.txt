@@ -14,33 +14,18 @@ Customer Registration and Login
 
 As a customer, I want to create an account so that I can shop and make my purchases.
 Acceptance Criteria:
-- The website displays a "Sign Up" button on the homepage.
-- Clicking the "Sign Up" button redirects the user to a registration form.
-- The registration form includes fields for First Name, Last Name, Email Address, Password, and Confirm Password.
-The form validates that all required fields are filled out and checks if the email address is already registered.
+- Clicking the "Register" button redirects the user to a registration form.
+- The registration form includes fields for First Name, Last Name, Email Address, and Password.
+- The form validates that all required fields are filled out and checks if the email address is already registered.
 - Upon successful form submission, an account is created for the user.
-- A confirmation email with a verification link is sent to the user’s email address.
-- The user is notified to check their email for confirmation and can log in after verifying the email.
 
 As a customer, I want to log in to my account so that I can access my saved information and previous orders.
 Acceptance Criteria:
-- The website displays a "Log In" button on the homepage.
-- Clicking the "Log In" button redirects the user to a login form.
 - The login form includes fields for Email Address and Password.
 - The form validates that the email and password are entered correctly.
 - If the email or password is incorrect, an error message is displayed.
 - Upon successful login, the user is redirected to their account dashboard.
 - The user gains access to their saved information, order history, and account settings.
-
-As a customer, I want to reset my password if I forget it so that I can regain access to my account.
-Acceptance Criteria:
-- The login page displays a "Forgot Password" link.
-- Clicking the "Forgot Password" link redirects the user to a password reset form.
-- The password reset form includes a field for the user’s email address.
-- Upon submitting the form, a reset password email with a secure link is sent to the user.
-- The reset link expires after a set period (e.g., 24 hours).
-- Clicking on the reset link redirects the user to a form where they can set a new password.
-- Upon successfully resetting the password, the user is notified that their password has been changed and is prompted to log in with the new password.
 
 Managing Account Preferences
 
@@ -54,37 +39,7 @@ Acceptance Criteria:
 - The updated information is reflected in the customer’s account without requiring a page refresh.
 - A logout button is available if the customer wants to logout
 
-As a customer, I want to update my notification preferences so that I receive only the alerts I am interested in.
-
-Acceptance Criteria:
-- The account settings page displays a section for managing notification preferences.
-- The customer can select or deselect notifications.
-- Changes to notification preferences are saved immediately after the customer makes a selection.
-- A success message confirms that the notification preferences have been updated.
-- The updated preferences are reflected in the customer’s account without requiring a page refresh.
-
 Browsing Products
-
-As a customer, I want to browse products by category so that I can easily find the items I am interested in.
-
-Acceptance Criteria:
-- The homepage displays a list of product categories with clear labels and images.
-- Each category link is clickable and navigates to a dedicated category page.
-- The category page shows a list of products belonging to that category.
-- Products are displayed with essential details such as name, price, and thumbnail image.
-- The category page includes pagination or infinite scrolling for large product lists.
-- A breadcrumb trail is available to navigate back to previous pages.
-
-As a customer, I want to search for products so that I can find specific items quickly.
-
-Acceptance Criteria:
-- The search bar is prominently visible on the top of all pages.
-- Entering a search term and pressing enter or clicking the search icon triggers a search.
-- The search results page displays products that match the search term, with details such as name, price, and thumbnail image.
-- The search function handles partial matches, plurals, and common misspellings.
-- Relevant filters (e.g., category, price, RATINGS) are available on the search results page.
-- If no products match the search term, a message is displayed suggesting alternative terms or categories.
-- The search results page includes pagination or infinite scrolling for large result sets.
 
 As a customer, I want to view detailed information about a product so that I can make an informed purchase decision.
 
@@ -93,8 +48,6 @@ Acceptance Criteria
 - The product page displays the product name, price, and multiple images from different angles.
 - A detailed description of the product is provided, including specifications, features, and materials.
 - Customer reviews and ratings are visible on the product page, along with an option to write a review.
-- The product page includes availability status (e.g., in stock, out of stock).
-- Related products or recommendations are shown below the product details.
 - An "Add to Cart" button is prominently displayed, along with options to select quantity.
 
 Adding Products to Cart
@@ -155,7 +108,7 @@ Acceptance Criteria:
 As a customer, I want to select a payment method so that I can complete my purchase securely.
 
 Acceptance Criteria:
-- The checkout page provides a variety of payment options, such as credit/debit cards, PayPal, and other payment gateways.
+- The checkout page provides a variety of payment options, such as credit/debit cards, Maya, and other payment gateways.
 - The customer can select their preferred payment method before completing the purchase.
 - The selected payment method is clearly indicated and confirmed before finalizing the order.
 
@@ -168,40 +121,6 @@ Acceptance Criteria:
 - The order confirmation includes a breakdown of all costs, including product prices, taxes, discounts, and shipping fees.
 - Customers can view their order history and details in their account dashboard after completing the purchase.
 - The order confirmation page also offers recommendations for additional products or related items.
-
-Tracking Order
-
-As a customer, I want to track my order’s shipment so that I know its current status and location.
-
-Acceptance Criteria:
-- The order details page includes a clearly visible "Track Order" button for orders that have been shipped.
-- Clicking the "Track Order" button opens a tracking page displaying the shipment’s current status and location.
-- The tracking page provides a detailed timeline of the shipment, including estimated delivery date and time.
-- The tracking page includes carrier information and contact details in case of delivery issues.
-- The customer is informed if there are any delays or changes in the shipment status on the tracking page.
-- Customers can refresh the tracking information to get real-time updates on the shipment status.
-- The tracking page offers a link to return to the order details or homepage for further actions.
-
-As a customer, I want to view my order history so that I can keep track of all my past orders.
-
-Acceptance Criteria:
-- The account section features an "Order History" option that is easily accessible from the main menu.
-- The order history page lists all past orders, displaying key details like order number, date, and current status.
-- Each order entry in the history includes a "View Details" link to see the full order summary and item details.
-- Customers can filter and sort their order history by date, status, or product category.
-- Orders with ongoing shipments have a "Track Order" button directly from the order history page.
-- The order history page also provides options to reorder items from previous orders with a single click.
-- Customers can download invoices or receipts for each order from the order history page.
-
-As a customer, I want to receive notifications about my order’s delivery status so that I am informed of any changes.
-
-Acceptance Criteria:
-- The system automatically sends an email or SMS notification when the order is shipped, including tracking details.
-- Notifications are also sent when the order is out for delivery and when it has been delivered successfully.
-- Notifications provide clear information on any changes or delays in the delivery schedule.
-- The customer can opt-in or opt-out of delivery notifications through their account settings.
-- Notifications include a summary of the order and the expected delivery date.
-- Customers can view a log of all notifications related to their order in the order details page or order history.
 
 Receiving and Reviewing Order
 
@@ -258,32 +177,17 @@ As a merchant, I want to register a new account so that I can start selling on t
 Acceptance Criteria:
 - The registration page allows merchants to enter required details such as store name, email, and password.
 - The registration form includes validation for email format and password strength.
-- After submitting the registration form, a verification email is sent to the provided email address.
-- The verification email contains a link to activate the account.
-- The account is activated once the verification link is clicked.
-- The merchant is redirected to a welcome page or login page upon successful activation.
 - An error message is displayed if registration fails due to invalid input or existing email.
 
 As a merchant, I want to log in to the platform so that I can manage my store. - done
 
 Acceptance Criteria:
-- Successful login redirects the merchant to the merchant dashboard. 
+- Successful login redirects the merchant to the merchant dashboard.
 - The login form displays an error message for incorrect email or password.
 - Successful login includes a welcome message or dashboard greeting.
 - The login page requires merchants to enter their registered email and password.
 - The login form includes validation for correct email and password.
 - A logout button is available if the customer wants to logout
-
-As a merchant, I want to reset my password if I forget it so that I can regain access to my account.
-
-Acceptance Criteria:
-- The password reset request page allows entering the registered email address.
-- A password reset link is sent to the provided email address.
-- The reset link directs the merchant to a page where they can enter and confirm a new password.
-- After successfully resetting the password, the merchant can log in using the new credentials.
-- A confirmation email is sent once the password has been successfully reset.
-- The login page includes a "Forgot Password" link.
-- Clicking the "Forgot Password" link directs the merchant to a password reset request page.
 
 Setting Up Store Profile
 
@@ -310,17 +214,6 @@ Acceptance Criteria:
 - Merchants receive a confirmation message after successfully updating the store information.
 - If the update fails, the system provides an error message with details on what needs to be corrected.
 
-As a merchant, I want to add store policies so that customers understand terms like returns and shipping.
-
-Acceptance Criteria:
-- The policies are saved and visible to customers on the store’s public page.
-- The policies page provides a preview option to review policies before saving.
-- Merchants receive a confirmation message once the policies are successfully added or updated.
-- If adding or updating policies fails, an error message indicates what needs to be corrected.
-- The store settings page includes sections to input return policies, shipping policies, and FAQs.
-- Each policy section includes a text editor for entering detailed policy information.
-
-
 Adding a New Product
 
 As a merchant, I want to add new products to my store so that customers can purchase them.
@@ -328,9 +221,7 @@ As a merchant, I want to add new products to my store so that customers can purc
 Acceptance Criteria:
 - The product listing form includes fields for entering the product name, description, price, and uploading images.
 - The product name and price fields include validation for required inputs and format.
-- Images can be uploaded and previewed before submission.
 - Successfully submitting the form adds the product to the store’s inventory and updates the product list.
-- Merchants receive a confirmation message once the product is successfully added.
 - The newly added product is visible on the store’s public page and available for purchase.
 - If the form submission fails, an error message indicates what needs to be corrected.
 
@@ -344,15 +235,6 @@ Acceptance Criteria:
 - Merchants can edit or update product categories through the product management interface.
 - The category assignment is visible in the product details and search results.
 - If category assignment fails, an error message indicates what needs to be corrected.
-
-As a merchant, I want to manage inventory levels so that I can avoid overselling out-of-stock products.
-
-Acceptance Criteria:
-- The product listing form includes a field to set and update inventory quantities.
-- Low-stock alerts are generated when inventory falls below a predefined threshold.
-- Merchants receive notifications for low stock to restock items in a timely manner.
-- Out-of-stock products are marked as unavailable on the storefront.
-- Inventory levels are updated immediately upon saving changes.
 
 Managing orders
 
@@ -378,34 +260,11 @@ Acceptance Criteria:
 - Merchants can view the history of status changes for each order.
 - If updating the status fails, an error message indicates the issue.
 
-Managing Payments
-
-As a merchant, I want to set up payment methods so that I can receive payments from customers.
-
-Acceptance Criteria:
-- The payment settings page includes options to select from various payment gateways (e.g., PayPal, Stripe).
-- Each payment gateway option provides a setup form for entering necessary credentials.
-- Successfully setting up a payment method confirms that funds can be received from sales.
-- The system provides a confirmation message upon successful setup of a payment method.
-- Merchants can add or remove payment methods as needed.
-- If setup fails, an error message provides details on the issue.
-
-As a merchant, I want to track payment history so that I can manage my finances.
-
-Acceptance Criteria:
-- The payment history page lists all received payments with details such as transaction dates and amounts.
-- Payments can be filtered by date range, order ID, or payment method.
-- Each entry in the payment history includes a link to view associated order details.
-- The page provides options to export payment history data in formats like CSV or PDF.
-- The system displays the payment status (e.g., Completed, Pending) for each transaction.
-- Payment history updates in real-time as new payments are processed.
-- If there is an issue loading payment history, an error message is displayed.
-
 Managing Discounts
 
 As a merchant, I want to verify customer IDs to offer discounts, ensuring that only eligible customers receive the discount.
 
-Acceptance Criteria: 
+Acceptance Criteria:
 - When a customer applies a discount code, the merchant should be able to verify the customer’s ID to confirm eligibility for the discount.
 - If the customer is verified and eligible, the discount should be applied to their purchase, and the discount details should be reflected in the final price.
 - After applying the discount, a confirmation message should be displayed to the merchant, indicating the discount has been successfully applied and the customer’s eligibility has been confirmed.
