@@ -1,0 +1,251 @@
+Merchant User Stories
+
+
+Merchant Registration
+As a new merchant,
+I want to create an account,
+so that I can start listing my products on the platform.
+
+Acceptance Criteria:
+
+- Successful registration with unique email.
+- Passwords are securely hashed.
+- Merchant role is assigned correctly.
+- Required fields are validated.
+- Error messages are displayed for invalid input.
+
+
+
+Merchant Login
+As a registered merchant,
+I want to log in to my account,
+so that I can manage my products and orders.
+
+Acceptance Criteria:
+
+- Ability to log in with email and password.
+- Validation of credentials.
+- Secure authentication with session or token management.
+- Error message for incorrect login details.
+- Successful redirection to the merchant dashboard.
+
+
+
+Merchant Logout
+As a logged-in merchant,
+I want to log out of my account,
+so that I can ensure my account is secure when I'm finished.
+
+Acceptance Criteria:
+
+- Ability to log out of the account.
+- Invalidating session or token upon logout.
+- Redirection to the login page.
+- Confirmation of successful logout.
+- Error handling if logout is attempted without being logged in.
+
+
+
+Product Listing
+As a merchant,
+I want to list new products,
+so that customers can view and purchase them.
+
+Acceptance Criteria:
+
+- Product creation with name, description, price, and quantity.
+- Category assignment through categoryId.
+- Images are stored in JSON format.
+- Quantity updates automatically.
+- Validation for all required fields.
+
+
+
+Product Editing
+As a merchant,
+I want to edit existing products,
+so that I can update product details as needed.
+
+Acceptance Criteria:
+
+- Ability to update product details like price and quantity.
+- Changes are saved and reflected on the product page.
+- Validation ensures data integrity.
+- Users are notified of successful updates.
+
+
+
+Order Management
+As a merchant,
+I want to view and manage customer orders,
+so that I can fulfill them efficiently.
+
+Acceptance Criteria:
+
+- Ability to view orders with details like products and customer info.
+- Update order status (e.g., Pending, Delivered).
+- Manage order fulfillment.
+- Notifications for order status changes.
+- Error handling for issues during management.
+
+
+
+Inventory Tracking
+As a merchant,
+I want to track my inventory levels,
+so that I can manage stock efficiently.
+
+Acceptance Criteria:
+
+- View current inventory levels for each product.
+- Update inventory levels when products are sold.
+- Validation of stock levels during updates.
+
+
+
+Discount Creation
+As a merchant,
+I want to create discount codes,
+so that I can offer promotions to customers.
+
+Acceptance Criteria:
+
+- Ability to create discount codes with values and expiry dates.
+- Discounts are applied to transactions correctly.
+- Manage and edit existing discount codes.
+- Validation of discount code parameters.
+
+
+
+Profile Management
+As a merchant,
+I want to update my profile information,
+so that my address details and business information are current.
+
+Acceptance Criteria:
+
+- Update profile information like business name and address details.
+- Changes are saved and reflected immediately.
+- Validation for updated information.
+- Notifications confirming profile updates.
+
+
+
+
+
+Customer User Stories
+
+
+Customer Registration
+As a new customer,
+I want to register an account,
+so that I can start shopping on the platform.
+
+Acceptance Criteria:
+
+- Successful registration with unique email.
+- Passwords are securely hashed.
+- Customer role is assigned correctly.
+- Required fields are validated.
+- Error messages are displayed for invalid input.
+
+
+
+Customer Login
+As a registered customer,
+I want to log in to my account,
+so that I can manage my orders and profile.
+
+Acceptance Criteria:
+
+- Ability to log in with email and password.
+- Validation of credentials.
+- Secure authentication with session or token management.
+- Error message for incorrect login details.
+- Successful redirection to the customer dashboard.
+
+
+
+Customer Logout
+As a logged-in customer,
+I want to log out of my account,
+so that I can ensure my account is secure when I'm finished.
+
+Acceptance Criteria:
+
+- Ability to log out of the account.
+- Invalidating session or token upon logout.
+- Redirection to the login page.
+- Confirmation of successful logout.
+- Error handling if logout is attempted without being logged in.
+
+
+
+Product Browse
+As a customer,
+I want to browse for products,
+so that I can find items that interest me.
+
+Acceptance Criteria:
+
+- Browse functionality by categories.
+- Display of browse results with product details.
+- Accurate and relevant browse results.
+
+
+
+Product Purchase
+As a customer,
+I want to purchase products,
+so that I can complete transactions and receive my items.
+
+Acceptance Criteria:
+
+- Ability to add products to the cart.
+- Checkout process with payment.
+- Transaction is recorded and confirmed.
+- Error handling for payment issues.
+- Confirmation message and receipt provided.
+
+
+
+Order Tracking
+As a customer,
+I want to track my orders,
+so that I can know the status.
+
+Acceptance Criteria:
+
+- View order status and tracking information.
+- Notifications for status updates (e.g., Pending, Completed).
+- Access to order history.
+- Error handling for tracking issues.
+
+
+
+Review Submission
+As a customer,
+I want to leave reviews for products I’ve purchased,
+so that I can share my feedback with others.
+
+Acceptance Criteria:
+
+- Ability to submit a review with rating, description, and image.
+- Reviews are linked to the correct product and transaction.
+- Validation of review content and rating.
+- Reviews are displayed on the product page.
+
+
+
+Profile Management
+As a customer,
+I want to update my profile information,
+so that my contact details and preferences are accurate.
+
+Acceptance Criteria:
+
+- Update personal information like name, email, and address.
+- Changes are saved and reflected immediately.
+- Passwords can be changed securely.
+- Validation of updated information.
+- Notifications confirming profile updates.
