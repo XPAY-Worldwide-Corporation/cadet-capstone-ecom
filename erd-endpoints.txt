@@ -1,0 +1,77 @@
+ERD ENDPOINTS
+
+User Endpoints
+  GET /users: Retrieve list of users.
+  GET /users/{UserID}: Retrieve details of a specific user
+  POST /users: Create a new user
+  DELETE /users/{UserID}: Delete a user
+
+Product Endpoints
+  GET /products: Retrieve lists of products.
+  GET /products/{ProductID}: Get details of a specific product.
+  POST /products: Create new product
+  PUT /products/{ProductID}: Update details of existing product.
+  DELETE /products/{ProductID}: Delete product
+
+Category Endpoints
+  GET /categories: Retrieve a list of categories
+  GET /categories/{CategoryID}`: Get details of a specific category
+  POST /categories: Create a new category
+  PUT /categories/{CategoryID}: Update details of existing category
+  DELETE /categories/{CategoryID}`: Delete a category
+
+Review Endpoints:
+  GET /reviews: Retrieve a list of reviews
+  GET /reviews/{ReviewID}: Retrieve details of a specific review.
+  POST /reviews: Create a new review.
+  PUT /reviews/{ReviewID}: Update a review.
+  DELETE /reviews/{ReviewID}: Delete a review.
+
+Cart Endpoints:
+  GET /carts: Retrieve all carts
+  GET /carts/{CartID}: Retrieve a specific cart
+  POST /carts: Create a new cart.
+  PUT /carts/{CartID}: Update existing cart.
+  DELETE /carts/{CartID}: Delete a cart.
+
+Order Endpoints
+  GET /orders: Get a list of orders.
+  GET /orders/{OrderID}: Retrieve details of a specific order.
+  POST /orders: Create new order.
+  PUT /orders/{OrderID}: Update details of an existing order.
+  DELETE /orders/{OrderID}`: Cancel an order.
+
+Payment Endpoints
+  GET /payments: GET a list of payments.
+  GET /payments/{PaymentID}: Retrieve details of a specific payment
+  POST /payments: Create new payment
+  PUT /payments/{PaymentID}: Update an existing payment
+  DELETE /payments/{PaymentID}: Delete a payment
+
+Shipping Endpoints
+  GET /shippings: Retrieve a list of shipping records
+  GET /shippings/{ShippingID}: GET details of a specific shipping
+  POST /shippings: Create new shipping record
+  PUT /shippings/{ShippingID}: Update an existing shipping record
+  DELETE /shippings/{ShippingID}: Delete a shipping record
+
+Discount Endpoints
+  GET /discounts: Retrieve a list of discounts
+  GET /discounts/{DiscountID}: Retrieve details of a specific discount
+  POST /discounts: Create new discount
+  PUT /discounts/{DiscountID}: Update an existing discount
+  DELETE /discounts/{DiscountID}: Delete a discount
+
+Transaction Endpoints
+  GET /transactions: Retrieve a list of transactions
+  GET /transactions/{TransactionID}: Retrieve details of a specific transaction
+  POST /transactions: Create a new transaction
+  PUT /transactions/{TransactionID}: Update an existing transaction
+  DELETE /transactions/{TransactionID}: Delete a transaction
+
+Merchant Endpoints
+  GET /merchants: Retrieve a list of merchants
+  GET /merchants/{MerchantID}: Retrieve details of a specific merchant
+  POST /merchants: Create a new merchant
+  PUT /merchants/{MerchantID}: Update an existing merchant
+  DELETE /merchants/{MerchantID}: Delete a merchant

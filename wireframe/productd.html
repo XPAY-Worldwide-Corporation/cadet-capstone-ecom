@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header, .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            background-color: #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .product-info {
+            text-align: center;
+        }
+        .product-info h2 {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .product-info p {
+            font-size: 16px;
+            color: #666;
+            margin: 5px 0;
+        }
+        .add-to-cart {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #ff2800;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .add-to-cart:hover {
+            background-color: #e02400;
+        }
+        @media (max-width: 600px) {
+            .header, .footer {
+                padding: 15px;
+            }
+            .product-details {
+                padding: 10px;
+            }
+            .product-image {
+                max-width: 100%;
+            }
+            .product-info h2 {
+                font-size: 20px;
+            }
+            .product-info p {
+                font-size: 14px;
+            }
+            .add-to-cart {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Product Details</h1>
+    </div>
+
+    <div class="product-details">
+        <div class="product-image">Image</div>
+        <div class="product-info">
+            <h2>Product Name</h2>
+            <p>Description of the product</p>
+            <p>Price: 100 PHP</p>
+            <div class="add-to-cart">Add to Cart</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Wireframe Website - XPay</p>
+    </div>
+</body>
+</html>

@@ -1,7 +1,50 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+# compiled output
+/dist
+/node_modules
+/build
+
+=======
+>>>>>>> 74e00730de0cfc2740c57387aa1e1f58d8292012
+=======
+>>>>>>> 74e00730de0cfc2740c57387aa1e1f58d8292012
 # Logs
 logs
 *.log
 npm-debug.log*
+<<<<<<< HEAD
+<<<<<<< HEAD
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+=======
+=======
+>>>>>>> 74e00730de0cfc2740c57387aa1e1f58d8292012
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
@@ -71,6 +114,10 @@ web_modules/
 
 # Yarn Integrity file
 .yarn-integrity
+<<<<<<< HEAD
+>>>>>>> 74e00730de0cfc2740c57387aa1e1f58d8292012
+=======
+>>>>>>> 74e00730de0cfc2740c57387aa1e1f58d8292012
 
 # dotenv environment variable files
 .env
@@ -79,6 +126,23 @@ web_modules/
 .env.production.local
 .env.local
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+# temp directory
+.temp
+.tmp
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+=======
+=======
+>>>>>>> 74e00730de0cfc2740c57387aa1e1f58d8292012
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
@@ -128,3 +192,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+<<<<<<< HEAD
+>>>>>>> 74e00730de0cfc2740c57387aa1e1f58d8292012
+=======
+>>>>>>> 74e00730de0cfc2740c57387aa1e1f58d8292012

@@ -1,0 +1,140 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  UserID           Int      @id @default(autoincrement())
+  Name             String
+  Email            String   @unique
+  Password         String
+  Address          String?
+  PhoneNumber      String?
+  TwoFactorEnabled Boolean  @default(false)
+  DateRegistered   DateTime @default(now())
+  Reviews          Review[]
+  Orders           Order[]
+  Cart             Cart[]
+}
+
+model Product {
+  ProductID    Int           @id @default(autoincrement())
+  Name         String
+  Description  String
+  Price        Float
+  StockLevel   Int
+  Category     Category      @relation(fields: [CategoryID], references: [CategoryID])
+  CategoryID   Int
+  Reviews      Review[]
+  Carts        Cart[]
+  Discounts    Discount[]
+  OrderItems   OrderItem[]
+  Transactions Transaction[] @relation("ProductToTransaction")
+}
+
+model Category {
+  CategoryID   Int       @id @default(autoincrement())
+  CategoryName String
+  Description  String?
+  Products     Product[]
+}
+
+model Review {
+  ReviewID   Int      @id @default(autoincrement())
+  Product    Product  @relation(fields: [ProductID], references: [ProductID])
+  ProductID  Int
+  User       User     @relation(fields: [UserID], references: [UserID])
+  UserID     Int
+  Rating     Int
+  Comment    String?
+  ReviewDate DateTime @default(now())
+}
+
+model Cart {
+  CartID    Int     @id @default(autoincrement())
+  User      User    @relation(fields: [UserID], references: [UserID])
+  UserID    Int
+  Product   Product @relation(fields: [ProductID], references: [ProductID])
+  ProductID Int
+  Quantity  Int
+}
+
+model Order {
+  id          Int       @id @default(autoincrement())
+  userId      Int
+  status      String
+  totalAmount Float
+  orderItems  OrderItem[]
+  user        User       @relation(fields: [userId], references: [UserID])
+  payment     Payment?
+  shipping    Shipping?
+}
+
+model OrderItem {
+  id        Int    @id @default(autoincrement())
+  productId Int
+  quantity  Int
+  orderId   Int
+  order     Order  @relation(fields: [orderId], references: [id])
+  product   Product @relation(fields: [productId], references: [ProductID])
+}
+
+model Payment {
+  PaymentID     Int          @id @default(autoincrement())
+  OrderID       Int          @unique
+  PaymentMethod String
+  Transaction   Transaction?
+  TransactionID Int          @unique
+  PaymentStatus String
+  Amount        Float
+  Order         Order @relation(fields: [OrderID], references: [id])
+}
+
+model Shipping {
+  ShippingID            Int      @id @default(autoincrement())
+  OrderID               Int      @unique
+  Carrier               String
+  ShippingMethod        String
+  ShippingCost          Float
+  EstimatedDeliveryTime DateTime
+  TrackingURL           String?
+  Order                 Order @relation(fields: [OrderID], references: [id])
+}
+
+model Discount {
+  DiscountID   Int       @id @default(autoincrement())
+  DiscountCode String
+  DiscountType String
+  AmountValue  Float
+  Products     Product[]
+  StartDate    DateTime
+  EndDate      DateTime
+}
+
+model Transaction {
+  TransactionID   Int      @id @default(autoincrement())
+  Payment         Payment  @relation(fields: [PaymentID], references: [PaymentID])
+  PaymentID       Int      @unique
+  Merchant        Merchant @relation(fields: [MerchantID], references: [MerchantID])
+  MerchantID      Int
+  Amount          Float
+  TransactionDate DateTime @default(now())
+  TransactionType String
+  Product         Product? @relation("ProductToTransaction", fields: [ProductID], references: [ProductID])
+  ProductID       Int?
+}
+
+model Merchant {
+  MerchantID     Int           @id @default(autoincrement())
+  MerchantName   String
+  Email          String        @unique
+  Password       String
+  BusinessName   String
+  VerifiedStatus Boolean       @default(false)
+  DateRegistered DateTime      @default(now())
+  Transactions   Transaction[]
+}

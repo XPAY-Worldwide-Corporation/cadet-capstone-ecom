@@ -1,0 +1,288 @@
+> Summer's User Stories
+
+- USER
+
+> As a User, I want to register an account so that I can make purchases and track my orders.
+Acceptance Criteria:
+- User can navigate to the registration page from the homepage.
+- Registration form includes fields for email, password, and password confirmation.
+- User must enter a valid email address and a strong password (minimum 8 characters OR any SPECIAL CHARACTER).
+- User receives a confirmation email upon successful registration.
+- User is redirected to the login page after successful registration.
+
+> As a User, I want to log in to my account so that I can access my personal information and order history.
+Acceptance Criteria:
+- Login page is accessible from the homepage.
+- User must enter a valid email address and password to log in.
+- System displays an error message if the email or password is incorrect.
+- User is redirected to their account dashboard upon successful login.
+
+> As a User, I want to log out of my account so that I can ensure the security of my personal information.
+Acceptance Criteria:
+- Logout option is available from the account dashboard.
+- User is logged out and redirected to the homepage after selecting the Logout option.
+- User session is terminated after logging out.
+
+> As a User, I want to reset my password so that I can regain access to my account if I forget my credentials.
+Acceptance Criteria:
+- Password reset option is available on the login page.
+- User must enter their registered email address to initiate the password reset process.
+- System sends a password reset link to the User's email address.
+- User can create a new password by following the link.
+- User is notified of a successful password reset and can log in with the new password.
+
+> As a Shopper, I want to browse products by categories so that I can find items I'm interested in easily.
+Acceptance Criteria:
+- Homepage displays main product categories.
+- User can click on a category to view all related products.
+- Products within a category are displayed with a thumbnail image, name, price, rating.
+
+> As a Shopper, I want to search for products so that I can quickly find specific items.
+Acceptance Criteria:
+- A search bar is available on every page of the site.
+- User can enter a search term and receive search results.
+- Search results include the product name, image, price, rating.
+- User is notified if no products match the search criteria.
+
+> As a Shopper, I want to view product details so that I can make informed purchasing decisions.
+Acceptance Criteria:
+- User can click on a product to view its details.
+- Product detail page includes the product name, price, description, reviews, and an option to add the product to the cart.
+- User can view multiple images of the product.
+- User can see product availability (in stock/out of stock).
+
+> As a Shopper, I want to add items to my cart so that I can purchase them later.
+Acceptance Criteria:
+- User can add products to their cart from the product detail page.
+- System confirms that the item has been added to the cart.
+- Cart icon updates to reflect the number of items added.
+- User can view and edit their cart from the cart page.
+
+> As a Shopper, I want to remove items from my cart so that I can adjust my purchase list.
+Acceptance Criteria:
+- User can view their cart and see all added items.
+- User can remove individual items from the cart.
+- Cart updates automatically to reflect the changes.
+- User is notified when an item is successfully removed.
+
+> As a Shopper, I want to proceed to checkout so that I can complete my purchase.
+Acceptance Criteria:
+- User can proceed to checkout from the cart page.
+- Checkout page includes fields for shipping address, payment method, and order summary.
+- User must enter all required information to complete the purchase.
+- System validates payment information before processing the order.
+- User receives an order confirmation email upon successful checkout.
+
+> As a Shopper, I want to choose a payment method so that I can pay for my order in a way that suits me.
+Acceptance Criteria:
+- Checkout page offers multiple payment options (credit/debit card, PayPal, etc.).
+- User can select their preferred payment method.
+- Payment form requires all necessary information (e.g., card number, expiration date, CVV).
+- System securely processes the payment.
+
+> As a Shopper, I want to receive an order confirmation so that I know my order was successful.
+Acceptance Criteria:
+- User receives an on-screen confirmation of their order after checkout.
+- User is emailed an order confirmation with the order number, items purchased, and shipping details.
+- Order confirmation page includes a summary of the order.
+
+> As a User, I want to track my order in real-time so that I can know the status and estimated delivery time.
+Acceptance Criteria:
+
+- Order tracking information is updated in real-time based on the shipping carrier's API.
+- Users receive notifications (email, SMS, or app) at key stages of order processing (e.g., shipped, out for delivery, delivered).
+- Tracking details are accessible from the order history page.
+
+> As a User, I want to enable two-factor authentication for my account so that I can enhance the security of my personal information.
+Acceptance Criteria:
+-Users can opt-in for 2FA during account registration or from their account settings.
+- 2FA can be implemented using SMS or authenticator apps.
+- Users are prompted for a verification code in addition to their password when logging in if 2FA is enabled.
+- An option to disable 2FA is available with a confirmation process.
+
+> As a User, I want to view my order history so that I can track past purchases.
+Acceptance Criteria:
+- User can access their order history from the account dashboard.
+- Order history page displays all past orders with order numbers, dates, and statuses.
+- User can click on an order to view its details, including items purchased and delivery status.
+
+> As a User, I want to leave reviews on products so that I can share my experience with other shoppers.
+Acceptance Criteria:
+- User can leave a review on any product they have purchased.
+- Review form includes fields for rating (1-5 stars) and a text review.
+- System validates that the user is logged in before allowing them to submit a review.
+- Review is visible on the product detail page after submission.
+
+> As a User, I want to rate products so that I can help others make informed purchasing decisions.
+Acceptance Criteria:
+- User can rate a product from the product detail page.
+- Ratings are submitted using a star-based system (1-5 stars).
+- Average rating is displayed on the product detail page and is updated in real-time.
+
+> As a User, I want to update my account information so that I can keep my profile current.
+Acceptance Criteria:
+- User can access their account settings from the dashboard.
+- User can update personal information such as name, email, and password.
+- System validates changes and requires the user to confirm their current password before saving updates.
+- User receives a notification confirming that their account information has been updated.
+
+- MERCHANT
+
+> As a Merchant, I want to manage user accounts so that I can handle customer support issues.
+Acceptance Criteria:
+- Merchant can view a list of all registered users.
+- Merchant can search for specific users by email or username.
+- Merchant can edit user details or deactivate user accounts.
+- Changes made by the merchant are saved and reflected immediately.
+- Merchant can view user activity logs for support purposes.
+
+> As a Merchant, I want to add, update, or remove products so that I can keep the inventory up to date.
+Acceptance Criteria:
+- Merchant can add new products with details such as name, price, description, and images.
+- Merchant can edit existing product information.
+-Merchant can remove products from the inventory.
+- Changes to the inventory are reflected on the storefront immediately.
+- System supports bulk import/export of product data.
+
+> As a Merchant, I want to view sales reports so that I can analyze business performance.
+Acceptance Criteria:
+- Merchant can generate sales reports for specific date ranges.
+- Sales report includes total sales, number of orders, and top-selling products.
+- Report can be exported as a CSV or PDF file.
+- Merchant can view sales trends and performance metrics on a dashboard.
+- Reports can be filtered by product category, region, or sales channel.
+
+> As a Merchant, I want to manage customer orders so that I can fulfill and track shipments efficiently.
+Acceptance Criteria:
+- Merchant can view a list of all customer orders.
+- Orders are categorized by status (pending, processing, shipped, completed, cancelled).
+- Merchant can update the status of an order (mark as shipped / cancel order).
+- Merchant can print packing slips and shipping labels from the order details page.
+- Customers are notified via email when their order status is updated.
+- Merchant can handle returns and exchanges from the order management interface.
+
+> As a Merchant, I want to configure shipping options so that I can offer various shipping methods to customers.
+Acceptance Criteria:
+- Merchant can set up multiple shipping methods.
+- Merchant can define shipping rates based on destination or order total.
+- System automatically calculates and displays shipping costs during checkout.
+- Merchant can enable or disable shipping options as needed.
+- Customers can select their preferred shipping method during checkout.
+- Merchant can set special handling instructions or restrictions.
+
+> As a Merchant, I want to create and manage promotions and discounts so that I can attract more customers and increase sales.
+Acceptance Criteria:
+- Merchant can create discount codes with specific rules (fixed amount / free shipping).
+- Merchant can set start and end dates for promotions.
+- Merchant can specify conditions for discounts.
+- System applies the discount automatically during checkout when conditions are met.
+- Merchant can view reports on the effectiveness of promotions.
+
+> As a Merchant, I want to manage inventory levels so that I can ensure products are in stock and avoid overselling.
+Acceptance Criteria:
+- Merchant can view and update inventory levels for each product.
+- System automatically deducts inventory when a purchase is made.
+- Merchant receives notifications when inventory for a product is low.
+- Products are marked as "out of stock" on the storefront when inventory reaches zero.
+- Merchant can set reorder points and receive alerts for restocking.
+
+> As a Merchant, I want to manage communication with customers so that I can provide excellent customer service and keep them informed.
+Acceptance Criteria:
+- Merchant can send order updates, promotions, and newsletters to customers via email.
+- Merchant can respond to customer inquiries and messages from within the platform.
+- Merchant can set up automated emails for order confirmations, shipping notifications, and follow-up surveys.
+- Merchant can create and manage email templates for consistency in communication.
+- System provides analytics on email open rates and customer engagement.
+
+> As a Merchant, I want to configure payment gateways so that I can offer secure and convenient payment options to customers.
+Acceptance Criteria:
+- Merchant can integrate multiple payment gateways like credit cards, debit cards, and digital wallets (GCash/Maya).
+- System securely processes payments and protects customer data.
+- Merchant can enable or disable payment methods as needed.
+- Merchant can view and manage transaction history for all payments received.
+- Payment gateway integrations comply with industry security standards.
+
+> As a Merchant, I want to configure API settings so that I can sync inventory with external systems (POS systems).
+Acceptance Criteria:
+- Merchant can configure API settings to sync inventory.
+- System automatically updates inventory levels in real-time when changes occur.
+- Merchant can set rules for how inventory updates are handled (e.g., priority, frequency).
+- System logs and notifies the merchant of any sync issues or errors.
+- Merchant can manually trigger inventory sync if needed.
+
+
+> As a Merchant, I want to prevent fraudulent transactions so that my business is protected from chargebacks and losses.
+Acceptance Criteria:
+
+- System automatically flags transactions that meet certain fraud risk criteria (high order value, mismatched shipping and billing addresses).
+- Merchants receive alerts for potential fraud cases and can review flagged orders.
+- System logs all fraudulent transaction attempts for further analysis.
+- Merchant can access tools to review and manage fraud alerts.
+
+- API for Merchant
+
+> As a Merchant, I want to connect to shipping APIs so that I can automate the order fulfillment process and provide real-time shipping options.
+Acceptance Criteria:
+- Merchant can integrate with shipping carrier APIs to fetch real-time rates.
+- System automatically generates shipping labels based on the selected carrier.
+- Merchant can track shipments directly from the platform using carrier APIs.
+- Customers receive tracking information and updates via email.
+- System logs all shipment details and tracking information for merchant reference.
+
+> As a Merchant, I want to export data from my eCommerce platform via API so that I can integrate it with external analytics or business intelligence tools.
+Acceptance Criteria:
+- Merchant can access an API endpoint to export data such as orders, customer information, and sales reports.
+- Merchant can specify the format (JSON or XML) and the range of data to be exported.
+- System provides logs and notifications for successful and failed export attempts.
+- Exported data includes relevant fields as specified by the merchant.
+
+
+> As a Merchant, I want to ensure my API can handle high-traffic events so that my eCommerce platform remains stable, efficient, and responsive.
+Acceptance Criteria:
+- API is designed to scale automatically during high-traffic events.
+- System provides load balancing to distribute API requests evenly across servers.
+- Merchant can monitor API performance in real-time during high-traffic periods.
+- System generates alerts if API performance drops below acceptable response time.
+- System includes detailed performance metrics and usage reports.
+
+> As a Merchant, I want to integrate my eCommerce platform with multiple payment processors via API so that I can offer a variety of payment options to my customers.
+Acceptance Criteria:
+- Merchant can integrate with various payment processors.
+- Merchant can configure payment options, including alternative payment methods.
+- System provides real-time transaction processing and instant notifications for payment status.
+- Merchant can view detailed reports on payment transactions, including fees.
+- System ensures compliance with security standards for payment processing.
+
+> As a Merchant, I want to use an API to implement dynamic pricing so that I can adjust prices in real-time based on factors like demand, competition, and customer segments.
+Acceptance Criteria:
+- Merchant can configure dynamic pricing rules via an API, including price adjustments based on time of day, customer location, and purchasing history.
+- System automatically updates product prices in real-time on the store webpage according to the rules set by the merchant.
+- Merchant can view reports on sales performance and revenue impact from dynamic pricing.
+- System supports various dynamic pricing strategies and offers analytics on pricing effectiveness.
+
+> As a Merchant, I want to automate the returns and exchanges process using an API so that I can improve efficiency and provide a better customer experience.
+Acceptance Criteria:
+- Merchant can use an API to handle return and exchange requests, including generating return labels and tracking the status of returns.
+System automatically updates inventory levels based on returned items and processes refunds or exchanges.
+- API allows the merchant to set return and exchange policies, such as time limits and restocking fees.
+- Merchant can access reports on return rates, reasons for returns, and the financial impact on the business.
+- Customers receive real-time updates on their return or exchange requests through email or their account on the platform.
+- API provides tools for managing return requests and tracking resolution progress.
+
+- EXTRA Features for Future Projects
+
+> As an Online Shopper, I want to see a digital certificate on the seller’s profile that verifies that it is a legitimate/verified seller before purchasing a product.
+Acceptance Criteria:
+- Seller’s profile page displays a digital certificate badge for verified sellers.
+- Digital certificate should be visible on both the desktop and mobile versions of the website/app.
+- Clicking on the certificate should provide more details about the verification process.
+- Only sellers who have passed the verification process can display the certificate.
+- The verification process includes validation of business licenses, customer reviews, and product authenticity.
+
+> As a Customer of Online Shopping, I want to have an exclusive membership that prioritizes my orders when I spend a certain cumulative amount, so that I receive my orders earlier than regular customers.
+Acceptance Criteria:
+- Eligibility Criteria: Customer must have spent a cumulative amount to qualify for the exclusive membership.
+- Priority Processing: Once the customer qualifies for the exclusive membership, their orders should be prioritized in processing, packaging, and shipping over those of regular customers.
+- Notification: Customer should receive a notification (email, SMS, or app notification) confirming their exclusive membership status once they reach the spending cumulative amount.
+- Delivery Time: Orders placed by exclusive members should have a guaranteed shorter delivery window compared to regular customers.
+- Exclusivity Badge: Exclusive members should have a visible badge or indicator on their account, order history, and during checkout to signify their priority status.
